@@ -1,5 +1,5 @@
 
-import abdominalproject.Disease
+import dss_project.Disease
 
 
 rule "Hernia"
@@ -23,7 +23,7 @@ end
 rule "Colitis2"
     dialect "java"
     when:
-        d3: Disease(nausea==true)
+        d3: Disease(nausea==false)
     then:
         d3.setDiseaseName(“Ulcerative Colitis”)
         System.out.println("The first approximation of the diagnosis is:"+d3.getDiseaseName())
