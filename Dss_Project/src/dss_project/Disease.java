@@ -12,9 +12,9 @@ package dss_project;
 public class Disease {
     
     private String diseaseName;
-    private enum Gender {MALE, FEMALE};
+    public enum Gender {MALE, FEMALE};
     //Baby (0-2 años), child (2-12 años),young(12-16) adolescent (16-25), young adult (25-40), adult (40-60), elder (+60)
-    private enum AgeRange {BABY,CHILD,YOUNG,ADOLESCENT,YOUNGADULT,ADULT,ELDER};
+    public enum AgeRange {BABY,CHILD,YOUNG,ADOLESCENT,YOUNGADULT,ADULT,ELDER};
     private Gender gender;
     private AgeRange age;
     private boolean abdpain;
@@ -40,38 +40,41 @@ public class Disease {
     private boolean fatigue;
     private boolean poo;
     private boolean dermatitis;
-    
 
-    public Disease(Gender gender, AgeRange age,boolean abdpain, boolean distention, boolean nausea, boolean vomiting, boolean anxiety, boolean genetic, boolean tobacco, boolean diarrhea, boolean rectalHemo, boolean exhaustion, boolean weightLoss, boolean cramps, boolean constipation, boolean pee, boolean bulks, boolean fever, boolean perianalDiscom, boolean ulcers, boolean melenas, boolean chills, boolean fatigue, boolean poo, boolean dermatitis) {
-        this.gender=Gender.FEMALE;
-        this.age=AgeRange.YOUNG;
-        this.diseaseName = "Irritable Bowel Syndrom";
-        this.abdpain = true;
-        this.distention = true;
-        this.nausea = true;
-        this.vomiting = true;
-        this.anxiety = true;
-        this.genetic = false;
-        this.tobacco = false;
-        this.diarrhea = true;
-        this.rectalHemo = true;
-        this.exhaustion = false;
-        this.weightLoss = false;
-        this.cramps = true;
-        this.constipation = true;
-        this.pee = true;
-        this.bulks = false;
-        this.fever = false;
-        this.perianalDiscom = false;
-        this.ulcers = false;
-        this.melenas = false;
-        this.chills = false;
-        this.fatigue = false;
-        this.poo = false;
-        this.dermatitis = false;
+    public Disease() {
+       super();
     }
 
-    
+    public Disease(String diseaseName, Gender gender, AgeRange age, boolean abdpain, boolean distention, boolean nausea, boolean vomiting, boolean anxiety, boolean genetic, boolean tobacco, boolean diarrhea, boolean rectalHemo, boolean exhaustion, boolean weightLoss, boolean cramps, boolean constipation, boolean pee, boolean bulks, boolean fever, boolean perianalDiscom, boolean ulcers, boolean melenas, boolean chills, boolean fatigue, boolean poo, boolean dermatitis) {
+        this.diseaseName = diseaseName;
+        this.gender = gender;
+        this.age = age;
+        this.abdpain = abdpain;
+        this.distention = distention;
+        this.nausea = nausea;
+        this.vomiting = vomiting;
+        this.anxiety = anxiety;
+        this.genetic = genetic;
+        this.tobacco = tobacco;
+        this.diarrhea = diarrhea;
+        this.rectalHemo = rectalHemo;
+        this.exhaustion = exhaustion;
+        this.weightLoss = weightLoss;
+        this.cramps = cramps;
+        this.constipation = constipation;
+        this.pee = pee;
+        this.bulks = bulks;
+        this.fever = fever;
+        this.perianalDiscom = perianalDiscom;
+        this.ulcers = ulcers;
+        this.melenas = melenas;
+        this.chills = chills;
+        this.fatigue = fatigue;
+        this.poo = poo;
+        this.dermatitis = dermatitis;
+    }
+   
+
     
     public String getDiseaseName() {
         return diseaseName;
@@ -267,8 +270,10 @@ public class Disease {
 
     @Override
     public String toString() {
-        return "Disease{" + "diseaseName=" + diseaseName + ", abdpain=" + abdpain + ", distention=" + distention + ", nausea=" + nausea + ", vomiting=" + vomiting + ", anxiety=" + anxiety + ", genetic=" + genetic + ", tobacco=" + tobacco + ", diarrhea=" + diarrhea + ", rectalHemo=" + rectalHemo + ", exhaustion=" + exhaustion + ", weightLoss=" + weightLoss + ", cramps=" + cramps + ", constipation=" + constipation + ", pee=" + pee + ", bulks=" + bulks + ", fever=" + fever + ", perianalDiscom=" + perianalDiscom + ", ulcers=" + ulcers + ", melenas=" + melenas + ", chills=" + chills + ", fatigue=" + fatigue + ", poo=" + poo + ", dermatitis=" + dermatitis + '}';
+        return "Disease{" + "diseaseName=" + diseaseName + ", gender=" + gender + ", age=" + age + ", abdpain=" + abdpain + ", distention=" + distention + ", nausea=" + nausea + ", vomiting=" + vomiting + ", anxiety=" + anxiety + ", genetic=" + genetic + ", tobacco=" + tobacco + ", diarrhea=" + diarrhea + ", rectalHemo=" + rectalHemo + ", exhaustion=" + exhaustion + ", weightLoss=" + weightLoss + ", cramps=" + cramps + ", constipation=" + constipation + ", pee=" + pee + ", bulks=" + bulks + ", fever=" + fever + ", perianalDiscom=" + perianalDiscom + ", ulcers=" + ulcers + ", melenas=" + melenas + ", chills=" + chills + ", fatigue=" + fatigue + ", poo=" + poo + ", dermatitis=" + dermatitis + '}';
     }
+
+    
     
     
 }
