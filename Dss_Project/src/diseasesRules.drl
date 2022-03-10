@@ -2,7 +2,7 @@
 import dss_project.Disease
 
 
-rule "Hernia"
+rule "Hernia" salience 700
     dialect "java"
     when:
         d1: Disease(bulk==true)
@@ -11,7 +11,7 @@ rule "Hernia"
         System.out.println("The first approximation of the diagnosis is:"+d1.getDiseaseName())
 end
 
-rule "Colitis"
+rule "Colitis" salience 1000
     dialect "java"
     when:
         d2: Disease(poo==true)
@@ -20,7 +20,7 @@ rule "Colitis"
         System.out.println("The first approximation of the diagnosis is:"+d2.getDiseaseName())
 end
 
-rule "Colitis2"
+rule "Colitis2" salience 400
     dialect "java"
     when:
         d3: Disease(nausea==false)
@@ -29,7 +29,7 @@ rule "Colitis2"
         System.out.println("The first approximation of the diagnosis is:"+d3.getDiseaseName())
 end
 
-rule "Celiac"
+rule "Celiac" salience 500
     dialect "java"
     when:
         d4: Disease(dermatitis==true)
@@ -38,7 +38,7 @@ rule "Celiac"
         System.out.println("The first approximation of the diagnosis is:"+d4.getDiseaseName()
 end
 
-rule "Diverticulosis"
+rule "Diverticulosis" salience 600
     dialect "java"
     when:
         d5: Disease(chills==true)
@@ -48,7 +48,7 @@ rule "Diverticulosis"
 end
 
 
-rule "Crohns"
+rule "Crohns" salience 900
     dialect "java"
     when:
         d6: Disease(melenas==true)
@@ -57,7 +57,7 @@ rule "Crohns"
         System.out.println("The first approximation of the diagnosis is:"+d6.getDiseaseName()
 end
 
-rule "Enterocolitis"
+rule "Enterocolitis" salience 800
     dialect "java"
     when:
         d7: Disease(ulcers==true)
@@ -66,7 +66,7 @@ rule "Enterocolitis"
         System.out.println("The first approximation of the diagnosis is:"+d7.getDiseaseName()
 end
 
-rule "Hernia"
+rule "Hernia2" salience 300
     dialect "java"
     when:
         d8: Disease(diarrhea==false)
@@ -75,7 +75,7 @@ rule "Hernia"
         System.out.println("The first approximation of the diagnosis is:"+d8.getDiseaseName()
 end
 
-rule "Appendicitis"
+rule "Appendicitis" salience 200 
     dialect "java"
     when:
         d9: Disease(fever==true)
@@ -84,7 +84,7 @@ rule "Appendicitis"
         System.out.println("The first approximation of the diagnosis is:"+d9.getDiseaseName()
 end
  
-rule "Colorectal"
+rule "Colorectal" salience 100
     dialect "java"
     when:
         d10: Disease(genetic==true)
