@@ -69,12 +69,26 @@ end
 rule "Hernia"
     dialect "java"
     when:
-        d8: Disease(diarrhea==true)
+        d8: Disease(diarrhea==false)
     then:
         d8.setDiseaseName(“Inguinal or Abdominal Hernia”)
         System.out.println("The first approximation of the diagnosis is:"+d8.getDiseaseName()
 end
 
-
-
+rule "Appendicitis"
+    dialect "java"
+    when:
+        d9: Disease(fever==true)
+    then:
+        d9.setDiseaseName(“Appendicitis”)
+        System.out.println("The first approximation of the diagnosis is:"+d9.getDiseaseName()
+end
  
+rule "Colorectal"
+    dialect "java"
+    when:
+        d10: Disease(genetic==true)
+    then:
+        d10.setDiseaseName(“Colorectal Cancer”)
+        System.out.println("The first approximation of the diagnosis is:"+d10.getDiseaseName()
+end
