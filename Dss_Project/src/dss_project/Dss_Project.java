@@ -4,6 +4,11 @@
  * and open the template in the editor.
  */
 package dss_project;
+import java.io.*;
+import org.kie.api.KieServices;
+import org.kie.api.runtime.KieContainer;
+import org.kie.api.runtime.KieSession;
+
 
 /**
  *
@@ -11,7 +16,12 @@ package dss_project;
  */
 public class Dss_Project {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        
+         KieServices ks = KieServices.Factory.get();
+        KieContainer kc = ks.getKieClasspathContainer();
+        
+        KieSession ksession = kc.newKieSession("evaluationKS");
         
         Disease IBS= new Disease("Irritable Bowel Syndrom",Disease.Gender.FEMALE,Disease.AgeRange.YOUNG,true,true,true,true,true,false,false,true,true,false,false,true,true,true,false,false,false,false,false,false,false,false,false);
         
@@ -31,7 +41,13 @@ public class Dss_Project {
         
         Disease Colorectal_cancer= new Disease("Colorectal Cancer",Disease.Gender.MALE,Disease.AgeRange.ADULT,true,true,true,true,true,true,true,true,true,true,true,false,true,false,false,false,false,false,false,false,false,false,false);
         
+       System.out.println("do you have diarrhea?");
         
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String diarrhea = br.readLine();
+        System.out.println(diarrhea);
+        
+      
     
     
     }
