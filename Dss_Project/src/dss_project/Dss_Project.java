@@ -6,6 +6,9 @@
 package dss_project;
 import java.io.*;
 import java.util.*;
+import org.kie.api.KieServices;
+import org.kie.api.runtime.KieContainer;
+import org.kie.api.runtime.KieSession;
 
 
 
@@ -21,10 +24,11 @@ public class Dss_Project {
         
         KieServices ks = KieServices.Factory.get();
         KieContainer kc = ks.getKieClasspathContainer();
+        KieSession ksession = kc.newKieSession("DiseasesRulesKS");
         
-        KieSession ksession = kc.newKieSession("evaluationKS");
-
-        Prediction prediction = new Prediction();
+    
+     
+       Prediction prediction = new Prediction();
         
         Disease ibs = new Disease("Irritable Bowel Syndrom",Disease.Gender.FEMALE,Disease.AgeRange.YOUNG,true,true,true,true,true,false,false,true,true,false,false,true,true,true,false,false,false,false,false,false,false,false,false);
         
@@ -159,5 +163,7 @@ public class Dss_Project {
     private static void DEBUG( String message ){
         if ( DEBUGGING ) System.out.println("[ DEBUG ] :: " + message);
     }
+
+
     
 }
