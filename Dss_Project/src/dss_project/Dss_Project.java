@@ -26,7 +26,7 @@ public class Dss_Project {
         KieContainer kc = ks.getKieClasspathContainer();
         KieSession ksession = kc.newKieSession("DiseasesRulesKS");
         
-    
+        console_reader= new BufferedReader(new InputStreamReader(System.in));
      
        Prediction prediction = new Prediction();
         
@@ -48,7 +48,7 @@ public class Dss_Project {
         
         Disease colorectal_cancer = new Disease("Colorectal Cancer",Disease.Gender.MALE,Disease.AgeRange.ADULT,true,true,true,true,true,true,true,true,true,true,true,false,true,false,false,false,false,false,false,false,false,false,false);
         
-        String answer = askSymptom("do you suffer diarrhea?");
+        String answer = askSymptom("Do you suffer diarrhea?");
         if ( !answer.equals("")) {
             DEBUG("Answer = " + answer);
             if ( answer.equalsIgnoreCase("yes") || answer.equalsIgnoreCase("y") ){
