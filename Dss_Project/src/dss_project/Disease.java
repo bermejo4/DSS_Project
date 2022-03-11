@@ -5,10 +5,7 @@
  */
 package dss_project;
 
-/**
- *
- * @author marin
- */
+
 public class Disease {
     
     private String diseaseName;

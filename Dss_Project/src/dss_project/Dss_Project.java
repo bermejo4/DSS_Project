@@ -5,17 +5,13 @@
  */
 package dss_project;
 import java.io.*;
-import java.util.Locale;
-
-import org.kie.api.KieServices;
-import org.kie.api.runtime.KieContainer;
-import org.kie.api.runtime.KieSession;
+import java.util.*;
 
 
-/**
- *
- * @author Jaime Bermejo
- */
+
+
+
+
 public class Dss_Project {
 
     private static BufferedReader console_reader;
