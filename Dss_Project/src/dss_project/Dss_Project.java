@@ -70,6 +70,50 @@ public class Dss_Project {
             ksession.fireAllRules();
             ksession.dispose();*/
         }
+        
+         answer=ask("How old are you? Select: OPTION 1 if age goes from (0 to 10). OPTION 2 if age goes from (11-14)."
+                + "OPTION 3 if age goes from (15-35) and OPTION 4 if age goes from (40 or more)");
+                 
+                Scanner sc = new Scanner(System.in);
+                int option = sc.nextInt();
+                
+                if(!answer.equals("")){
+                    switch(option){
+                        case 1:
+                            System.out.println("Your age belongs to the age-group CHILD");
+                            prediction.setAge(Disease.AgeRange.CHILD);
+                            disease.setAge(Disease.AgeRange.CHILD);
+                            break;
+
+                        case 2:
+                            System.out.println("Your age belongs to the age-group YOUNG");
+                            prediction.setAge(Disease.AgeRange.YOUNG);
+                            disease.setAge(Disease.AgeRange.YOUNG);
+                            break;
+
+                        case 3:
+                            System.out.println("Your age belongs to the age-group YOUNG-ADULT");
+                            prediction.setAge(Disease.AgeRange.YOUNGADULT);
+                            disease.setAge(Disease.AgeRange.YOUNGADULT);
+                            break;
+
+                        case 4:
+                            System.out.println("Your age belongs to the age-group ADULT");
+                            prediction.setAge(Disease.AgeRange.ADULT);
+                            disease.setAge(Disease.AgeRange.ADULT);
+                            break;
+                    }
+                }
+                else{
+                    System.out.println("Please enter a number.");
+                }
+                
+                KieRuntimeLogger logger = ks.getLoggers().newThreadedFileLogger( ksession, "./helloworld", 1000 );
+                ksession.insert(disease);
+                ksession.fireAllRules();
+                ksession.dispose();
+
+        
          //answer = ask("How old are you?");
          //Baby (0-2 años), child (2-12 años),young(12-16) adolescent (16-25), young adult (25-40), adult (40-60), elder (+60)
         /*if ( !answer.equals("")) {

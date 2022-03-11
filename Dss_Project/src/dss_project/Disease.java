@@ -10,8 +10,8 @@ public class Disease {
     
     private String diseaseName;
     public enum Gender {MALE, FEMALE};
-    //Baby (0-2 años), child (2-12 años),young(12-16) adolescent (16-25), young adult (25-40), adult (40-60), elder (+60)
-    public enum AgeRange {BABY,CHILD,YOUNG,ADOLESCENT,YOUNGADULT,ADULT,ELDER};
+  //CHILD(5-10), YOUNG(12-14), YOUNGADULT(15-35) AND ADULT(+40) 
+    public enum AgeRange {CHILD,YOUNG,YOUNGADULT,ADULT}; 
     private Gender gender;
     private AgeRange age;
     private boolean abdpain;
