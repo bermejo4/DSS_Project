@@ -41,6 +41,20 @@ public class Disease {
     public Disease() {
        super();
     }
+    public Disease(String name) {
+       super();
+        this.diseaseName=name;
+        
+    }
+    public Disease(String name,Gender gen, AgeRange age) {
+       this.diseaseName = name;
+        this.gender = gen;
+        this.age = age;
+    }
+     public Disease(String name,AgeRange age) {
+       this.diseaseName = name;
+        this.age = age;
+    }
 
     public Disease(String diseaseName, Gender gender, AgeRange age, boolean abdpain, boolean distention, boolean nausea, boolean vomiting, boolean anxiety, boolean genetic, boolean tobacco, boolean diarrhea, boolean rectalHemo, boolean exhaustion, boolean weightLoss, boolean cramps, boolean constipation, boolean pee, boolean bulks, boolean fever, boolean perianalDiscom, boolean ulcers, boolean melenas, boolean chills, boolean fatigue, boolean poo, boolean dermatitis) {
         this.diseaseName = diseaseName;
@@ -69,6 +83,22 @@ public class Disease {
         this.fatigue = fatigue;
         this.poo = poo;
         this.dermatitis = dermatitis;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+
+    public AgeRange getAge() {
+        return age;
+    }
+
+    public void setAge(AgeRange age) {
+        this.age = age;
     }
    
 
