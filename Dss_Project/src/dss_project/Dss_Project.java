@@ -16,6 +16,7 @@ import org.kie.api.runtime.KieSession;
 
 
 
+
 public class Dss_Project {
 
     private static BufferedReader console_reader;
@@ -108,10 +109,10 @@ public class Dss_Project {
                     System.out.println("Please enter a number.");
                 }
                 
-                KieRuntimeLogger logger = ks.getLoggers().newThreadedFileLogger( ksession, "./helloworld", 1000 );
-                ksession.insert(disease);
-                ksession.fireAllRules();
-                ksession.dispose();
+                //KieRuntimeLogger logger = ks.getLoggers().newThreadedFileLogger( ksession, "./helloworld", 1000 );
+                //ksession.insert(disease);
+                //ksession.fireAllRules();
+                //ksession.dispose();
 
         
          //answer = ask("How old are you?");
@@ -147,10 +148,12 @@ public class Dss_Project {
             } else {
                 System.out.println("Please enter Yes(y) or No(n)");
             }
-            //KieRuntimeLogger logger = ks.getLoggers().newThreadedFileLogger( ksession, "./helloworld", 1000 );
-            /*ksession.insert(disease);
+            
+           // KieRuntimeLogger logger = ks.getLoggers().newThreadedFileLogger( ksession, "./diseasesRules", 1000 );
+            System.out.println(disease);
+            ksession.insert(disease);
             ksession.fireAllRules();
-            ksession.dispose();*/
+            ksession.dispose();
         }
 
         answer = askSymptom("Have you seen blood in your feces?");
@@ -292,7 +295,7 @@ public class Dss_Project {
             ksession.dispose();*/
         }
         
-        ksession.insert(disease);
+            ksession.insert(disease);
             ksession.fireAllRules();
             ksession.dispose();
     
@@ -323,6 +326,7 @@ public class Dss_Project {
         if ( DEBUGGING ) System.out.println("[ DEBUG ] :: " + message);
     }
 
-
+     
+     
     
 }
