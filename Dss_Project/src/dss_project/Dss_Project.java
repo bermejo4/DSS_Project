@@ -21,6 +21,16 @@ public class Dss_Project {
 
     private static BufferedReader console_reader;
     private static boolean DEBUGGING = true;
+    
+    public static void execute(KieServices ks, KieContainer kc, Disease dis){
+        KieSession ksession = kc.newKieSession("DiseasesRulesKS");
+        
+        ksession.insert(dis);
+        ksession.fireAllRules();
+        ksession.dispose();
+       
+    }
+    
 
     public static void main(String[] args) {
         
@@ -136,11 +146,13 @@ public class Dss_Project {
         //}
         
         answer = askSymptom("Do you suffer diarrhea?");
+        //Disease d1 = new Disease();
         if ( !answer.equals("")) {
             DEBUG("Answer = " + answer);
             if ( answer.equalsIgnoreCase("yes") || answer.equalsIgnoreCase("y") ){
                 prediction.setDiarrhea(true);
                 disease.setDiarrhea(true);
+                 
                 
             } else if ( answer.equalsIgnoreCase("no") || answer.equalsIgnoreCase("n") ){
                 prediction.setDiarrhea(false);
@@ -150,10 +162,8 @@ public class Dss_Project {
             }
             
            // KieRuntimeLogger logger = ks.getLoggers().newThreadedFileLogger( ksession, "./diseasesRules", 1000 );
-            System.out.println(disease);
-            ksession.insert(disease);
-            ksession.fireAllRules();
-            ksession.dispose();
+            //System.out.println(d1);
+            //execute(ks,kc,d1);
         }
 
         answer = askSymptom("Have you seen blood in your feces?");
@@ -295,9 +305,10 @@ public class Dss_Project {
             ksession.dispose();*/
         }
         
-            ksession.insert(disease);
-            ksession.fireAllRules();
-            ksession.dispose();
+            execute(ks,kc,disease);
+            //ksession.insert(disease);
+            //ksession.fireAllRules();
+            //ksession.dispose();
     
     }
             
