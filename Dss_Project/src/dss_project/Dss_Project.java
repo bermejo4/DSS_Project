@@ -23,8 +23,7 @@ public class Dss_Project {
     private static boolean DEBUGGING = true;
     
     public static void execute(KieServices ks, KieContainer kc, Disease dis){
-        KieSession ksession = kc.newKieSession("DiseasesRulesKS");
-        
+        KieSession ksession = kc.newKieSession("DiseaseRulesKS");
         ksession.insert(dis);
         ksession.fireAllRules();
         ksession.dispose();
@@ -36,12 +35,12 @@ public class Dss_Project {
         
         KieServices ks = KieServices.Factory.get();
         KieContainer kc = ks.getKieClasspathContainer();
-        KieSession ksession = kc.newKieSession("DiseasesRulesKS");
+        //KieSession ksession = kc.newKieSession("DiseasesRulesKS");
         
-        console_reader= new BufferedReader(new InputStreamReader(System.in));
+        console_reader = new BufferedReader(new InputStreamReader(System.in));
      
-       Prediction prediction = new Prediction();
-       Disease disease = new Disease("",Disease.AgeRange.ADULT);
+        Prediction prediction = new Prediction();
+        Disease disease = new Disease("",Disease.AgeRange.ADULT);
         
         Disease ibs = new Disease("Irritable Bowel Syndrom",Disease.Gender.FEMALE,Disease.AgeRange.YOUNG,true,true,true,true,true,false,false,true,true,false,false,true,true,true,false,false,false,false,false,false,false,false,false);
         
@@ -85,44 +84,44 @@ public class Dss_Project {
          answer=ask("How old are you? Select: OPTION 1 if age goes from (0 to 10). OPTION 2 if age goes from (11-14)."
                 + "OPTION 3 if age goes from (15-35) and OPTION 4 if age goes from (40 or more)");
                  
-                Scanner sc = new Scanner(System.in);
-                int option = sc.nextInt();
-                
-                if(!answer.equals("")){
-                    switch(option){
-                        case 1:
-                            System.out.println("Your age belongs to the age-group CHILD");
-                            prediction.setAge(Disease.AgeRange.CHILD);
-                            disease.setAge(Disease.AgeRange.CHILD);
-                            break;
+        Scanner sc = new Scanner(System.in);
+        int option = sc.nextInt();
 
-                        case 2:
-                            System.out.println("Your age belongs to the age-group YOUNG");
-                            prediction.setAge(Disease.AgeRange.YOUNG);
-                            disease.setAge(Disease.AgeRange.YOUNG);
-                            break;
+        if(!answer.equals("")){
+            switch(option){
+                case 1:
+                    System.out.println("Your age belongs to the age-group CHILD");
+                    prediction.setAge(Disease.AgeRange.CHILD);
+                    disease.setAge(Disease.AgeRange.CHILD);
+                    break;
 
-                        case 3:
-                            System.out.println("Your age belongs to the age-group YOUNG-ADULT");
-                            prediction.setAge(Disease.AgeRange.YOUNGADULT);
-                            disease.setAge(Disease.AgeRange.YOUNGADULT);
-                            break;
+                case 2:
+                    System.out.println("Your age belongs to the age-group YOUNG");
+                    prediction.setAge(Disease.AgeRange.YOUNG);
+                    disease.setAge(Disease.AgeRange.YOUNG);
+                    break;
 
-                        case 4:
-                            System.out.println("Your age belongs to the age-group ADULT");
-                            prediction.setAge(Disease.AgeRange.ADULT);
-                            disease.setAge(Disease.AgeRange.ADULT);
-                            break;
-                    }
-                }
-                else{
-                    System.out.println("Please enter a number.");
-                }
-                
-                //KieRuntimeLogger logger = ks.getLoggers().newThreadedFileLogger( ksession, "./helloworld", 1000 );
-                //ksession.insert(disease);
-                //ksession.fireAllRules();
-                //ksession.dispose();
+                case 3:
+                    System.out.println("Your age belongs to the age-group YOUNG-ADULT");
+                    prediction.setAge(Disease.AgeRange.YOUNGADULT);
+                    disease.setAge(Disease.AgeRange.YOUNGADULT);
+                    break;
+
+                case 4:
+                    System.out.println("Your age belongs to the age-group ADULT");
+                    prediction.setAge(Disease.AgeRange.ADULT);
+                    disease.setAge(Disease.AgeRange.ADULT);
+                    break;
+            }
+        }
+        else{
+            System.out.println("Please enter a number.");
+        }
+
+        //KieRuntimeLogger logger = ks.getLoggers().newThreadedFileLogger( ksession, "./helloworld", 1000 );
+        //ksession.insert(disease);
+        //ksession.fireAllRules();
+        //ksession.dispose();
 
         
          //answer = ask("How old are you?");
