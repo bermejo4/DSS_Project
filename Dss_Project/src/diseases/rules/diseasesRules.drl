@@ -8,7 +8,7 @@ rule "Hernia"
         d1 : Disease(bulks==true)
     then
         d1.setDiseaseName("Hernia");
-        System.out.println("The first approximation of the diagnosis is:"+d1.getDiseaseName());
+        System.out.println("The first approximation of the diagnosis is: "+d1.getDiseaseName());
 end
 
 rule "Colitis"
@@ -17,7 +17,7 @@ rule "Colitis"
         d2 : Disease(poo==true)
     then
         d2.setDiseaseName("Ulcerative Colitis");
-        System.out.println("The first approximation of the diagnosis is:"+d2.getDiseaseName());
+        System.out.println("The first approximation of the diagnosis is: "+d2.getDiseaseName());
 end
 
 rule "Colitis2"
@@ -26,7 +26,7 @@ rule "Colitis2"
         d3 : Disease(nausea==false)
     then
         d3.setDiseaseName("Ulcerative Colitis");
-        System.out.println("The first approximation of the diagnosis is:"+d3.getDiseaseName());
+        System.out.println("The first approximation of the diagnosis is: "+d3.getDiseaseName());
 end
 
 rule "Celiac"
@@ -35,7 +35,7 @@ rule "Celiac"
         d4 : Disease(dermatitis==true)
     then
         d4.setDiseaseName("Celiac Disease");
-        System.out.println("The first approximation of the diagnosis is:"+d4.getDiseaseName());
+        System.out.println("The first approximation of the diagnosis is: "+d4.getDiseaseName());
 end
 
 rule "Diverticulosis"
@@ -44,7 +44,7 @@ rule "Diverticulosis"
         d5 : Disease(chills==true)
     then
         d5.setDiseaseName("Diverticulosis");
-        System.out.println("The first approximation of the diagnosis is:"+d5.getDiseaseName());
+        System.out.println("The first approximation of the diagnosis is: "+d5.getDiseaseName());
 end
 
 
@@ -54,7 +54,7 @@ rule "Crohns"
         d6 : Disease(melenas==true)
     then
         d6.setDiseaseName("Crohns Disease");
-        System.out.println("The first approximation of the diagnosis is:"+d6.getDiseaseName());
+        System.out.println("The first approximation of the diagnosis is: "+d6.getDiseaseName());
 end
 
 rule "Enterocolitis"
@@ -63,7 +63,7 @@ rule "Enterocolitis"
         d7 : Disease(ulcers==true)
     then
         d7.setDiseaseName("Infectious Enterocolitis");
-        System.out.println("The first approximation of the diagnosis is:"+d7.getDiseaseName());
+        System.out.println("The first approximation of the diagnosis is: "+d7.getDiseaseName());
 end
 
 rule "Hernia2"
@@ -72,7 +72,7 @@ rule "Hernia2"
         d8 : Disease(diarrhea==false)
     then
         d8.setDiseaseName("Inguinal or Abdominal Hernia");
-        System.out.println("The first approximation of the diagnosis is:"+d8.getDiseaseName());
+        System.out.println("The first approximation of the diagnosis is: "+d8.getDiseaseName());
 end
 
 rule "Appendicitis"
@@ -81,7 +81,7 @@ rule "Appendicitis"
         d9 : Disease(fever==true)
     then
         d9.setDiseaseName("Appendicitis");
-        System.out.println("The first approximation of the diagnosis is:"+d9.getDiseaseName());
+        System.out.println("The first approximation of the diagnosis is: "+d9.getDiseaseName());
 end
  
 rule "Colorectal"
@@ -90,5 +90,5 @@ rule "Colorectal"
         d10 : Disease(genetic==true)
     then
         d10.setDiseaseName("Colorectal Cancer");
-        System.out.println("The first approximation of the diagnosis is:"+d10.getDiseaseName());
+        System.out.println("The first approximation of the diagnosis is: "+d10.getDiseaseName());
 end
