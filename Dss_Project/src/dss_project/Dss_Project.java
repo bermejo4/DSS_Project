@@ -93,7 +93,7 @@ public class Dss_Project {
 
         do {
             answer = ask("How old are you? Select: \n\t1. Age between 0 to 10 \n\t2. Age between 11 to 14"
-                    + "\n\t3.Age between 15 to 35 \n\t4. Age above 40");
+                    + "\n\t3. Age between 15 to 35 \n\t4. Age above 40");
 
             acceptable_answers_set.add("1");
             acceptable_answers_set.add("2");

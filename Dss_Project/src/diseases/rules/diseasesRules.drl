@@ -9,6 +9,7 @@ rule "Hernia"
     then
         d1.setDiseaseName("Hernia");
         System.out.println("The first approximation of the diagnosis is:"+d1.getDiseaseName());
+        System.exit(0);
 end
 
 rule "Colitis"
@@ -18,6 +19,7 @@ rule "Colitis"
     then
         d2.setDiseaseName("Ulcerative Colitis");
         System.out.println("The first approximation of the diagnosis is:"+d2.getDiseaseName());
+        System.exit(0);
 end
 
 rule "Colitis2"
@@ -27,6 +29,7 @@ rule "Colitis2"
     then
         d3.setDiseaseName("Ulcerative Colitis");
         System.out.println("The first approximation of the diagnosis is:"+d3.getDiseaseName());
+        System.exit(0);
 end
 
 rule "Celiac"
@@ -36,6 +39,7 @@ rule "Celiac"
     then
         d4.setDiseaseName("Celiac Disease");
         System.out.println("The first approximation of the diagnosis is:"+d4.getDiseaseName());
+        System.exit(0);
 end
 
 rule "Diverticulosis"
@@ -45,6 +49,7 @@ rule "Diverticulosis"
     then
         d5.setDiseaseName("Diverticulosis");
         System.out.println("The first approximation of the diagnosis is:"+d5.getDiseaseName());
+        System.exit(0);
 end
 
 
@@ -55,6 +60,7 @@ rule "Crohns"
     then
         d6.setDiseaseName("Crohns Disease");
         System.out.println("The first approximation of the diagnosis is:"+d6.getDiseaseName());
+        System.exit(0);
 end
 
 rule "Enterocolitis"
@@ -64,6 +70,7 @@ rule "Enterocolitis"
     then
         d7.setDiseaseName("Infectious Enterocolitis");
         System.out.println("The first approximation of the diagnosis is:"+d7.getDiseaseName());
+        System.exit(0);
 end
 
 rule "Hernia2"
@@ -73,6 +80,7 @@ rule "Hernia2"
     then
         d8.setDiseaseName("Inguinal or Abdominal Hernia");
         System.out.println("The first approximation of the diagnosis is:"+d8.getDiseaseName());
+        System.exit(0);
 end
 
 rule "Appendicitis"
@@ -82,6 +90,7 @@ rule "Appendicitis"
     then
         d9.setDiseaseName("Appendicitis");
         System.out.println("The first approximation of the diagnosis is:"+d9.getDiseaseName());
+        System.exit(0);
 end
  
 rule "Colorectal"
@@ -91,4 +100,5 @@ rule "Colorectal"
     then
         d10.setDiseaseName("Colorectal Cancer");
         System.out.println("The first approximation of the diagnosis is:"+d10.getDiseaseName());
+        System.exit(0);
 end
