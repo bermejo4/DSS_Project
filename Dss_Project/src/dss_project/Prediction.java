@@ -1,5 +1,7 @@
 package dss_project;
 
+
+
 public class Prediction extends Disease {
     private float p_IBS;
     private float p_chrons;

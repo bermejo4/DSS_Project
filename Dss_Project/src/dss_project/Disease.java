@@ -5,16 +5,13 @@
  */
 package dss_project;
 
-/**
- *
- * @author marin
- */
+
 public class Disease {
     
     private String diseaseName;
     public enum Gender {MALE, FEMALE};
-    //Baby (0-2 años), child (2-12 años),young(12-16) adolescent (16-25), young adult (25-40), adult (40-60), elder (+60)
-    public enum AgeRange {BABY,CHILD,YOUNG,ADOLESCENT,YOUNGADULT,ADULT,ELDER};
+  //CHILD(5-10), YOUNG(12-14), YOUNGADULT(15-35) AND ADULT(+40) 
+    public enum AgeRange {CHILD,YOUNG,YOUNGADULT,ADULT}; 
     private Gender gender;
     private AgeRange age;
     private boolean abdpain;
@@ -44,6 +41,20 @@ public class Disease {
     public Disease() {
        super();
     }
+    public Disease(String name) {
+       super();
+        this.diseaseName=name;
+        
+    }
+    public Disease(String name,Gender gen, AgeRange age) {
+       this.diseaseName = name;
+        this.gender = gen;
+        this.age = age;
+    }
+     public Disease(String name,AgeRange age) {
+       this.diseaseName = name;
+        this.age = age;
+    }
 
     public Disease(String diseaseName, Gender gender, AgeRange age, boolean abdpain, boolean distention, boolean nausea, boolean vomiting, boolean anxiety, boolean genetic, boolean tobacco, boolean diarrhea, boolean rectalHemo, boolean exhaustion, boolean weightLoss, boolean cramps, boolean constipation, boolean pee, boolean bulks, boolean fever, boolean perianalDiscom, boolean ulcers, boolean melenas, boolean chills, boolean fatigue, boolean poo, boolean dermatitis) {
         this.diseaseName = diseaseName;
@@ -72,6 +83,22 @@ public class Disease {
         this.fatigue = fatigue;
         this.poo = poo;
         this.dermatitis = dermatitis;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+
+    public AgeRange getAge() {
+        return age;
+    }
+
+    public void setAge(AgeRange age) {
+        this.age = age;
     }
    
 
