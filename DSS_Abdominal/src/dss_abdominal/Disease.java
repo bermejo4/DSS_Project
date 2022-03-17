@@ -537,16 +537,18 @@ public class Disease {
         
     } 
     
-    public int ComparationArrayListDisease(ArrayList<Boolean> disease1, ArrayList<Boolean> disease2){
+    public int ComparationArrayListDisease(ArrayList<Boolean> disease1){
         int result=0;
+        ArrayList<Boolean> disease = new ArrayList<Boolean>();
+        disease.addAll(this.diseaseToArrayList());
+        
         for (int i=0; i<(disease1.size()-1); i++){
-            if (disease1.get(i)==disease2.get(i)){
+            if (disease1.get(i)==disease.get(i)){
                 result++;
             }
         }
         return result;
      
-        
     }
     
     

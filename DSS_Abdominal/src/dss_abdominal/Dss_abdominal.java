@@ -65,6 +65,14 @@ public class Dss_abdominal {
         
         Patient colorectal_cancer = new Patient("Colorectal Cancer",Patient.Gender.MALE,Patient.AgeRange.ADULT,true,true,true,true,true,true,true,true,true,true,true,false,true,false,false,false,false,false,false,false,false,false,false);
         
+        //Código molón para probar mis funciones, salu2 Bermejo:
+        
+        System.out.println(hernia.patientSynmptomsToArrayList());
+        System.out.println(hernia.ComparationArrayListSymptoms(appendicitis.patientSynmptomsToArrayList()));
+        
+        // Fin del código molón :(
+        
+        
         String answer="";
         boolean answer_not_acceptable;
         Set<String> acceptable_answers_set = new HashSet<String>();

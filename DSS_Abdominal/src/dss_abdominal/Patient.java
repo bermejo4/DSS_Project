@@ -5,12 +5,14 @@
  */
 package dss_abdominal;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author gabri
  */
-
 public class Patient {
+
     private float p_IBS;
     private float p_chrons;
     private float p_ulcerative;
@@ -21,9 +23,15 @@ public class Patient {
     private float p_coeliac;
     private float p_rectal_cancer;
     private String diseaseName;
-    public enum Gender {MALE, FEMALE};
-  //CHILD(5-10), YOUNG(12-14), YOUNGADULT(15-35) AND ADULT(+40) 
-    public enum AgeRange {CHILD,YOUNG,YOUNGADULT,ADULT}; 
+
+    public enum Gender {
+        MALE, FEMALE
+    };
+    //CHILD(5-10), YOUNG(12-14), YOUNGADULT(15-35) AND ADULT(+40) 
+
+    public enum AgeRange {
+        CHILD, YOUNG, YOUNGADULT, ADULT
+    };
     private Gender gender;
     private AgeRange age;
     private boolean abdpain;
@@ -50,8 +58,7 @@ public class Patient {
     private boolean poo;
     private boolean dermatitis;
 
-
-    public Patient(){
+    public Patient() {
         p_IBS = 0;
         p_chrons = 0;
         p_ulcerative = 0;
@@ -63,19 +70,20 @@ public class Patient {
         p_rectal_cancer = 0;
     }
 
-
     public Patient(String name) {
-       super();
-        this.diseaseName=name;
-        
+        super();
+        this.diseaseName = name;
+
     }
-    public Patient(String name,Gender gen, AgeRange age) {
-       this.diseaseName = name;
+
+    public Patient(String name, Gender gen, AgeRange age) {
+        this.diseaseName = name;
         this.gender = gen;
         this.age = age;
     }
-     public Patient(String name,AgeRange age) {
-       this.diseaseName = name;
+
+    public Patient(String name, AgeRange age) {
+        this.diseaseName = name;
         this.age = age;
     }
 
@@ -123,9 +131,7 @@ public class Patient {
     public void setAge(AgeRange age) {
         this.age = age;
     }
-   
 
-    
     public String getDiseaseName() {
         return diseaseName;
     }
@@ -318,8 +324,7 @@ public class Patient {
         this.dermatitis = dermatitis;
     }
 
-
-public float getP_IBS() {
+    public float getP_IBS() {
         return p_IBS;
     }
 
@@ -393,19 +398,62 @@ public float getP_IBS() {
 
     @Override
     public String toString() {
-        return "Prediction:" +
-                "\n\tChance of IBS=" + p_IBS +
-                "\n\tChance of Chron's disease=" + p_chrons +
-                "\n\tChance of ulcerative Colitis=" + p_ulcerative +
-                "\n\tChance of diverticulosis=" + p_diverticulosis +
-                "\n\tChance of Hernia=" + p_hernia +
-                "\n\tChance of appendicitis=" + p_appendicitis +
-                "\n\tChance of infectious enterocolitis=" + p_enterocolitis +
-                "\n\tChance of coeliac disease=" + p_coeliac +
-                "\n\tChance of colorectal cancer=" + p_rectal_cancer;
-        
-     
+        return "Prediction:"
+                + "\n\tChance of IBS=" + p_IBS
+                + "\n\tChance of Chron's disease=" + p_chrons
+                + "\n\tChance of ulcerative Colitis=" + p_ulcerative
+                + "\n\tChance of diverticulosis=" + p_diverticulosis
+                + "\n\tChance of Hernia=" + p_hernia
+                + "\n\tChance of appendicitis=" + p_appendicitis
+                + "\n\tChance of infectious enterocolitis=" + p_enterocolitis
+                + "\n\tChance of coeliac disease=" + p_coeliac
+                + "\n\tChance of colorectal cancer=" + p_rectal_cancer;
+
     }
-    
-    
+
+    public ArrayList<Boolean> patientSynmptomsToArrayList() {
+        ArrayList<Boolean> diseaseArrayList = new ArrayList<Boolean>();
+
+        diseaseArrayList.add(this.abdpain);
+        diseaseArrayList.add(this.distention);
+        diseaseArrayList.add(this.nausea);
+        diseaseArrayList.add(this.vomiting);
+        diseaseArrayList.add(this.anxiety);
+        diseaseArrayList.add(this.genetic);
+        diseaseArrayList.add(this.tobacco);
+        diseaseArrayList.add(this.diarrhea);
+        diseaseArrayList.add(this.rectalHemo);
+        diseaseArrayList.add(this.exhaustion);
+        diseaseArrayList.add(this.weightLoss);
+        diseaseArrayList.add(this.cramps);
+        diseaseArrayList.add(this.constipation);
+        diseaseArrayList.add(this.pee);
+        diseaseArrayList.add(this.bulks);
+        diseaseArrayList.add(this.fever);
+        diseaseArrayList.add(this.perianalDiscom);
+        diseaseArrayList.add(this.ulcers);
+        diseaseArrayList.add(this.melenas);
+        diseaseArrayList.add(this.chills);
+        diseaseArrayList.add(this.fatigue);
+        diseaseArrayList.add(this.poo);
+        diseaseArrayList.add(this.dermatitis);
+
+        return diseaseArrayList;
+
+    }
+
+    public int ComparationArrayListSymptoms(ArrayList<Boolean> disease1) {
+        int result = 0;
+        ArrayList<Boolean> disease = new ArrayList<Boolean>();
+        disease.addAll(this.patientSynmptomsToArrayList());
+
+        for (int i = 0; i < (disease1.size() - 1); i++) {
+            if (disease1.get(i) == disease.get(i)) {
+                result++;
+            }
+        }
+        return result;
+
+    }
+
 }
