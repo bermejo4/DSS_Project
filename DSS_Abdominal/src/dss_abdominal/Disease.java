@@ -40,6 +40,154 @@ public class Disease {
     private static float weight_fatigue;
     private static float weight_poo;
     private static float weight_dermatitis;
+    
+    private boolean abdpain;
+    private boolean distention;
+    private boolean nausea;
+    private boolean vomiting;
+    private boolean anxiety;
+    private boolean genetic;
+    private boolean tobacco;
+    private boolean diarrhea;
+    private boolean rectalHemo;
+    private boolean exhaustion;
+    private boolean weightLoss;
+    private boolean cramps;
+    private boolean constipation;
+    private boolean pee;
+    private boolean bulks;
+    private boolean fever;
+    private boolean perianalDiscom;
+    private boolean ulcers;
+    private boolean melenas;
+    private boolean chills;
+    private boolean fatigue;
+    private boolean poo;
+    private boolean dermatitis;
+
+    
+    public Disease(String diseaseName, Gender gender, AgeRange age, boolean abdpain, boolean distention, boolean nausea, boolean vomiting, boolean anxiety, boolean genetic, boolean tobacco, boolean diarrhea, boolean rectalHemo, boolean exhaustion, boolean weightLoss, boolean cramps, boolean constipation, boolean pee, boolean bulks, boolean fever, boolean perianalDiscom, boolean ulcers, boolean melenas, boolean chills, boolean fatigue, boolean poo, boolean dermatitis) {
+        this.diseaseName = diseaseName;
+        this.gender = gender;
+        this.age = age;
+        this.abdpain = abdpain;
+        this.distention = distention;
+        this.nausea = nausea;
+        this.vomiting = vomiting;
+        this.anxiety = anxiety;
+        this.genetic = genetic;
+        this.tobacco = tobacco;
+        this.diarrhea = diarrhea;
+        this.rectalHemo = rectalHemo;
+        this.exhaustion = exhaustion;
+        this.weightLoss = weightLoss;
+        this.cramps = cramps;
+        this.constipation = constipation;
+        this.pee = pee;
+        this.bulks = bulks;
+        this.fever = fever;
+        this.perianalDiscom = perianalDiscom;
+        this.ulcers = ulcers;
+        this.melenas = melenas;
+        this.chills = chills;
+        this.fatigue = fatigue;
+        this.poo = poo;
+        this.dermatitis = dermatitis;
+    }
+
+    public boolean isAbdpain() {
+        return abdpain;
+    }
+
+    public boolean isDistention() {
+        return distention;
+    }
+
+    public boolean isNausea() {
+        return nausea;
+    }
+
+    public boolean isVomiting() {
+        return vomiting;
+    }
+
+    public boolean isAnxiety() {
+        return anxiety;
+    }
+
+    public boolean isGenetic() {
+        return genetic;
+    }
+
+    public boolean isTobacco() {
+        return tobacco;
+    }
+
+    public boolean isDiarrhea() {
+        return diarrhea;
+    }
+
+    public boolean isRectalHemo() {
+        return rectalHemo;
+    }
+
+    public boolean isExhaustion() {
+        return exhaustion;
+    }
+
+    public boolean isWeightLoss() {
+        return weightLoss;
+    }
+
+    public boolean isCramps() {
+        return cramps;
+    }
+
+    public boolean isConstipation() {
+        return constipation;
+    }
+
+    public boolean isPee() {
+        return pee;
+    }
+
+    public boolean isBulks() {
+        return bulks;
+    }
+
+    public boolean isFever() {
+        return fever;
+    }
+
+    public boolean isPerianalDiscom() {
+        return perianalDiscom;
+    }
+
+    public boolean isUlcers() {
+        return ulcers;
+    }
+
+    public boolean isMelenas() {
+        return melenas;
+    }
+
+    public boolean isChills() {
+        return chills;
+    }
+
+    public boolean isFatigue() {
+        return fatigue;
+    }
+
+    public boolean isPoo() {
+        return poo;
+    }
+
+    public boolean isDermatitis() {
+        return dermatitis;
+    }
+
+    
 
     public String getDiseaseName() {
         return diseaseName;
@@ -144,6 +292,100 @@ public class Disease {
     public static float getWeight_dermatitis() {
         return weight_dermatitis;
     }
+
+    public void setAbdpain(boolean abdpain) {
+        this.abdpain = abdpain;
+    }
+
+    public void setDistention(boolean distention) {
+        this.distention = distention;
+    }
+
+    public void setNausea(boolean nausea) {
+        this.nausea = nausea;
+    }
+
+    public void setVomiting(boolean vomiting) {
+        this.vomiting = vomiting;
+    }
+
+    public void setAnxiety(boolean anxiety) {
+        this.anxiety = anxiety;
+    }
+
+    public void setGenetic(boolean genetic) {
+        this.genetic = genetic;
+    }
+
+    public void setTobacco(boolean tobacco) {
+        this.tobacco = tobacco;
+    }
+
+    public void setDiarrhea(boolean diarrhea) {
+        this.diarrhea = diarrhea;
+    }
+
+    public void setRectalHemo(boolean rectalHemo) {
+        this.rectalHemo = rectalHemo;
+    }
+
+    public void setExhaustion(boolean exhaustion) {
+        this.exhaustion = exhaustion;
+    }
+
+    public void setWeightLoss(boolean weightLoss) {
+        this.weightLoss = weightLoss;
+    }
+
+    public void setCramps(boolean cramps) {
+        this.cramps = cramps;
+    }
+
+    public void setConstipation(boolean constipation) {
+        this.constipation = constipation;
+    }
+
+    public void setPee(boolean pee) {
+        this.pee = pee;
+    }
+
+    public void setBulks(boolean bulks) {
+        this.bulks = bulks;
+    }
+
+    public void setFever(boolean fever) {
+        this.fever = fever;
+    }
+
+    public void setPerianalDiscom(boolean perianalDiscom) {
+        this.perianalDiscom = perianalDiscom;
+    }
+
+    public void setUlcers(boolean ulcers) {
+        this.ulcers = ulcers;
+    }
+
+    public void setMelenas(boolean melenas) {
+        this.melenas = melenas;
+    }
+
+    public void setChills(boolean chills) {
+        this.chills = chills;
+    }
+
+    public void setFatigue(boolean fatigue) {
+        this.fatigue = fatigue;
+    }
+
+    public void setPoo(boolean poo) {
+        this.poo = poo;
+    }
+
+    public void setDermatitis(boolean dermatitis) {
+        this.dermatitis = dermatitis;
+    }
+    
+    
 
     public void setDiseaseName(String diseaseName) {
         this.diseaseName = diseaseName;
@@ -251,8 +493,9 @@ public class Disease {
 
     @Override
     public String toString() {
-        return "Disease{" + "diseaseName=" + diseaseName + ", gender=" + gender + ", age=" + age + '}';
+        return "Disease{" + "diseaseName=" + diseaseName + ", gender=" + gender + ", age=" + age + ", abdpain=" + abdpain + ", distention=" + distention + ", nausea=" + nausea + ", vomiting=" + vomiting + ", anxiety=" + anxiety + ", genetic=" + genetic + ", tobacco=" + tobacco + ", diarrhea=" + diarrhea + ", rectalHemo=" + rectalHemo + ", exhaustion=" + exhaustion + ", weightLoss=" + weightLoss + ", cramps=" + cramps + ", constipation=" + constipation + ", pee=" + pee + ", bulks=" + bulks + ", fever=" + fever + ", perianalDiscom=" + perianalDiscom + ", ulcers=" + ulcers + ", melenas=" + melenas + ", chills=" + chills + ", fatigue=" + fatigue + ", poo=" + poo + ", dermatitis=" + dermatitis + '}';
     }
+
 
     
     
