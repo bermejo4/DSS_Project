@@ -5,6 +5,8 @@
  */
 package dss_abdominal;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author gabri
@@ -502,7 +504,50 @@ public class Disease {
         return "Disease{" + "diseaseName=" + diseaseName + ", gender=" + gender + ", age=" + age + ", abdpain=" + abdpain + ", distention=" + distention + ", nausea=" + nausea + ", vomiting=" + vomiting + ", anxiety=" + anxiety + ", genetic=" + genetic + ", tobacco=" + tobacco + ", diarrhea=" + diarrhea + ", rectalHemo=" + rectalHemo + ", exhaustion=" + exhaustion + ", weightLoss=" + weightLoss + ", cramps=" + cramps + ", constipation=" + constipation + ", pee=" + pee + ", bulks=" + bulks + ", fever=" + fever + ", perianalDiscom=" + perianalDiscom + ", ulcers=" + ulcers + ", melenas=" + melenas + ", chills=" + chills + ", fatigue=" + fatigue + ", poo=" + poo + ", dermatitis=" + dermatitis + '}';
     }
 
-
+    
+    public ArrayList<Boolean> diseaseToArrayList(){
+        ArrayList<Boolean> diseaseArrayList = new ArrayList<Boolean>();
+        
+        diseaseArrayList.add(this.abdpain);
+        diseaseArrayList.add(this.distention);
+        diseaseArrayList.add(this.nausea);
+        diseaseArrayList.add(this.vomiting);
+        diseaseArrayList.add(this.anxiety);
+        diseaseArrayList.add(this.genetic);
+        diseaseArrayList.add(this.tobacco);
+        diseaseArrayList.add(this.diarrhea);
+        diseaseArrayList.add(this.rectalHemo);
+        diseaseArrayList.add(this.exhaustion);
+        diseaseArrayList.add(this.weightLoss);
+        diseaseArrayList.add(this.cramps);
+        diseaseArrayList.add(this.constipation);
+        diseaseArrayList.add(this.pee);
+        diseaseArrayList.add(this.bulks);
+        diseaseArrayList.add(this.fever);
+        diseaseArrayList.add(this.perianalDiscom);
+        diseaseArrayList.add(this.ulcers);
+        diseaseArrayList.add(this.melenas);
+        diseaseArrayList.add(this.chills);
+        diseaseArrayList.add(this.fatigue);
+        diseaseArrayList.add(this.poo);
+        diseaseArrayList.add(this.dermatitis);
+        
+        return diseaseArrayList;
+        
+        
+    } 
+    
+    public int ComparationArrayListDisease(ArrayList<Boolean> disease1, ArrayList<Boolean> disease2){
+        int result=0;
+        for (int i=0; i<(disease1.size()-1); i++){
+            if (disease1.get(i)==disease2.get(i)){
+                result++;
+            }
+        }
+        return result;
+     
+        
+    }
     
     
     
