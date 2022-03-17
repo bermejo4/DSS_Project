@@ -15,6 +15,7 @@ import org.kie.api.KieServices;
 import org.kie.api.logger.KieRuntimeLogger;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
+import java.util.ArrayList;
 
 
 
@@ -38,9 +39,12 @@ public class Dss_abdominal {
         KieContainer kc = ks.getKieClasspathContainer();
         
         console_reader = new BufferedReader(new InputStreamReader(System.in));
-     
+        
+        
+        
+        
         Patient prediction = new Patient();
-
+        
         Patient patient = new Patient("",Patient.AgeRange.ADULT);
         
         Patient ibs = new Patient("Irritable Bowel Syndrom",Patient.Gender.FEMALE,Patient.AgeRange.YOUNG,true,true,true,true,true,false,false,true,true,false,false,true,true,true,false,false,false,false,false,false,false,false,false);
@@ -346,11 +350,11 @@ public class Dss_abdominal {
         } while ( answer_not_acceptable );
 
         execute(ks,kc,patient);
-    
+        
+      
     }
             
-    
-
+     
     private static String askSymptom( String message ){
         System.out.println(message);
         try {
