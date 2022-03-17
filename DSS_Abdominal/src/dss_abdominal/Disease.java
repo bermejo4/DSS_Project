@@ -41,6 +41,8 @@ public class Disease {
     private static float weight_poo;
     private static float weight_dermatitis;
     
+    
+    
     private boolean abdpain;
     private boolean distention;
     private boolean nausea;
@@ -486,7 +488,11 @@ public class Disease {
     public static void setWeight_poo(float weight_poo) {
         Disease.weight_poo = weight_poo;
     }
-
+     //private static String[] compareDiseases() 
+       /* 
+            
+        }
+    */
     public static void setWeight_dermatitis(float weight_dermatitis) {
         Disease.weight_dermatitis = weight_dermatitis;
     }
