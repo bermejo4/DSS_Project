@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -9,7 +10,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -19,60 +19,82 @@
          <center>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <GridPane alignment="CENTER" prefHeight="347.0" prefWidth="541.0" HBox.hgrow="ALWAYS">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="322.1999755859375" minWidth="10.0" prefWidth="322.1999755859375" />
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="489.82391827296476" minWidth="10.0" prefWidth="276.60002441406243" />
-                    </columnConstraints>
-                    <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
-                     <children>
-                        <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Personal Information" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                           <font>
-                              <Font name="System Bold" size="20.0" />
-                           </font></Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Born gender" textAlignment="CENTER" wrappingWidth="322.3744478225708" GridPane.halignment="CENTER" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="14.0" />
-                           </font></Text>
-                        <VBox alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
-                           <children>
-                              <RadioButton fx:id="femaleRadioButton" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="18.0" prefWidth="160.0" text="Female" VBox.vgrow="ALWAYS">
-                                 <toggleGroup>
-                                    <ToggleGroup fx:id="gender" />
-                                 </toggleGroup>
-                              </RadioButton>
-                              <RadioButton fx:id="maleRadioButton" mnemonicParsing="false" prefHeight="18.0" prefWidth="148.0" text="Male" toggleGroup="$gender" />
-                           </children>
-                        </VBox>
-                        <Pane fx:id="ethnicityDropdown" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                           <children>
-                              <RadioButton fx:id="femaleRadioButton1" contentDisplay="CENTER" layoutY="22.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="160.0" text="Yes">
-                                 <toggleGroup>
-                                    <ToggleGroup fx:id="smoke" />
-                                 </toggleGroup>
-                              </RadioButton>
-                              <RadioButton fx:id="maleRadioButton1" layoutY="39.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="148.0" text="No" toggleGroup="$smoke" />
-                           </children>
-                        </Pane>
-                        <Pane nodeOrientation="LEFT_TO_RIGHT" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-                           <children>
-                              <Text layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Do you smoke?" textAlignment="CENTER" wrappingWidth="322.5476379394531">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font></Text>
-                           </children>
-                        </Pane>
-                     </children>
-                  </GridPane>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="90.0" prefWidth="601.0" text="Patient's information" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
                </children>
             </HBox>
          </center>
       </BorderPane>
+      <GridPane layoutX="5.0" layoutY="87.0" prefHeight="310.0" prefWidth="594.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="98.60001220703126" minHeight="10.0" prefHeight="81.8000244140625" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="124.99997558593753" minHeight="10.0" prefHeight="124.99997558593753" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Do you smoke?" textAlignment="CENTER" wrappingWidth="296.9476013183594">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Pane fx:id="ethnicityDropdown11" prefHeight="104.0" prefWidth="270.0" GridPane.columnIndex="1">
+               <children>
+                  <RadioButton fx:id="femaleRadioButton111" contentDisplay="CENTER" layoutX="6.0" layoutY="14.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="160.0" text="Yes">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="smoke11" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="maleRadioButton111" layoutX="6.0" layoutY="43.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="148.0" text="No" toggleGroup="$smoke11" />
+               </children>
+            </Pane>
+            <Pane fx:id="ethnicityDropdown111" prefHeight="104.0" prefWidth="270.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <RadioButton fx:id="femaleRadioButton1111" contentDisplay="CENTER" layoutX="6.0" layoutY="14.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="160.0" text="Female">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="smoke111" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="maleRadioButton1111" layoutX="6.0" layoutY="40.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="148.0" text="Male" toggleGroup="$smoke111" />
+               </children>
+            </Pane>
+            <Pane fx:id="ethnicityDropdown1111" prefHeight="122.0" prefWidth="298.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <RadioButton fx:id="femaleRadioButton11111" contentDisplay="CENTER" layoutX="7.0" layoutY="63.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="160.0" text="Between 15 and 35">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="smoke1111" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="maleRadioButton11111" layoutX="7.0" layoutY="32.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="148.0" text="Between 11 and 14" toggleGroup="$smoke1111" />
+                  <RadioButton fx:id="femaleRadioButton111111" contentDisplay="CENTER" layoutX="7.0" layoutY="93.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="160.0" text="Above 40">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="smoke11111" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="femaleRadioButton111112" contentDisplay="CENTER" layoutX="7.0" layoutY="5.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="160.0" text="Between 0 and 10">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="smoke11112" />
+                     </toggleGroup>
+                  </RadioButton>
+               </children>
+            </Pane>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gender" textAlignment="CENTER" wrappingWidth="296.9476013183594" GridPane.rowIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Age range" textAlignment="CENTER" wrappingWidth="296.9476013183594" GridPane.rowIndex="2">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+         </children>
+      </GridPane>
    </children>
 </AnchorPane>
