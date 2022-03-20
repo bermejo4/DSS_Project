@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
@@ -28,8 +28,8 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="The better aproximation of the disease is: " textAlignment="CENTER" wrappingWidth="300.01914978027344" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Some recommended treatment ideas are:" textAlignment="CENTER" wrappingWidth="300.01914978027344" GridPane.rowIndex="1" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="The best aproximation of the disease is: " textAlignment="CENTER" wrappingWidth="300.01914978027344" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Treatment recommendation ideas:" textAlignment="CENTER" wrappingWidth="300.01914978027344" GridPane.rowIndex="1" />
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Other resources of information are: " textAlignment="CENTER" wrappingWidth="300.01914978027344" GridPane.rowIndex="2" />
                         <TextField prefHeight="40.0" prefWidth="286.0" GridPane.columnIndex="1" />
                         <TextField prefHeight="40.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />

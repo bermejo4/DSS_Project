@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
@@ -32,8 +32,8 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Do you experience chills frequently?" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Do you have an increase need of defecation?" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Have you experienced chills regularly?" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Have you experienced an increase in pee frequency?" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Have you experienced abrnormal fatigue?" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Which gender did you have at birth?" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Have you experienced vomiting?" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
@@ -69,12 +69,12 @@
                         </Pane>
                         <Pane fx:id="ethnicityDropdown3" prefHeight="61.0" prefWidth="274.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                            <children>
-                              <RadioButton fx:id="maleRadioButton13" layoutX="14.0" layoutY="30.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="148.0" text="No">
+                              <RadioButton fx:id="maleRadioButton13" layoutX="14.0" layoutY="30.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="148.0" text="Female">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="smoke3" />
                                  </toggleGroup>
                               </RadioButton>
-                              <RadioButton fx:id="femaleRadioButton13" contentDisplay="CENTER" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="160.0" text="Yes" toggleGroup="$smoke3" />
+                              <RadioButton fx:id="femaleRadioButton13" contentDisplay="CENTER" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="160.0" text="Male" toggleGroup="$smoke3" />
                            </children>
                         </Pane>
                         <Pane fx:id="ethnicityDropdown4" prefHeight="61.0" prefWidth="274.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
