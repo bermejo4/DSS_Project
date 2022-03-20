@@ -39,7 +39,7 @@
           <RowConstraints maxHeight="124.99997558593753" minHeight="10.0" prefHeight="124.99997558593753" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Do you smoke?" textAlignment="CENTER" wrappingWidth="296.9476013183594">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Smoker" textAlignment="CENTER" wrappingWidth="296.9476013183594">
                <font>
                   <Font size="14.0" />
                </font>
