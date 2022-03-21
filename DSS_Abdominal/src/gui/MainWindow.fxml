@@ -6,6 +6,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.effect.Light.Distant?>
 <?import javafx.scene.effect.Light.Spot?>
 <?import javafx.scene.effect.Lighting?>
@@ -21,11 +23,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="407.0" prefWidth="600.0" stylesheets="@mainStyle.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="407.0" prefWidth="600.0" stylesheets="@mainStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <BorderPane stylesheets="@mainStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
-            <HBox prefHeight="297.0" prefWidth="538.0">
+            <HBox prefHeight="106.0" prefWidth="581.0">
                <effect>
                   <Lighting>
                      <bumpInput>
@@ -37,29 +39,25 @@
                   </Lighting>
                </effect>
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="106.0" prefWidth="626.0" styleClass="background1" stylesheets="@mainStyle.css" text="Patient's information" textAlignment="CENTER" wrapText="true">
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="91.0" prefWidth="597.0" styleClass="title" stylesheets="@mainStyle.css" text="Patient's information" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font name="Arial Bold" size="96.0" />
                      </font>
                      <effect>
-                        <Lighting>
-                           <bumpInput>
-                              <Shadow />
-                           </bumpInput>
-                           <light>
-                              <Light.Distant />
-                           </light>
-                        </Lighting>
+                        <Glow />
                      </effect>
                   </Label>
                </children>
             </HBox>
          </center>
          <bottom>
-            <Button fx:id="gotoquestions" mnemonicParsing="false" onAction="#gotoquestions" text="Next" BorderPane.alignment="CENTER" />
+            <Button fx:id="gotoquestions" mnemonicParsing="false" onAction="#gotoquestions" prefHeight="35.0" prefWidth="70.0" text="Next" BorderPane.alignment="CENTER">
+               <effect>
+                  <Blend />
+               </effect></Button>
          </bottom>
       </BorderPane>
-      <GridPane layoutX="-1.0" layoutY="109.0" prefHeight="214.0" prefWidth="600.0">
+      <GridPane layoutX="-1.0" layoutY="109.0" prefHeight="247.0" prefWidth="600.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
