@@ -442,7 +442,7 @@ public class Patient {
 
     }
 
-    public int ComparationArrayListSymptoms(ArrayList<Boolean> disease1) {
+    public float ComparationArrayListSymptoms(ArrayList<Boolean> disease1) {
         int result = 0;
         ArrayList<Boolean> disease = new ArrayList<Boolean>();
         disease.addAll(this.patientSynmptomsToArrayList());
@@ -458,7 +458,10 @@ public class Patient {
                 result++;
             }
         }
-        return result;
+        System.out.println("result:"+result);
+        
+        float porcentage=((float)result/23)*100;
+        return porcentage;
 
     }
 

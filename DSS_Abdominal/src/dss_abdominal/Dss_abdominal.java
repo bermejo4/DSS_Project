@@ -368,7 +368,7 @@ public class Dss_abdominal {
         System.out.println(patient.ComparationArrayListSymptoms(appendicitis.patientSynmptomsToArrayList()));
         System.out.println(patient.ComparationArrayListSymptoms(enterocolitis.patientSynmptomsToArrayList()));
         System.out.println(patient.ComparationArrayListSymptoms(celiac_Disease.patientSynmptomsToArrayList()));
-         System.out.println(patient.ComparationArrayListSymptoms(colorectal_cancer.patientSynmptomsToArrayList()));
+        System.out.println(patient.ComparationArrayListSymptoms(colorectal_cancer.patientSynmptomsToArrayList()));
 
 
 
