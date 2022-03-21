@@ -1,4 +1,40 @@
-.background {
-    -fx-background-color: #1d1d1d;
+
+.background1 {
+    -fx-background-color: #fa8072;
+    -fx-text-fill: white;
+    -fx-border-color: linear-gradient(to bottom left, #fa8072, #fa8072);
+    -fx-border-width: 4;
+    -fx-border-radius: 20;
+    
 }
+
+.background2 {
+    -fx-background-color: #ff69b4;
+}
+
+.button {
+    -fx-background-color: #ff69b4;
+}
+
+.button:hover {
+    -fx-font-size: 16px; 
+}
+
+.label {
+    -fx-font-size: 11px;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-text-fill: white;
+    -fx-opacity: 0.6;
+}
+#next_button { 
+    -fx-background-color: linear-gradient(to bottom left, #ff4500, #4169e1);
+    -fx-font-weight: normal;
+    -fx-text-fill: white;
+    -fx-font-size: 20;
+    -fx-background-radius: 20
+}
+#next_button:hover {
+	-fx-background-color: white;
+}
+
 
