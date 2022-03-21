@@ -6,6 +6,8 @@
 package dss_abdominal;
 
 import java.util.ArrayList;
+import java.lang.Math;
+
 
 /**
  *
@@ -34,27 +36,27 @@ public class Patient {
     };
     private Gender gender;
     private AgeRange age;
-    private boolean abdpain;
-    private boolean distention;
+    private float abdpain;
+    private float distention;
     private boolean nausea;
-    private boolean vomiting;
+    private float vomiting;
     private boolean anxiety;
     private boolean genetic;
     private boolean tobacco;
     private boolean diarrhea;
-    private boolean rectalHemo;
-    private boolean exhaustion;
-    private boolean weightLoss;
-    private boolean cramps;
+    private float rectalHemo;
+    private float exhaustion;
+    private float weightLoss;
+    private float cramps;
     private boolean constipation;
-    private boolean pee;
+    private float pee;
     private boolean bulks;
-    private boolean fever;
-    private boolean perianalDiscom;
+    private float fever;
+    private float perianalDiscom;
     private boolean ulcers;
     private boolean melenas;
     private boolean chills;
-    private boolean fatigue;
+    private float fatigue;
     private boolean poo;
     private boolean dermatitis;
 
@@ -87,7 +89,7 @@ public class Patient {
         this.age = age;
     }
 
-    public Patient(String diseaseName, Gender gender, AgeRange age, boolean abdpain, boolean distention, boolean nausea, boolean vomiting, boolean anxiety, boolean genetic, boolean tobacco, boolean diarrhea, boolean rectalHemo, boolean exhaustion, boolean weightLoss, boolean cramps, boolean constipation, boolean pee, boolean bulks, boolean fever, boolean perianalDiscom, boolean ulcers, boolean melenas, boolean chills, boolean fatigue, boolean poo, boolean dermatitis) {
+    public Patient(String diseaseName, Gender gender, AgeRange age, float abdpain, float distention, boolean nausea, float vomiting, boolean anxiety, boolean genetic, boolean tobacco, boolean diarrhea, float rectalHemo, float exhaustion, float weightLoss, float cramps, boolean constipation, float pee, boolean bulks, float fever, float perianalDiscom, boolean ulcers, boolean melenas, boolean chills, float fatigue, boolean poo, boolean dermatitis) {
         this.diseaseName = diseaseName;
         this.gender = gender;
         this.age = age;
@@ -140,20 +142,48 @@ public class Patient {
         this.diseaseName = diseaseName;
     }
 
-    public boolean isAbdpain() {
+    public float getAbdpain() {
         return abdpain;
     }
 
-    public void setAbdpain(boolean abdpain) {
-        this.abdpain = abdpain;
-    }
-
-    public boolean isDistention() {
+    public float getDistention() {
         return distention;
     }
 
-    public void setDistention(boolean distention) {
-        this.distention = distention;
+    public float getVomiting() {
+        return vomiting;
+    }
+
+    public float getRectalHemo() {
+        return rectalHemo;
+    }
+
+    public float getExhaustion() {
+        return exhaustion;
+    }
+
+    public float getWeightLoss() {
+        return weightLoss;
+    }
+
+    public float getCramps() {
+        return cramps;
+    }
+
+    public float getPee() {
+        return pee;
+    }
+
+    public float getFever() {
+        return fever;
+    }
+
+    public float getPerianalDiscom() {
+        return perianalDiscom;
+    }
+
+    public float getFatigue() {
+        return fatigue;
     }
 
     public boolean isNausea() {
@@ -162,14 +192,6 @@ public class Patient {
 
     public void setNausea(boolean nausea) {
         this.nausea = nausea;
-    }
-
-    public boolean isVomiting() {
-        return vomiting;
-    }
-
-    public void setVomiting(boolean vomiting) {
-        this.vomiting = vomiting;
     }
 
     public boolean isAnxiety() {
@@ -204,52 +226,12 @@ public class Patient {
         this.diarrhea = diarrhea;
     }
 
-    public boolean isRectalHemo() {
-        return rectalHemo;
-    }
-
-    public void setRectalHemo(boolean rectalHemo) {
-        this.rectalHemo = rectalHemo;
-    }
-
-    public boolean isExhaustion() {
-        return exhaustion;
-    }
-
-    public void setExhaustion(boolean exhaustion) {
-        this.exhaustion = exhaustion;
-    }
-
-    public boolean isWeightLoss() {
-        return weightLoss;
-    }
-
-    public void setWeightLoss(boolean weightLoss) {
-        this.weightLoss = weightLoss;
-    }
-
-    public boolean isCramps() {
-        return cramps;
-    }
-
-    public void setCramps(boolean cramps) {
-        this.cramps = cramps;
-    }
-
     public boolean isConstipation() {
         return constipation;
     }
 
     public void setConstipation(boolean constipation) {
         this.constipation = constipation;
-    }
-
-    public boolean isPee() {
-        return pee;
-    }
-
-    public void setPee(boolean pee) {
-        this.pee = pee;
     }
 
     public boolean isBulks() {
@@ -260,20 +242,48 @@ public class Patient {
         this.bulks = bulks;
     }
 
-    public boolean isFever() {
-        return fever;
+    public void setAbdpain(float abdpain) {
+        this.abdpain = abdpain;
     }
 
-    public void setFever(boolean fever) {
+    public void setDistention(float distention) {
+        this.distention = distention;
+    }
+
+    public void setVomiting(float vomiting) {
+        this.vomiting = vomiting;
+    }
+
+    public void setRectalHemo(float rectalHemo) {
+        this.rectalHemo = rectalHemo;
+    }
+
+    public void setExhaustion(float exhaustion) {
+        this.exhaustion = exhaustion;
+    }
+
+    public void setWeightLoss(float weightLoss) {
+        this.weightLoss = weightLoss;
+    }
+
+    public void setCramps(float cramps) {
+        this.cramps = cramps;
+    }
+
+    public void setPee(float pee) {
+        this.pee = pee;
+    }
+
+    public void setFever(float fever) {
         this.fever = fever;
     }
 
-    public boolean isPerianalDiscom() {
-        return perianalDiscom;
+    public void setPerianalDiscom(float perianalDiscom) {
+        this.perianalDiscom = perianalDiscom;
     }
 
-    public void setPerianalDiscom(boolean perianalDiscom) {
-        this.perianalDiscom = perianalDiscom;
+    public void setFatigue(float fatigue) {
+        this.fatigue = fatigue;
     }
 
     public boolean isUlcers() {
@@ -298,14 +308,6 @@ public class Patient {
 
     public void setChills(boolean chills) {
         this.chills = chills;
-    }
-
-    public boolean isFatigue() {
-        return fatigue;
-    }
-
-    public void setFatigue(boolean fatigue) {
-        this.fatigue = fatigue;
     }
 
     public boolean isPoo() {
@@ -411,8 +413,8 @@ public class Patient {
 
     }
 
-    public ArrayList<Boolean> patientSynmptomsToArrayList() {
-        ArrayList<Boolean> diseaseArrayList = new ArrayList<Boolean>();
+    public ArrayList<Object> patientSynmptomsToArrayList() {
+        ArrayList<Object> diseaseArrayList = new ArrayList<Object>();
 
         diseaseArrayList.add(this.abdpain);
         diseaseArrayList.add(this.distention);
@@ -442,25 +444,44 @@ public class Patient {
 
     }
 
-    public float ComparationArrayListSymptoms(ArrayList<Boolean> disease1) {
-        int result = 0;
-        ArrayList<Boolean> disease = new ArrayList<Boolean>();
+    public float ComparationArrayListSymptoms(ArrayList<Object> disease1) {
+        float result = 0;
+        ArrayList<Object> disease = new ArrayList<Object>();
         disease.addAll(this.patientSynmptomsToArrayList());
         
         for (int i = 0; i < (disease1.size() - 1); i++) {
+        //System.out.println("");    
+        //System.out.println("-----------");
+        //System.out.println("-----------");
+            if(disease1.get(i).toString().equals(disease.get(i).toString())){
+                result=result+0;
+                //System.out.println("Sumo 0");
+            }
+            else{
+                if(disease1.get(i).toString().equals("true")){
+                    if(disease.get(i).toString().equals("false")){
+                        result=result+2;
+                        //System.out.println("Sumo 2");
+                    }
+                }else if(disease1.get(i).toString().equals("false")){
+                    if(disease.get(i).toString().equals("true")){
+                        result=result+2;
+                        //System.out.println("Sumo 2");
+                    }
+                }else{
+                    result=result+Math.abs(Float.parseFloat(disease.get(i).toString())-Float.parseFloat(disease1.get(i).toString()));
+                    //System.out.println("Sumo: "+Math.abs(Float.parseFloat(disease.get(i).toString())-Float.parseFloat(disease1.get(i).toString())));
+                }
+            }
             //System.out.println("-----------");
             //System.out.println(disease1.get(i));
             //System.out.println(disease.get(i));
             //System.out.println("-----------");
             
-            
-            if (disease1.get(i).equals(disease.get(i))) {
-                result++;
-            }
         }
         System.out.println("result:"+result);
         
-        float porcentage=((float)result/23)*100;
+        float porcentage=((float)(69-(float)result)/69)*100;//69 is because 23 symptons * 3 range of ponderation
         return porcentage;
 
     }
