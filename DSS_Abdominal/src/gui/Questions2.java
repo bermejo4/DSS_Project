@@ -5,6 +5,8 @@
  */
 package gui;
 
+import java.awt.event.ActionEvent;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import static javafx.application.ConditionalFeature.FXML;
@@ -30,25 +32,34 @@ public class Questions2 {
     
     
      @FXML
-    private  RadioButton increasedpee_yes;
+    private  RadioButton increasedpee_none;
      
       @FXML
-    private  RadioButton increasedpee_no;
+    private  RadioButton increasedpee_sporadic;
+    
+           @FXML
+    private  RadioButton increasedpee_frequent;
     
      
       @FXML
-    private  RadioButton exhaustion_yes;
+    private  RadioButton exhaustion_none;
       
        @FXML
-    private  RadioButton exhaustion_no;
+    private  RadioButton exhaustion_mild;
     
-      
-       @FXML
-    private  RadioButton weightloss_yes;
-       
+            @FXML
+    private  RadioButton exhaustion_disabling;
+   
         @FXML
     private  RadioButton weightloss_no;
-    
+      
+       @FXML
+    private  RadioButton weightloss_zerotofive;
+       
+      
+       @FXML
+    private  RadioButton weightloss_morefive;
+       
          
          private ToggleGroup answers;
          
@@ -58,24 +69,27 @@ public class Questions2 {
             answers = new ToggleGroup();
             this.constipation_yes.setToggleGroup(answers);
             this.constipation_no.setToggleGroup(answers);
-            this.increasedpee_yes.setToggleGroup(answers);
-            this.increasedpee_no.setToggleGroup(answers);
-            this.exhaustion_yes.setToggleGroup(answers);
-            this.exhaustion_no.setToggleGroup(answers);
-            this.weightloss_yes.setToggleGroup(answers);
+            this.increasedpee_none.setToggleGroup(answers);
+            this.increasedpee_sporadic.setToggleGroup(answers);
+            this.increasedpee_frequent.setToggleGroup(answers);
+            this.exhaustion_none.setToggleGroup(answers);
+            this.exhaustion_mild.setToggleGroup(answers);
+            this.exhaustion_disabling.setToggleGroup(answers);
             this.weightloss_no.setToggleGroup(answers);
+            this.weightloss_zerotofive.setToggleGroup(answers);
+            this.weightloss_morefive.setToggleGroup(answers);
             
         }
 
-        public void goBack(Stage stage) throws Exception {
-        
-        Parent root = FXMLLoader.load(getClass().getResource("Questions1.fxml"));
-        
-        Scene scene = new Scene(root);
-        
-        stage.setScene(scene);
-        stage.show();
-    }
+    public void gobackques1( ActionEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader();
+
+        loader.setLocation(getClass().getResource("Questions1.fxml"));
+        Parent parent = loader.load();
+
+        Scene scene = new Scene(parent);
+    
+  }
     
    
     public void nextQuestions(Stage stage) throws Exception {

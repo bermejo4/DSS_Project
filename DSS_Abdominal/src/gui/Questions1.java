@@ -5,6 +5,8 @@
  */
 package gui;
 
+import java.awt.event.ActionEvent;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import static javafx.application.ConditionalFeature.FXML;
@@ -91,27 +93,25 @@ public class Questions1 {
  */ 
         
    
-    public void goBack(Stage stage) throws Exception {
-        
-        Parent root = FXMLLoader.load(getClass().getResource("MainWindow.fxml"));
-        
-        Scene scene = new Scene(root);
-        
-        stage.setScene(scene);
-        stage.show();
-    }
+  public void goback( ActionEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader();
+
+        loader.setLocation(getClass().getResource("MainWindow.fxml"));
+        Parent parent = loader.load();
+
+        Scene scene = new Scene(parent);
     
-   
-    public void nextQuestions(Stage stage) throws Exception {
-        
-        Parent root = FXMLLoader.load(getClass().getResource("Questions2.fxml"));
-        
-        Scene scene = new Scene(root);
-        
-        stage.setScene(scene);
-        stage.show();
-    }
-        
+  }
+  
+  public void gotoquestions( ActionEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader();
+
+        loader.setLocation(getClass().getResource("Questions2.fxml"));
+        Parent parent = loader.load();
+
+        Scene scene = new Scene(parent);
+    
+  }
     
     
     

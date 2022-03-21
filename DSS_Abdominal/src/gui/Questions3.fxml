@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ToggleGroup?>
@@ -13,9 +14,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <BorderPane prefHeight="372.0" prefWidth="600.0" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
@@ -32,59 +33,64 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <Text fx:id="lump" strokeType="OUTSIDE" strokeWidth="0.0" text="Does the patient have a lump?" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                        <Text fx:id="swelling" strokeType="OUTSIDE" strokeWidth="0.0" text="Does the patient have abdominal swelling?" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-                        <Text fx:id="diarrhea" strokeType="OUTSIDE" strokeWidth="0.0" text="Does the patient suffer Diarrhea?" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-                        <Text fx:id="nausea" strokeType="OUTSIDE" strokeWidth="0.0" text="Has the patient experienced nausea?" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-                        <Text fx:id="anxiety" strokeType="OUTSIDE" strokeWidth="0.0" text="Has the patient experienced anxiety or depression?" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                        <Text fx:id="lump" strokeType="OUTSIDE" strokeWidth="0.0" text="Has the patient experienced fever lately?" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                        <Text fx:id="swelling" strokeType="OUTSIDE" strokeWidth="0.0" text="Has the patient suffered discomfort around the anus?" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                        <Text fx:id="diarrhea" strokeType="OUTSIDE" strokeWidth="0.0" text="Has the patient experienced abdominal cramps?" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                        <Text fx:id="nausea" strokeType="OUTSIDE" strokeWidth="0.0" text="Has the patient experienced blood in their feces?" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                        <Text fx:id="anxiety" strokeType="OUTSIDE" strokeWidth="0.0" text="Has the patient suffered from dermatitis?" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
                         <Pane fx:id="ethnicityDropdown" prefHeight="61.0" prefWidth="274.0" GridPane.columnIndex="1">
                            <children>
-                              <RadioButton fx:id="maleRadioButton1" layoutX="14.0" layoutY="30.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="148.0" text="No">
+                              <RadioButton fx:id="maleRadioButton1" layoutX="14.0" layoutY="30.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="148.0" text="37.5-39º">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="smoke" />
                                  </toggleGroup>
                               </RadioButton>
-                              <RadioButton fx:id="femaleRadioButton1" contentDisplay="CENTER" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="160.0" text="Yes" toggleGroup="$smoke" />
+                              <RadioButton fx:id="femaleRadioButton1" contentDisplay="CENTER" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="160.0" text="&lt;37.5º" toggleGroup="$smoke" />
+                              <RadioButton layoutX="14.0" layoutY="50.0" mnemonicParsing="false" text="&gt;39º" />
                            </children>
                         </Pane>
                         <Pane fx:id="ethnicityDropdown1" prefHeight="61.0" prefWidth="274.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <children>
-                              <RadioButton fx:id="maleRadioButton11" layoutX="14.0" layoutY="30.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="148.0" text="No">
+                              <RadioButton fx:id="maleRadioButton11" layoutX="14.0" layoutY="30.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="148.0" text="Focalized">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="smoke1" />
                                  </toggleGroup>
                               </RadioButton>
-                              <RadioButton fx:id="femaleRadioButton11" contentDisplay="CENTER" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="160.0" text="Yes" toggleGroup="$smoke1" />
+                              <RadioButton fx:id="femaleRadioButton11" contentDisplay="CENTER" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="160.0" text="None" toggleGroup="$smoke1" />
+                              <RadioButton layoutX="14.0" layoutY="50.0" mnemonicParsing="false" text="Extended" />
                            </children>
                         </Pane>
                         <Pane fx:id="ethnicityDropdown2" prefHeight="61.0" prefWidth="274.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <children>
-                              <RadioButton fx:id="maleRadioButton12" layoutX="14.0" layoutY="30.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="148.0" text="No">
+                              <RadioButton fx:id="maleRadioButton12" layoutX="14.0" layoutY="30.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="148.0" text="Mild">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="smoke2" />
                                  </toggleGroup>
                               </RadioButton>
-                              <RadioButton fx:id="femaleRadioButton12" contentDisplay="CENTER" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="160.0" text="Yes" toggleGroup="$smoke2" />
+                              <RadioButton fx:id="femaleRadioButton12" contentDisplay="CENTER" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="160.0" text="None" toggleGroup="$smoke2" />
+                              <RadioButton layoutX="14.0" layoutY="50.0" mnemonicParsing="false" text="Disabling" />
                            </children>
                         </Pane>
                         <Pane fx:id="ethnicityDropdown3" prefHeight="61.0" prefWidth="274.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                            <children>
-                              <RadioButton fx:id="maleRadioButton13" layoutX="14.0" layoutY="30.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="148.0" text="No">
+                              <RadioButton fx:id="maleRadioButton13" layoutX="14.0" layoutY="30.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="148.0" text="Some">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="smoke3" />
                                  </toggleGroup>
                               </RadioButton>
-                              <RadioButton fx:id="femaleRadioButton13" contentDisplay="CENTER" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="160.0" text="Yes" toggleGroup="$smoke3" />
+                              <RadioButton fx:id="femaleRadioButton13" contentDisplay="CENTER" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="160.0" text="None" toggleGroup="$smoke3" />
+                              <RadioButton layoutX="14.0" layoutY="49.0" mnemonicParsing="false" text="A lot" />
                            </children>
                         </Pane>
                         <Pane fx:id="ethnicityDropdown4" prefHeight="61.0" prefWidth="274.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                            <children>
-                              <RadioButton fx:id="maleRadioButton14" layoutX="14.0" layoutY="30.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="148.0" text="No">
+                              <RadioButton fx:id="maleRadioButton14" layoutX="14.0" layoutY="30.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="148.0" text="Focalized">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="smoke4" />
                                  </toggleGroup>
                               </RadioButton>
-                              <RadioButton fx:id="femaleRadioButton14" contentDisplay="CENTER" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="160.0" text="Yes" toggleGroup="$smoke4" />
+                              <RadioButton fx:id="femaleRadioButton14" contentDisplay="CENTER" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="160.0" text="Extended" toggleGroup="$smoke4" />
+                              <RadioButton layoutX="14.0" layoutY="49.0" mnemonicParsing="false" text="Extended" />
                            </children>
                         </Pane>
                      </children>
@@ -103,5 +109,7 @@
                </children></HBox>
          </top>
       </BorderPane>
+      <Button layoutY="374.0" mnemonicParsing="false" text="Back" />
+      <Button layoutX="534.0" layoutY="374.0" mnemonicParsing="false" text="Next" />
    </children>
 </AnchorPane>
