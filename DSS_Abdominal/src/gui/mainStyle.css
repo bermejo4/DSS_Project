@@ -1,15 +1,17 @@
 
 .background1 {
-    -fx-background-color: #fa8072;
-    -fx-text-fill: white;
-    -fx-border-color: linear-gradient(to bottom left, #fa8072, #fa8072);
+    -fx-background-color: #32cd32;
+    -fx-font-size: 12px; 
+    -fx-text-fill: #808080;
+    -fx-border-color: #f8f8ff;
     -fx-border-width: 4;
-    -fx-border-radius: 20;
+    -fx-border-radius: 0;
+    -fx-border-style:0;
     
 }
 
 .background2 {
-    -fx-background-color: #ff69b4;
+    -fx-background-color: #f0fff0;
 }
 
 .button {
