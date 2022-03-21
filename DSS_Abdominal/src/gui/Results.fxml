@@ -38,6 +38,7 @@
                         <TextField prefHeight="40.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="112.0" stylesheets="@mainStyle.css" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Hyperlink prefHeight="24.0" prefWidth="207.0" text="medline.com" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField prefHeight="40.0" prefWidth="300.0" GridPane.columnIndex="1" />
                      </children>
                   </GridPane>
                </children>
