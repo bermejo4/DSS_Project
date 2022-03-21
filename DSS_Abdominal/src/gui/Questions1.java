@@ -30,11 +30,13 @@ public class Questions1 {
     
     
      @FXML
-    private  RadioButton abdominalSwelling_yes;
+    private  RadioButton abdominalSwelling_none;
      
       @FXML
-    private  RadioButton abdominalSwelling_no;
+    private  RadioButton abdominalSwelling_low;
     
+           @FXML
+    private  RadioButton abdominalSwelling_high;
      
       @FXML
     private  RadioButton diarrhea_yes;
@@ -44,11 +46,13 @@ public class Questions1 {
     
       
        @FXML
-    private  RadioButton nausea_yes;
+    private  RadioButton nausea_none;
        
         @FXML
-    private  RadioButton nausea_no;
+    private  RadioButton nausea_sporadic;
     
+             @FXML
+    private  RadioButton nausea_frequent;
        
         @FXML
     private  RadioButton anxiety_depress_yes;
@@ -64,12 +68,14 @@ public class Questions1 {
             answers = new ToggleGroup();
             this.lump_yes.setToggleGroup(answers);
             this.lump_no.setToggleGroup(answers);
-            this.abdominalSwelling_yes.setToggleGroup(answers);
-            this.abdominalSwelling_no.setToggleGroup(answers);
+            this.abdominalSwelling_none.setToggleGroup(answers);
+            this.abdominalSwelling_low.setToggleGroup(answers);
+            this.abdominalSwelling_high.setToggleGroup(answers);
             this.diarrhea_yes.setToggleGroup(answers);
             this.diarrhea_no.setToggleGroup(answers);
-            this.nausea_yes.setToggleGroup(answers);
-            this.nausea_no.setToggleGroup(answers);
+            this.nausea_none.setToggleGroup(answers);
+            this.nausea_sporadic.setToggleGroup(answers);
+            this.nausea_frequent.setToggleGroup(answers);
             this.anxiety_depress_yes.setToggleGroup(answers);
             this.anxiety_depress_no.setToggleGroup(answers);    
             
