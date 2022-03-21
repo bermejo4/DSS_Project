@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
@@ -21,24 +21,33 @@
                <children>
                   <GridPane gridLinesVisible="true" prefHeight="365.0" prefWidth="594.0" HBox.hgrow="ALWAYS">
                      <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="318.39996337890625" minWidth="10.0" prefWidth="318.39996337890625" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.20001220703125" minWidth="10.0" prefWidth="281.60003662109375" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="367.6" minWidth="10.0" prefWidth="367.6" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="302.4000244140625" minWidth="5.199999999999989" prefWidth="5.199999999999989" />
                      </columnConstraints>
                      <rowConstraints>
-                        <RowConstraints maxHeight="101.9999755859375" minHeight="10.0" prefHeight="101.9999755859375" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="70.8000244140625" minHeight="10.0" prefHeight="50.800024414062506" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Have you experienced constipation?" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Do you smoke?" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Have you experienced an increase in pee frequency?" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Do you feel exhausted?" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Have you experienced weight loss?" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
-                        <HBox prefHeight="61.0" prefWidth="292.0" />
-                        <Pane fx:id="ethnicityDropdown1" prefHeight="61.0" prefWidth="274.0" GridPane.columnIndex="1">
+                        <Text fx:id="lump" strokeType="OUTSIDE" strokeWidth="0.0" text="Does the patient experienced constipation?" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                        <Text fx:id="swelling" strokeType="OUTSIDE" strokeWidth="0.0" text="Does the patient smoke?" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                        <Text fx:id="diarrhea" strokeType="OUTSIDE" strokeWidth="0.0" text="Has the patient experienced an increase in pee frequency?" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                        <Text fx:id="nausea" strokeType="OUTSIDE" strokeWidth="0.0" text="Does the patient feel exhausted?" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                        <Text fx:id="anxiety" strokeType="OUTSIDE" strokeWidth="0.0" text="Has the patient experienced weight loss?" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                        <Pane fx:id="ethnicityDropdown" prefHeight="61.0" prefWidth="274.0" GridPane.columnIndex="1">
+                           <children>
+                              <RadioButton fx:id="maleRadioButton1" layoutX="14.0" layoutY="30.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="148.0" text="No">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="smoke" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="femaleRadioButton1" contentDisplay="CENTER" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="160.0" text="Yes" toggleGroup="$smoke" />
+                           </children>
+                        </Pane>
+                        <Pane fx:id="ethnicityDropdown1" prefHeight="61.0" prefWidth="274.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <children>
                               <RadioButton fx:id="maleRadioButton11" layoutX="14.0" layoutY="30.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="148.0" text="No">
                                  <toggleGroup>
@@ -48,44 +57,34 @@
                               <RadioButton fx:id="femaleRadioButton11" contentDisplay="CENTER" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="160.0" text="Yes" toggleGroup="$smoke1" />
                            </children>
                         </Pane>
-                        <Pane fx:id="ethnicityDropdown11" prefHeight="61.0" prefWidth="274.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <Pane fx:id="ethnicityDropdown2" prefHeight="61.0" prefWidth="274.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <children>
-                              <RadioButton fx:id="maleRadioButton111" layoutX="14.0" layoutY="30.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="148.0" text="No">
+                              <RadioButton fx:id="maleRadioButton12" layoutX="14.0" layoutY="30.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="148.0" text="No">
                                  <toggleGroup>
-                                    <ToggleGroup fx:id="smoke11" />
+                                    <ToggleGroup fx:id="smoke2" />
                                  </toggleGroup>
                               </RadioButton>
-                              <RadioButton fx:id="femaleRadioButton111" contentDisplay="CENTER" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="160.0" text="Yes" toggleGroup="$smoke11" />
+                              <RadioButton fx:id="femaleRadioButton12" contentDisplay="CENTER" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="160.0" text="Yes" toggleGroup="$smoke2" />
                            </children>
                         </Pane>
-                        <Pane fx:id="ethnicityDropdown12" prefHeight="61.0" prefWidth="274.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <Pane fx:id="ethnicityDropdown3" prefHeight="61.0" prefWidth="274.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                            <children>
-                              <RadioButton fx:id="maleRadioButton112" layoutX="14.0" layoutY="30.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="148.0" text="No">
+                              <RadioButton fx:id="maleRadioButton13" layoutX="14.0" layoutY="30.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="148.0" text="No">
                                  <toggleGroup>
-                                    <ToggleGroup fx:id="smoke12" />
+                                    <ToggleGroup fx:id="smoke3" />
                                  </toggleGroup>
                               </RadioButton>
-                              <RadioButton fx:id="femaleRadioButton112" contentDisplay="CENTER" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="160.0" text="Yes" toggleGroup="$smoke12" />
+                              <RadioButton fx:id="femaleRadioButton13" contentDisplay="CENTER" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="160.0" text="Yes" toggleGroup="$smoke3" />
                            </children>
                         </Pane>
-                        <Pane fx:id="ethnicityDropdown13" prefHeight="61.0" prefWidth="274.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                        <Pane fx:id="ethnicityDropdown4" prefHeight="61.0" prefWidth="274.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                            <children>
-                              <RadioButton fx:id="maleRadioButton113" layoutX="14.0" layoutY="30.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="148.0" text="No">
+                              <RadioButton fx:id="maleRadioButton14" layoutX="14.0" layoutY="30.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="148.0" text="No">
                                  <toggleGroup>
-                                    <ToggleGroup fx:id="smoke13" />
+                                    <ToggleGroup fx:id="smoke4" />
                                  </toggleGroup>
                               </RadioButton>
-                              <RadioButton fx:id="femaleRadioButton113" contentDisplay="CENTER" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="160.0" text="Yes" toggleGroup="$smoke13" />
-                           </children>
-                        </Pane>
-                        <Pane fx:id="ethnicityDropdown14" prefHeight="61.0" prefWidth="274.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
-                           <children>
-                              <RadioButton fx:id="maleRadioButton114" layoutX="14.0" layoutY="30.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="148.0" text="No">
-                                 <toggleGroup>
-                                    <ToggleGroup fx:id="smoke14" />
-                                 </toggleGroup>
-                              </RadioButton>
-                              <RadioButton fx:id="femaleRadioButton114" contentDisplay="CENTER" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="160.0" text="Yes" toggleGroup="$smoke14" />
+                              <RadioButton fx:id="femaleRadioButton14" contentDisplay="CENTER" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="160.0" text="Yes" toggleGroup="$smoke4" />
                            </children>
                         </Pane>
                      </children>
@@ -94,14 +93,15 @@
             </HBox>
          </center>
          <top>
-            <HBox prefHeight="18.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <HBox prefHeight="42.0" prefWidth="600.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label alignment="BOTTOM_RIGHT" prefHeight="42.0" prefWidth="579.0" text="2 of 4" textAlignment="CENTER">
+                  <Label alignment="BOTTOM_RIGHT" prefHeight="19.0" prefWidth="579.0" text="2 of 4" textAlignment="CENTER">
                      <font>
                         <Font name="System Italic" size="13.0" />
                      </font>
                   </Label>
-               </children></HBox>
+               </children>
+            </HBox>
          </top>
       </BorderPane>
    </children>
