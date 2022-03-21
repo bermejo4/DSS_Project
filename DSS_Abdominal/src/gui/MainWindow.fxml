@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Light.Spot?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -10,21 +16,44 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@mainStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="90.0" prefWidth="601.0" text="Patient's information" textAlignment="CENTER">
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="90.0" prefWidth="601.0" text="Patient's information" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
+                     <effect>
+                        <Lighting>
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant />
+                           </light>
+                        </Lighting>
+                     </effect>
                   </Label>
                </children>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
             </HBox>
          </center>
       </BorderPane>
@@ -41,8 +70,18 @@
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Smoker" textAlignment="CENTER" wrappingWidth="296.9476013183594">
                <font>
-                  <Font size="14.0" />
+                  <Font size="18.0" />
                </font>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
             </Text>
             <Pane fx:id="ethnicityDropdown11" prefHeight="104.0" prefWidth="270.0" GridPane.columnIndex="1">
                <children>
@@ -50,9 +89,34 @@
                      <toggleGroup>
                         <ToggleGroup fx:id="smoke11" />
                      </toggleGroup>
+                     <effect>
+                        <Lighting>
+                           <bumpInput>
+                              <Lighting bumpInput="$null">
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </bumpInput>
+                           <light>
+                              <Light.Distant />
+                           </light>
+                        </Lighting>
+                     </effect>
                   </RadioButton>
                   <RadioButton fx:id="maleRadioButton111" layoutX="6.0" layoutY="43.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="148.0" text="No" toggleGroup="$smoke11" />
                </children>
+               <effect>
+                  <Lighting bumpInput="$null" specularConstant="0.45">
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.9368420839309692" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
             </Pane>
             <Pane fx:id="ethnicityDropdown111" prefHeight="104.0" prefWidth="270.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
@@ -71,7 +135,7 @@
                         <ToggleGroup fx:id="smoke1111" />
                      </toggleGroup>
                   </RadioButton>
-                  <RadioButton fx:id="maleRadioButton11111" layoutX="7.0" layoutY="32.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="148.0" text="Between 11 and 14" toggleGroup="$smoke1111" />
+                  <RadioButton fx:id="maleRadioButton11111" layoutX="7.0" layoutY="32.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="181.0" text="Between 11 and 14" toggleGroup="$smoke1111" />
                   <RadioButton fx:id="femaleRadioButton111111" contentDisplay="CENTER" layoutX="7.0" layoutY="93.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="160.0" text="Above 40">
                      <toggleGroup>
                         <ToggleGroup fx:id="smoke11111" />
@@ -82,19 +146,78 @@
                         <ToggleGroup fx:id="smoke11112" />
                      </toggleGroup>
                   </RadioButton>
+                  <ToggleButton accessibleRole="BUTTON" layoutX="188.0" layoutY="90.0" mnemonicParsing="false" text="Next">
+                     <textFill>
+                        <RadialGradient centerX="0.5" centerY="1.0" radius="0.5">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" opacity="0.0" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </RadialGradient>
+                     </textFill>
+                  </ToggleButton>
                </children>
             </Pane>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gender" textAlignment="CENTER" wrappingWidth="296.9476013183594" GridPane.rowIndex="1">
                <font>
-                  <Font size="14.0" />
+                  <Font size="18.0" />
                </font>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
             </Text>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Age range" textAlignment="CENTER" wrappingWidth="296.9476013183594" GridPane.rowIndex="2">
                <font>
-                  <Font size="14.0" />
+                  <Font size="18.0" />
                </font>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
             </Text>
          </children>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow>
+                     <color>
+                        <Color green="0.5833333134651184" blue="1.0" />
+                     </color>
+                  </Shadow>
+               </bumpInput>
+               <light>
+                  <Light.Spot>
+                     <color>
+                        <Color green="0.7091228365898132" blue="0.9894737005233765" />
+                     </color>
+                  </Light.Spot>
+               </light>
+            </Lighting>
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </GridPane>
    </children>
 </AnchorPane>
