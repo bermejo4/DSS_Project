@@ -51,7 +51,7 @@ public class Dss_abdominal {
         
         Patient chron = new Patient("Chron",Patient.Gender.FEMALE,Patient.AgeRange.YOUNGADULT,true,true,true,true,true,true,true,true,false,true,true,false,true,false,false,true,false,false,true,false,false,false,false);
         
-        Patient ylcerative_colitis = new Patient("Ulcerative Colitis",Patient.Gender.MALE,Patient.AgeRange.YOUNGADULT,true,true,false,false,true,true,false,true,true,true,true,false,true,false,false,false,false,false,false,false,true,true,false);
+        Patient ulcerative_colitis = new Patient("Ulcerative Colitis",Patient.Gender.MALE,Patient.AgeRange.YOUNGADULT,true,true,false,false,true,true,false,true,true,true,true,false,true,false,false,false,false,false,false,false,true,true,false);
         
         Patient diverticulosis = new Patient("Diverticulosis",Patient.Gender.FEMALE,Patient.AgeRange.ADULT,true,false,true,false,false,false,true,true,true,false,false,false,false,true,false,true,false,false,false,true,true,false,false);
         
@@ -358,6 +358,20 @@ public class Dss_abdominal {
         } while ( answer_not_acceptable );
 
         execute(ks,kc,patient);
+        
+        // Result code:
+        System.out.println(patient.ComparationArrayListSymptoms(ibs.patientSynmptomsToArrayList()));
+        System.out.println(patient.ComparationArrayListSymptoms(chron.patientSynmptomsToArrayList()));
+        System.out.println(patient.ComparationArrayListSymptoms(ulcerative_colitis.patientSynmptomsToArrayList()));
+        System.out.println(patient.ComparationArrayListSymptoms(diverticulosis.patientSynmptomsToArrayList()));
+        System.out.println(patient.ComparationArrayListSymptoms(hernia.patientSynmptomsToArrayList()));
+        System.out.println(patient.ComparationArrayListSymptoms(appendicitis.patientSynmptomsToArrayList()));
+        System.out.println(patient.ComparationArrayListSymptoms(enterocolitis.patientSynmptomsToArrayList()));
+        System.out.println(patient.ComparationArrayListSymptoms(celiac_Disease.patientSynmptomsToArrayList()));
+         System.out.println(patient.ComparationArrayListSymptoms(colorectal_cancer.patientSynmptomsToArrayList()));
+
+
+
         
       
     }

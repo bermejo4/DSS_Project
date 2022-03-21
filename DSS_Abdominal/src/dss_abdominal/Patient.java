@@ -446,9 +446,15 @@ public class Patient {
         int result = 0;
         ArrayList<Boolean> disease = new ArrayList<Boolean>();
         disease.addAll(this.patientSynmptomsToArrayList());
-
+        
         for (int i = 0; i < (disease1.size() - 1); i++) {
-            if (disease1.get(i) == disease.get(i)) {
+            //System.out.println("-----------");
+            //System.out.println(disease1.get(i));
+            //System.out.println(disease.get(i));
+            //System.out.println("-----------");
+            
+            
+            if (disease1.get(i).equals(disease.get(i))) {
                 result++;
             }
         }
