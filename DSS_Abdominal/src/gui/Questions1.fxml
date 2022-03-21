@@ -17,21 +17,21 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <BorderPane prefHeight="364.0" prefWidth="600.0" AnchorPane.bottomAnchor="36.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <BorderPane prefHeight="390.0" prefWidth="600.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <GridPane alignment="TOP_CENTER" centerShape="false" gridLinesVisible="true" prefHeight="323.0" prefWidth="600.0" HBox.hgrow="ALWAYS">
+                  <GridPane alignment="TOP_CENTER" centerShape="false" gridLinesVisible="true" prefHeight="318.0" prefWidth="590.0" HBox.hgrow="ALWAYS">
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="323.5999755859375" minWidth="10.0" prefWidth="268.0" />
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="274.4" minWidth="10.0" prefWidth="274.4" />
                      </columnConstraints>
                      <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="51.0" minHeight="10.0" prefHeight="51.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="74.0" minHeight="10.0" prefHeight="66.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="51.0" minHeight="10.0" prefHeight="51.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="72.0" minHeight="10.0" prefHeight="72.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="47.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
                         <Text fx:id="lump" strokeType="OUTSIDE" strokeWidth="0.0" text="Does the patient have a lump?" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
@@ -51,12 +51,13 @@
                         </Pane>
                         <Pane fx:id="ethnicityDropdown1" prefHeight="61.0" prefWidth="274.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <children>
-                              <RadioButton fx:id="abdominalSwelling_no" layoutX="14.0" layoutY="30.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="148.0" text="No">
+                              <RadioButton fx:id="abdominalSwelling_no" layoutX="14.0" layoutY="30.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="148.0" text="Low">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="smoke1" />
                                  </toggleGroup>
                               </RadioButton>
-                              <RadioButton fx:id="abdominalSwelling_yes" contentDisplay="CENTER" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="160.0" text="Yes" toggleGroup="$smoke1" />
+                              <RadioButton fx:id="abdominalSwelling_yes" contentDisplay="CENTER" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="160.0" text="None" toggleGroup="$smoke1" />
+                              <RadioButton layoutX="14.0" layoutY="52.0" mnemonicParsing="false" text="High" />
                            </children>
                         </Pane>
                         <Pane fx:id="ethnicityDropdown2" GridPane.columnIndex="1" GridPane.rowIndex="2">
@@ -71,15 +72,16 @@
                         </Pane>
                         <Pane fx:id="ethnicityDropdown3" GridPane.columnIndex="1" GridPane.rowIndex="3">
                            <children>
-                              <RadioButton fx:id="nausea_no" layoutX="14.0" layoutY="30.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="148.0" text="No">
+                              <RadioButton fx:id="nausea_no" layoutX="14.0" layoutY="30.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="148.0" text="Sporadic">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="smoke3" />
                                  </toggleGroup>
                               </RadioButton>
-                              <RadioButton fx:id="nausea_yes" contentDisplay="CENTER" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="160.0" text="Yes" toggleGroup="$smoke3" />
+                              <RadioButton fx:id="nausea_yes" contentDisplay="CENTER" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="160.0" text="None" toggleGroup="$smoke3" />
+                              <RadioButton layoutX="14.0" layoutY="50.0" mnemonicParsing="false" text="Frequent" />
                            </children>
                         </Pane>
-                        <Pane fx:id="ethnicityDropdown4" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                        <Pane fx:id="ethnicityDropdown4" prefHeight="69.0" prefWidth="275.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                            <children>
                               <RadioButton fx:id="anxiety_depression_no" layoutX="14.0" layoutY="38.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="148.0" text="No">
                                  <toggleGroup>
@@ -98,7 +100,7 @@
             </HBox>
          </center>
          <top>
-            <HBox prefHeight="83.0" prefWidth="599.0" BorderPane.alignment="CENTER">
+            <HBox prefHeight="66.0" prefWidth="600.0" BorderPane.alignment="CENTER">
                <children>
                   <Label fx:id="title" prefHeight="61.0" prefWidth="600.0" text="     Answer the following questions regarding your symptoms">
                      <font>
@@ -109,7 +111,7 @@
             </HBox>
          </top>
       </BorderPane>
-      <Button layoutY="374.0" mnemonicParsing="false" text="Back" />
-      <Button layoutX="548.0" layoutY="374.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="51.0" text="Next" />
+      <Button layoutY="374.0" mnemonicParsing="false" onAction="#goBack" text="Back" />
+      <Button layoutX="548.0" layoutY="374.0" mnemonicParsing="false" onAction="#nextQuestions" prefHeight="25.0" prefWidth="51.0" text="Next" />
    </children>
 </AnchorPane>
