@@ -13,47 +13,52 @@ import javafx.stage.Stage;
 
 public class MainWindow {
 
-        @FXML
+    @FXML
     private  RadioButton smoker_yes;
     
-     @FXML
+    @FXML
     private  RadioButton smoker_no;
      
-         @FXML
+    @FXML
     private  RadioButton female;
     
-     @FXML
+    @FXML
     private  RadioButton male;
      
-         @FXML
+    @FXML
     private  RadioButton age_one;
     
-     @FXML
+    @FXML
     private  RadioButton age_two;
      
-         @FXML
+    @FXML
     private  RadioButton age_three;
     
-     @FXML
+    @FXML
     private  RadioButton age_four;
     
-             @FXML
+    @FXML
     private  RadioButton anxiety_depress_no;
          
-         private ToggleGroup answers;
+        private ToggleGroup smoker;
+        private ToggleGroup gender;
+        private ToggleGroup age;
          
     
         public void initialize (URL url, ResourceBundle rb){
             
-            answers = new ToggleGroup();
-            this.smoker_yes.setToggleGroup(answers);
-            this.smoker_no.setToggleGroup(answers);
-            this.male.setToggleGroup(answers);
-            this.female.setToggleGroup(answers);
-            this.age_one.setToggleGroup(answers);
-            this.age_two.setToggleGroup(answers);
-            this.age_three.setToggleGroup(answers);
-            this.age_four.setToggleGroup(answers);
+            smoker = new ToggleGroup();
+            gender = new ToggleGroup();
+            age = new ToggleGroup();
+
+            this.smoker_yes.setToggleGroup(smoker);
+            this.smoker_no.setToggleGroup(smoker);
+            this.male.setToggleGroup(gender);
+            this.female.setToggleGroup(gender);
+            this.age_one.setToggleGroup(age);
+            this.age_two.setToggleGroup(age);
+            this.age_three.setToggleGroup(age);
+            this.age_four.setToggleGroup(age);
             
         }
         
