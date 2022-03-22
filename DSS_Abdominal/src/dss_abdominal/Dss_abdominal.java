@@ -193,11 +193,11 @@ public class Dss_abdominal {
             } else {
                 DEBUG("Answer = " + answer);
                 if (answer.equalsIgnoreCase("yes") || answer.equalsIgnoreCase("y")) {
-                    prediction.setRectalHemo(true);
-                    patient.setRectalHemo(true);
+                    //prediction.setRectalHemo(true);
+                    //patient.setRectalHemo(true);
                 } else if (answer.equalsIgnoreCase("no") || answer.equalsIgnoreCase("n")) {
-                    prediction.setRectalHemo(false);
-                    patient.setRectalHemo(false);
+                    //prediction.setRectalHemo(false);
+                    //patient.setRectalHemo(false);
                 } else {
                     System.out.println("Please enter Yes(y) or No(n)");
                 }
@@ -366,13 +366,13 @@ public class Dss_abdominal {
         // Result code:
         System.out.println(patient.ComparationArrayListSymptoms(ibs.patientSynmptomsToArrayList()));
         System.out.println(patient.ComparationArrayListSymptoms(chron.patientSynmptomsToArrayList()));
-        System.out.println(patient.ComparationArrayListSymptoms(ulcerative_colitis.patientSynmptomsToArrayList()));
-        System.out.println(patient.ComparationArrayListSymptoms(diverticulosis.patientSynmptomsToArrayList()));
-        System.out.println(patient.ComparationArrayListSymptoms(hernia.patientSynmptomsToArrayList()));
-        System.out.println(patient.ComparationArrayListSymptoms(appendicitis.patientSynmptomsToArrayList()));
-        System.out.println(patient.ComparationArrayListSymptoms(enterocolitis.patientSynmptomsToArrayList()));
-        System.out.println(patient.ComparationArrayListSymptoms(celiac_Disease.patientSynmptomsToArrayList()));
-        System.out.println(patient.ComparationArrayListSymptoms(colorectal_cancer.patientSynmptomsToArrayList()));
+//        System.out.println(patient.ComparationArrayListSymptoms(ulcerative_colitis.patientSynmptomsToArrayList()));
+//        System.out.println(patient.ComparationArrayListSymptoms(diverticulosis.patientSynmptomsToArrayList()));
+//        System.out.println(patient.ComparationArrayListSymptoms(hernia.patientSynmptomsToArrayList()));
+//        System.out.println(patient.ComparationArrayListSymptoms(appendicitis.patientSynmptomsToArrayList()));
+//        System.out.println(patient.ComparationArrayListSymptoms(enterocolitis.patientSynmptomsToArrayList()));
+//        System.out.println(patient.ComparationArrayListSymptoms(celiac_Disease.patientSynmptomsToArrayList()));
+//        System.out.println(patient.ComparationArrayListSymptoms(colorectal_cancer.patientSynmptomsToArrayList()));
 
 
 
