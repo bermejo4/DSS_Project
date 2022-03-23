@@ -1,6 +1,7 @@
 package gui;
 
 import dss_abdominal.Disease;
+import dss_abdominal.Patient;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,6 +14,7 @@ import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.BorderPane;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -22,31 +24,7 @@ public class MainWindow implements Initializable {
     private BorderPane main_window;
 
     @FXML
-    private  RadioButton smoker_yes;
-    
-    @FXML
-    private  RadioButton smoker_no;
-     
-    @FXML
-    private  RadioButton female;
-    
-    @FXML
-    private  RadioButton male;
-     
-    @FXML
-    private  RadioButton age_one;
-    
-    @FXML
-    private  RadioButton age_two;
-     
-    @FXML
-    private  RadioButton age_three;
-    
-    @FXML
-    private  RadioButton age_four;
-    
-    @FXML
-    private  RadioButton anxiety_depress_no;
+    private  Button button_prev;
 
     @FXML
     private Button button_next;
@@ -55,8 +33,14 @@ public class MainWindow implements Initializable {
     private ToggleGroup gender;
     private ToggleGroup age;
 
+    private static Patient patient;
+
+    private int page_num = 0;
+
     @Override
     public void initialize (URL url, ResourceBundle rb){
+
+        patient = new Patient();
 
         smoker = new ToggleGroup();
         gender = new ToggleGroup();
@@ -71,6 +55,8 @@ public class MainWindow implements Initializable {
 //        this.age_three.setToggleGroup(age);
 //        this.age_four.setToggleGroup(age);
 
+
+
     }
         
     
@@ -78,6 +64,7 @@ public class MainWindow implements Initializable {
     public void goToQuestions(ActionEvent event) throws Exception {
 
         Toggle smokes_selected = smoker.getSelectedToggle();
+        System.out.println("smokes_selected: "+smokes_selected);
         boolean smokes = false;
         if (smokes_selected == smoker_yes){
             smokes = true;
@@ -86,12 +73,11 @@ public class MainWindow implements Initializable {
         }
 
         Toggle gender_toggle = gender.getSelectedToggle();
-        Disease.Gender gender;
+        Patient.Gender gender = Patient.Gender.MALE;
         if (gender_toggle == male){
-            gender = Disease.Gender.MALE;
+            gender = Patient.Gender.MALE;
         } else if ( gender_toggle == female ){
-            gender = Disease.Gender.FEMALE;
-
+            gender = Patient.Gender.FEMALE;
         }
 
 //        Toggle age_toggle = age.getSelectedToggle();
@@ -106,19 +92,36 @@ public class MainWindow implements Initializable {
 //            age = Disease.AgeRange.CHILD;
 //        }
 
-        if ( smokes ){
-            System.out.println("Is a smoker!");
-
-        }
-
-        Parent root = FXMLLoader.load(getClass().getResource("Questions1.fxml"));
-        
-        //Scene scene = new Scene(root);
-        main_window.setCenter(root);
-        main_window.autosize();
-        // Remove the next buttom at the bottom
-        main_window.setBottom(null);
+        // patient.setAge(age);
+        patient.setGender(gender);
+        patient.setTobacco(smokes);
     }
 
+    public void next() throws IOException {
+        page_num++;
+        FXMLLoader loader;
+        Parent root;
 
+        switch ( page_num ){
+            case 1:
+                loader = new FXMLLoader(getClass().getResource("Questions1.fxml"));
+                root = loader.load();
+                Questions1 q1 = loader.getController();
+
+                //Scene scene = new Scene(root);
+                main_window.setCenter(root);
+                // Remove the next buttom at the bottom
+                main_window.setBottom(null);
+                break;
+            case 2:
+                loader = new FXMLLoader(getClass().getResource("Questions2.fxml"));
+                root = loader.load();
+                Questions2 q2 = loader.getController();
+
+                //Scene scene = new Scene(root);
+                main_window.setCenter(root);
+                // Remove the next buttom at the bottom
+                main_window.setBottom(null);
+        }
+    }
 }

@@ -29,7 +29,8 @@ public class Main extends Application {
             Parent root = loader.load();
             this.window.setScene(new Scene(root));
             this.window.setTitle("Decision Support System");
-            this.window.setResizable(true);
+            this.window.sizeToScene();
+            this.window.setResizable(false);
             this.window.show();
 
         } catch (IOException e) {
