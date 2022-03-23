@@ -38,7 +38,7 @@ public class Patient {
     private AgeRange age;
     private float abdpain;
     private float distention;
-    private boolean nausea;
+    private float nausea;
     private float vomiting;
     private boolean anxiety;
     private boolean genetic;
@@ -89,7 +89,7 @@ public class Patient {
         this.age = age;
     }
 
-    public Patient(String diseaseName, Gender gender, AgeRange age, float abdpain, float distention, boolean nausea, float vomiting, boolean anxiety, boolean genetic, boolean tobacco, boolean diarrhea, float rectalHemo, float exhaustion, float weightLoss, float cramps, boolean constipation, float pee, boolean bulks, float fever, float perianalDiscom, boolean ulcers, boolean melenas, boolean chills, float fatigue, boolean poo, boolean dermatitis) {
+    public Patient(String diseaseName, Gender gender, AgeRange age, float abdpain, float distention, float nausea, float vomiting, boolean anxiety, boolean genetic, boolean tobacco, boolean diarrhea, float rectalHemo, float exhaustion, float weightLoss, float cramps, boolean constipation, float pee, boolean bulks, float fever, float perianalDiscom, boolean ulcers, boolean melenas, boolean chills, float fatigue, boolean poo, boolean dermatitis) {
         this.diseaseName = diseaseName;
         this.gender = gender;
         this.age = age;
@@ -186,11 +186,11 @@ public class Patient {
         return fatigue;
     }
 
-    public boolean isNausea() {
+    public float getNausea() {
         return nausea;
     }
 
-    public void setNausea(boolean nausea) {
+    public void setNausea(float nausea) {
         this.nausea = nausea;
     }
 

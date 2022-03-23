@@ -49,9 +49,9 @@ public class Dss_abdominal {
         
         //ATENCIOOOOOOON!!!!!!
         //Estos argumentos que he metido abajo son falsísimos, no fiarse, son para probar la función de comparación de patient.
-        Patient ibs = new Patient("Irritable Bowel Syndrom",Patient.Gender.FEMALE,Patient.AgeRange.YOUNG,0,0,true,1,true,false,false,true,0,2,1,1,true,2,false,2,0,false,false,false,0,false,false);
+        Patient ibs = new Patient("Irritable Bowel Syndrom",Patient.Gender.FEMALE,Patient.AgeRange.YOUNG,0,0,0,1,true,false,false,true,0,2,1,1,true,2,false,2,0,false,false,false,0,false,false);
         
-        Patient chron = new Patient("Chron",Patient.Gender.FEMALE,Patient.AgeRange.YOUNGADULT,1,0,true,1,true,true,false,true,0,0,1,1,true,1,true,0,0,false,false,false,0,false,true);
+        Patient chron = new Patient("Chron",Patient.Gender.FEMALE,Patient.AgeRange.YOUNGADULT,1,0,0,1,true,true,false,true,0,0,1,1,true,1,true,0,0,false,false,false,0,false,true);
         /////-------------------------------------------------------------------------------------
         
         
@@ -347,11 +347,11 @@ public class Dss_abdominal {
             } else {
                 DEBUG("Answer = " + answer);
                 if (answer.equalsIgnoreCase("yes") || answer.equalsIgnoreCase("y")) {
-                    prediction.setNausea(true);
-                    patient.setNausea(true);
+                    //prediction.setNausea(true);
+                    //patient.setNausea(true);
                 } else if (answer.equalsIgnoreCase("no") || answer.equalsIgnoreCase("n")) {
-                    prediction.setNausea(false);
-                    patient.setNausea(false);
+                    //prediction.setNausea(false);
+                    //patient.setNausea(false);
                 } else {
                     System.out.println("Please enter Yes(y) or No(n)");
                 }
