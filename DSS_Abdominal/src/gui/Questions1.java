@@ -5,7 +5,6 @@
  */
 package gui;
 
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -13,19 +12,20 @@ import java.util.ResourceBundle;
 import static javafx.application.ConditionalFeature.FXML;
 
 import dss_abdominal.Patient;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
-import javafx.stage.Stage;
 
 /**
  * @author marin
  */
-public class Questions1 implements Initializable {
+public class Questions1 implements Initializable, QuestionPanel {
 
     @FXML
     private RadioButton lump_yes;
@@ -109,19 +109,89 @@ public class Questions1 implements Initializable {
 
     }
 
-    public void gotoquestions(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-
-        loader.setLocation(getClass().getResource("Questions2.fxml"));
-        Parent parent = loader.load();
-
-        Scene scene = new Scene(parent);
-
-    }
-
+    @Override
     public void initComponents(MainWindow main, Patient patient) {
         this.main = main;
         this.patient = patient;
+
+        if ( patient.isBulks() ) {
+            lump_toggle.selectToggle(lump_yes);
+        } else {
+            lump_toggle.selectToggle(lump_no);
+        }
+
+        if ( (int) (patient.getDistention()) == 0 ){
+            swelling_toggle.selectToggle(abdominalSwelling_none);
+        } else if ( (int) (patient.getDistention()) == 1 ){
+            swelling_toggle.selectToggle(abdominalSwelling_low);
+        } else if ( (int) (patient.getDistention()) == 2 ){
+            swelling_toggle.selectToggle(abdominalSwelling_high);
+        }
+
+        if ( patient.isDiarrhea() ) {
+            diarrhea_toggle.selectToggle(diarrhea_yes);
+        } else {
+            diarrhea_toggle.selectToggle(diarrhea_no);
+        }
+
+        if ( (int) patient.getNausea() == 0) {
+            nausea_toggle.selectToggle(nausea_none);
+        } else if ( (int) patient.getNausea() == 1) {
+            nausea_toggle.selectToggle(nausea_sporadic);
+        } else if ( (int) patient.getNausea() == 2) {
+            nausea_toggle.selectToggle(nausea_frequent);
+        }
+
+        if ( patient.isAnxiety() ) {
+            anxiety_toggle.selectToggle(anxiety_depress_yes);
+        } else {
+            anxiety_toggle.selectToggle(anxiety_depress_no);
+        }
+
+    }
+
+    @Override
+    public void getQuestionValues() {
+        Toggle lump_selected = lump_toggle.getSelectedToggle();
+        Toggle anxiety_selected = anxiety_toggle.getSelectedToggle();
+        Toggle diarrhea_selected = diarrhea_toggle.getSelectedToggle();
+        Toggle nausea_selected = nausea_toggle.getSelectedToggle();
+        Toggle swelling_selected = swelling_toggle.getSelectedToggle();
+
+        patient.setBulks( lump_selected == lump_yes);
+        patient.setAnxiety( anxiety_selected == anxiety_depress_yes);
+        patient.setDiarrhea( diarrhea_selected == diarrhea_yes );
+
+        if ( nausea_selected == nausea_none ){
+            patient.setNausea(0);
+        } else if ( nausea_selected == nausea_sporadic ) {
+            patient.setNausea(1);
+        } else if ( nausea_selected == nausea_frequent ) {
+            patient.setNausea(2);
+        }
+
+        if ( swelling_selected == abdominalSwelling_none ){
+            patient.setDistention(0);
+        } else if ( nausea_selected == abdominalSwelling_low ) {
+            patient.setDistention(1);
+        } else if ( nausea_selected == abdominalSwelling_high ) {
+            patient.setDistention(2);
+        }
+
+    }
+
+    @FXML
+    public void checkRadialButtons(ActionEvent evnt){
+        Toggle lump_selected = lump_toggle.getSelectedToggle();
+        Toggle diarrhea_selected = diarrhea_toggle.getSelectedToggle();
+        Toggle nausea_selected = nausea_toggle.getSelectedToggle();
+        Toggle anxiety_selected = anxiety_toggle.getSelectedToggle();
+
+        if ( lump_selected == null || diarrhea_selected == null || nausea_selected == null || anxiety_selected == null ) {
+            main.button_next.setDisable(true);
+        } else {
+            main.button_next.setDisable(false);
+        }
 
     }
 

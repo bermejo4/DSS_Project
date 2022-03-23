@@ -25,12 +25,15 @@ public class Main extends Application {
     public void start(Stage stage) {
         try {
             this.window = stage;
+            this.window.setOnCloseRequest(e->System.exit(0));
             FXMLLoader loader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
             Parent root = loader.load();
             this.window.setScene(new Scene(root));
             this.window.setTitle("Decision Support System");
-            this.window.sizeToScene();
-            this.window.setResizable(false);
+            this.window.setHeight(1000);
+            this.window.setWidth(1000);
+
+            //this.window.setResizable(false);
             this.window.show();
 
         } catch (IOException e) {

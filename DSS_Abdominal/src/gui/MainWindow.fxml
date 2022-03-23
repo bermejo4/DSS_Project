@@ -1,23 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.effect.Blend?>
-<?import javafx.scene.effect.Glow?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.text.Font?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="407.0" prefWidth="600.0" stylesheets="@mainStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MainWindow">
    <children>
       <BorderPane fx:id="main_window" stylesheets="@mainStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <bottom>
-            <GridPane BorderPane.alignment="CENTER">
+            <GridPane alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER">
                <columnConstraints>
                   <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" />
@@ -26,28 +20,30 @@
                   <RowConstraints minHeight="10.0" valignment="CENTER" vgrow="ALWAYS" />
                </rowConstraints>
                <children>
-                  <Button fx:id="button_next" mnemonicParsing="false" onAction="#goToQuestions" prefHeight="35.0" prefWidth="70.0" text="Next" GridPane.columnIndex="1">
+                  <Button fx:id="button_next" mnemonicParsing="false" onAction="#button_pressed" prefHeight="35.0" prefWidth="70.0" text="Next" GridPane.columnIndex="1">
                      <effect>
                         <Blend />
                      </effect>
                   </Button>
-                  <Button fx:id="button_prev" mnemonicParsing="false" text="Previous" />
+                  <Button fx:id="button_prev" mnemonicParsing="false" onAction="#button_pressed" text="Previous" />
                </children>
+               <BorderPane.margin>
+                  <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+               </BorderPane.margin>
             </GridPane>
          </bottom>
          <top>
-            <Pane BorderPane.alignment="CENTER">
-               <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="91.0" prefWidth="597.0" styleClass="title" stylesheets="@mainStyle.css" text="Patient's information" textAlignment="CENTER" wrapText="true">
-                     <font>
-                        <Font name="Arial Bold" size="96.0" />
-                     </font>
-                     <effect>
-                        <Glow />
-                     </effect>
-                  </Label>
-               </children>
-            </Pane>
+            <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="91.0" prefWidth="597.0" styleClass="title" stylesheets="@mainStyle.css" text="Patient's information" textAlignment="CENTER" wrapText="true" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Arial Bold" size="96.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+               <BorderPane.margin>
+                  <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+               </BorderPane.margin>
+            </Label>
          </top>
       </BorderPane>
    </children>

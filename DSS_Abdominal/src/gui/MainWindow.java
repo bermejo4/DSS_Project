@@ -24,104 +24,77 @@ public class MainWindow implements Initializable {
     private BorderPane main_window;
 
     @FXML
-    private  Button button_prev;
+    protected Button button_prev;
 
     @FXML
-    private Button button_next;
-         
-    private ToggleGroup smoker;
-    private ToggleGroup gender;
-    private ToggleGroup age;
+    protected Button button_next;
 
-    private static Patient patient;
+
+    protected static Patient patient;
 
     private int page_num = 0;
+    private final int MAX_PAGE = 4;
+
+    private QuestionPanel current_panel;
 
     @Override
     public void initialize (URL url, ResourceBundle rb){
 
         patient = new Patient();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Questions" + page_num + ".fxml"));
 
-        smoker = new ToggleGroup();
-        gender = new ToggleGroup();
-        age = new ToggleGroup();
+        Parent root = null;
+        try {
+            root = loader.load();
+            current_panel = loader.getController();
+            current_panel.initComponents(this, patient);
+            main_window.setCenter(root);
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.exit(-1);
+        }
 
-        this.smoker_yes.setToggleGroup(smoker);
-        this.smoker_no.setToggleGroup(smoker);
-        this.male.setToggleGroup(gender);
-        this.female.setToggleGroup(gender);
-//        this.age_one.setToggleGroup(age);
-//        this.age_two.setToggleGroup(age);
-//        this.age_three.setToggleGroup(age);
-//        this.age_four.setToggleGroup(age);
-
-
+        button_next.setDisable(true);
+        button_prev.setDisable(true);
 
     }
         
     
     @FXML
-    public void goToQuestions(ActionEvent event) throws Exception {
+    public void button_pressed(ActionEvent event) throws Exception {
 
-        Toggle smokes_selected = smoker.getSelectedToggle();
-        System.out.println("smokes_selected: "+smokes_selected);
-        boolean smokes = false;
-        if (smokes_selected == smoker_yes){
-            smokes = true;
-        } else if (smokes_selected == smoker_no){
-            smokes = false;
+        if ( event.getSource() == button_next ) {
+            page_num++;
+            // Will not be enabled until the questions of the new current panel are all selected
+            button_prev.setDisable(false);
+            button_next.setDisable(true);
+        } else {
+            page_num--;
+            // If we are going back that means this panel already has all the information
+            button_next.setDisable(false);
+            if( page_num == 0 ){
+                button_prev.setDisable(true);
+            }
         }
-
-        Toggle gender_toggle = gender.getSelectedToggle();
-        Patient.Gender gender = Patient.Gender.MALE;
-        if (gender_toggle == male){
-            gender = Patient.Gender.MALE;
-        } else if ( gender_toggle == female ){
-            gender = Patient.Gender.FEMALE;
-        }
-
-//        Toggle age_toggle = age.getSelectedToggle();
-//        Disease.AgeRange age;
-//        if (gender_toggle == age_one){
-//            age = Disease.AgeRange.ADULT;
-//        } else if ( gender_toggle == age_two ){
-//            age = Disease.AgeRange.YOUNGADULT;
-//        } else if ( gender_toggle == age_three ){
-//            age = Disease.AgeRange.YOUNG;
-//        } else if ( gender_toggle == age_four ){
-//            age = Disease.AgeRange.CHILD;
-//        }
-
-        // patient.setAge(age);
-        patient.setGender(gender);
-        patient.setTobacco(smokes);
+        changeQuestionPanel();
     }
 
-    public void next() throws IOException {
-        page_num++;
-        FXMLLoader loader;
-        Parent root;
+    public void changeQuestionPanel() throws IOException {
+        System.out.println(patient);
+        current_panel.getQuestionValues();
+        System.out.println(patient);
 
-        switch ( page_num ){
-            case 1:
-                loader = new FXMLLoader(getClass().getResource("Questions1.fxml"));
-                root = loader.load();
-                Questions1 q1 = loader.getController();
+        if ( page_num <= MAX_PAGE) {
+            FXMLLoader loader;
+            Parent root;
 
-                //Scene scene = new Scene(root);
-                main_window.setCenter(root);
-                // Remove the next buttom at the bottom
-                main_window.setBottom(null);
-                break;
-            case 2:
-                loader = new FXMLLoader(getClass().getResource("Questions2.fxml"));
-                root = loader.load();
-                Questions2 q2 = loader.getController();
+            loader = new FXMLLoader(getClass().getResource("Questions" + page_num + ".fxml"));
 
-                //Scene scene = new Scene(root);
-                main_window.setCenter(root);
-                // Remove the next buttom at the bottom
-                main_window.setBottom(null);
+            root = loader.load();
+            current_panel = loader.getController();
+            current_panel.initComponents(this, patient);
+            main_window.setCenter(root);
+
         }
     }
 }
