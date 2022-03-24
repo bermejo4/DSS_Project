@@ -127,14 +127,11 @@ public class Telegrambot extends TelegramLongPollingBot {
         String chatId = update.getMessage().getChatId().toString();
         int session_pos = sessions.indexOf(chatId);
 
-        int pos = msg.indexOf(" ");
-        if (pos == -1) {
-            command = msg.substring(1, msg.length()).toLowerCase();
-        } else {
-            command = msg.substring(1, pos).toLowerCase();
-        }
+        String[] data = msg.split(" ");
+        command = data[0].toLowerCase();
+        System.out.println("ChatId: "+chatId+" -> Command: "+command);
 
-        if (command.equals("start")) {
+        if (command.equals("/start")) {
             // Initiate the patient and start asking questions.
             patients.set(session_pos, new Patient());
             SendMessage answer = new SendMessage();
@@ -145,18 +142,18 @@ public class Telegrambot extends TelegramLongPollingBot {
             sendMessage(answer);
 
 
-        } else if (command.equals("help")) {
+        } else if (command.equals("/help")) {
             SendMessage answer = new SendMessage();
             answer.setChatId(chatId);
             answer.setText("This is a list of the current available commands:" +
                     "\n/help: displays this message" +
                     "\n/start: Initiates the symptom questionnaire" +
                     "\n/stop: Ends the connection" +
-                    "\n/back: Goes back one question" +
+                    "\n/back [back_num]: Goes back one question or more if specified." +
                     "\n/hellothere: easter egg");
             sendMessage(answer);
 
-        } else if (command.equals("stop")) {
+        } else if (command.equals("/stop")) {
             sessions.remove(session_pos);
             patients.remove(session_pos);
             times.remove(session_pos);
@@ -166,10 +163,26 @@ public class Telegrambot extends TelegramLongPollingBot {
             answer.setChatId(chatId);
             sendMessage(answer);
 
-        } else if (command.equals("back")) {
-            deleteLastAnswer(session_pos);
+        } else if (command.equals("/back")) {
+            int back_num = 1;
+            if ( data.length > 1 ){
+                try {
+                    back_num = Integer.parseInt(data[1]);
+                } catch ( NumberFormatException e ) {
+                    SendMessage m = new SendMessage();
+                    m.setChatId(chatId);
+                    m.setText("Please enter a number as the parameter to the /back command or nothing. EG: /back 3");
+                    sendMessage(m);
+                }
+            }
 
-        } else if (command.equals("hellothere")) {
+            for(; back_num > 0; back_num--) {
+                // This line is a bit confusing. It will remove answers, and only send the message of the last one.
+                // If it reaches the point of removing the gender and then it can't go back anymore, it will break the loop
+                if ( ! deleteLastAnswer(session_pos, back_num==1) ) break;
+            }
+
+        } else if (command.equals("/hellothere")) {
             // easter_egg
             InputFile gif = new InputFile("https://external-preview.redd.it/ydorx1_c0fBD-RrGB6zVx4GW0T5iSkUpietCeb9Kq2E.gif?format=mp4&s=5e48de033628db5b07945a9d128823ac5837b094");
             SendAnimation test = new SendAnimation(update.getMessage().getChatId().toString(), gif);
@@ -688,13 +701,15 @@ public class Telegrambot extends TelegramLongPollingBot {
         }
     }
 
-    private void deleteLastAnswer(int sessionPos) {
+    private boolean deleteLastAnswer(int sessionPos, boolean sendMessage) {
         Patient patient = patients.get(sessionPos);
         SendMessage message = new SendMessage();
         message.setChatId(sessions.get(sessionPos));
 
         if (patient.getGender() == null) {
-            message.setText("I can't go any further back");
+            message.setText("I can't go any further back\n\nWere you born male(m) or female(f)?");
+            sendMessage(message);
+            return false;
         } else if (patient.getAge() == null) {
             message.setText("Were you born male(m) or female(f)?");
             patient.setGender(null);
@@ -769,7 +784,8 @@ public class Telegrambot extends TelegramLongPollingBot {
             patient.setPoo(null);
         }
 
-        sendMessage(message);
+        if ( sendMessage ) sendMessage(message);
+        return true;
     }
 
 }
