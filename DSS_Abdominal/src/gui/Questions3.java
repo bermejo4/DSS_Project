@@ -137,7 +137,9 @@ public class Questions3 {
         } else if ( (int) (patient.getCramps()) == 2 ){
             cramps.selectToggle(cramps_disabling);
         }
-/*
+        
+        /*
+
         if ( (int) patient.ge()== 0) {
             melenas.selectToggle(melenas_none);
         } else if ( (int) patient.getNausea() == 1) {

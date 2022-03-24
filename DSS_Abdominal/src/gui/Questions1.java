@@ -148,6 +148,13 @@ public class Questions1 implements Initializable, QuestionPanel {
             anxiety_toggle.selectToggle(anxiety_depress_no);
         }
 
+        try {
+            checkRadialButtons(null);
+        } catch ( Exception e ){
+            e.printStackTrace();
+            System.out.println("Error checking if radials already have buttons.");
+        }
+
     }
 
     @Override

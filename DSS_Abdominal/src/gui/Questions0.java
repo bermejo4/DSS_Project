@@ -109,7 +109,12 @@ public class Questions0 implements Initializable, QuestionPanel {
             smoker.selectToggle(smoker_no);
         }
 
-
+        try {
+            checkRadialButtons(null);
+        } catch ( Exception e ){
+            e.printStackTrace();
+            System.out.println("Error checking if radials already have buttons.");
+        }
 
     }
 

@@ -54,11 +54,11 @@ public class Patient {
     private float fever;
     private float perianalDiscom;
     private boolean ulcers;
-    private boolean melenas;
-    private boolean chills;
+    private float melenas;
+    private float chills;
     private float fatigue;
-    private boolean poo;
-    private boolean dermatitis;
+    private float poo;
+    private float dermatitis;
 
     public Patient() {
         p_IBS = 0;
@@ -89,7 +89,7 @@ public class Patient {
         this.age = age;
     }
 
-    public Patient(String diseaseName, Gender gender, AgeRange age, float abdpain, float distention, float nausea, float vomiting, boolean anxiety, boolean genetic, boolean tobacco, boolean diarrhea, float rectalHemo, float exhaustion, float weightLoss, float cramps, boolean constipation, float pee, boolean bulks, float fever, float perianalDiscom, boolean ulcers, boolean melenas, boolean chills, float fatigue, boolean poo, boolean dermatitis) {
+    public Patient(String diseaseName, Gender gender, AgeRange age, float abdpain, float distention, float nausea, float vomiting, boolean anxiety, boolean genetic, boolean tobacco, boolean diarrhea, float rectalHemo, float exhaustion, float weightLoss, float cramps, boolean constipation, float pee, boolean bulks, float fever, float perianalDiscom, boolean ulcers, float melenas, float chills, float fatigue, float poo, float dermatitis) {
         this.diseaseName = diseaseName;
         this.gender = gender;
         this.age = age;
@@ -294,35 +294,35 @@ public class Patient {
         this.ulcers = ulcers;
     }
 
-    public boolean isMelenas() {
+    public float isMelenas() {
         return melenas;
     }
 
-    public void setMelenas(boolean melenas) {
+    public void setMelenas(float melenas) {
         this.melenas = melenas;
     }
 
-    public boolean isChills() {
+    public float isChills() {
         return chills;
     }
 
-    public void setChills(boolean chills) {
+    public void setChills(float chills) {
         this.chills = chills;
     }
 
-    public boolean isPoo() {
+    public float isPoo() {
         return poo;
     }
 
-    public void setPoo(boolean poo) {
+    public void setPoo(float poo) {
         this.poo = poo;
     }
 
-    public boolean isDermatitis() {
+    public float isDermatitis() {
         return dermatitis;
     }
 
-    public void setDermatitis(boolean dermatitis) {
+    public void setDermatitis(float dermatitis) {
         this.dermatitis = dermatitis;
     }
 

@@ -87,7 +87,7 @@ public class MainWindow implements Initializable {
         if ( page_num <= MAX_PAGE) {
             FXMLLoader loader;
             Parent root;
-
+            System.out.println("Loading Questions" + page_num + ".fxml");
             loader = new FXMLLoader(getClass().getResource("Questions" + page_num + ".fxml"));
 
             root = loader.load();

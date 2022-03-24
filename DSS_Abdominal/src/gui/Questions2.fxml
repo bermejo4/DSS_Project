@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Questions0">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Questions2">
    <columnConstraints>
       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
       <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
@@ -45,8 +45,8 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <RadioButton mnemonicParsing="false" text="Yes" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
-            <RadioButton mnemonicParsing="false" text="No" GridPane.rowIndex="2" />
+            <RadioButton fx:id="constipation_yes" mnemonicParsing="false" onAction="#checkRadialButtons" text="Yes" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
+            <RadioButton fx:id="constipation_no" mnemonicParsing="false" onAction="#checkRadialButtons" text="No" GridPane.rowIndex="2" />
          </children>
       </GridPane>
       <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -61,9 +61,9 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <RadioButton mnemonicParsing="false" text="None" GridPane.rowIndex="1" />
-            <RadioButton mnemonicParsing="false" text="Sporadic " GridPane.rowIndex="2" />
-            <RadioButton mnemonicParsing="false" text="Frequent" GridPane.rowIndex="3" />
+            <RadioButton fx:id="increasedpee_none" mnemonicParsing="false" onAction="#checkRadialButtons" text="None" GridPane.rowIndex="1" />
+            <RadioButton fx:id="increasedpee_sporadic" mnemonicParsing="false" onAction="#checkRadialButtons" prefHeight="24.0" prefWidth="71.0" text="Sporadic " GridPane.rowIndex="2" />
+            <RadioButton fx:id="increasedpee_frequent" mnemonicParsing="false" onAction="#checkRadialButtons" text="Frequent" GridPane.rowIndex="3" />
          </children>
       </GridPane>
       <GridPane GridPane.columnIndex="1" GridPane.rowIndex="2">
@@ -78,9 +78,9 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <RadioButton mnemonicParsing="false" text="None" GridPane.rowIndex="1" />
-            <RadioButton mnemonicParsing="false" text="Mild" GridPane.rowIndex="2" />
-            <RadioButton mnemonicParsing="false" text="Disabling" GridPane.rowIndex="3" />
+            <RadioButton fx:id="exhaustion_none" mnemonicParsing="false" onAction="#checkRadialButtons" text="None" GridPane.rowIndex="1" />
+            <RadioButton fx:id="exhaustion_mild" mnemonicParsing="false" onAction="#checkRadialButtons" text="Mild" GridPane.rowIndex="2" />
+            <RadioButton fx:id="exhaustion_disabling" mnemonicParsing="false" onAction="#checkRadialButtons" text="Disabling" GridPane.rowIndex="3" />
          </children>
       </GridPane>
       <GridPane GridPane.columnIndex="1" GridPane.rowIndex="3">
@@ -95,9 +95,9 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <RadioButton mnemonicParsing="false" text="No weight loss" GridPane.rowIndex="1" />
-            <RadioButton mnemonicParsing="false" text="0-5% loss" GridPane.rowIndex="2" />
-            <RadioButton mnemonicParsing="false" text="&gt;5% loss" GridPane.rowIndex="3" />
+            <RadioButton fx:id="weightloss_no" mnemonicParsing="false" onAction="#checkRadialButtons" text="No weight loss" GridPane.rowIndex="1" />
+            <RadioButton fx:id="weightloss_zerotofive" mnemonicParsing="false" onAction="#checkRadialButtons" text="0-5% loss" GridPane.rowIndex="2" />
+            <RadioButton fx:id="weightloss_morefive" mnemonicParsing="false" onAction="#checkRadialButtons" text="&gt;5% loss" GridPane.rowIndex="3" />
          </children>
       </GridPane>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Has the patient experienced weight loss over the last 6 months?" textAlignment="CENTER" wrappingWidth="297.623046875" GridPane.rowIndex="3">
