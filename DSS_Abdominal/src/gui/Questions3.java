@@ -112,49 +112,52 @@ public class Questions3 {
     public void initComponents(MainWindow main, Patient patient) {
         this.main = main;
         this.patient = patient;
-
-        if ( (int) (patient.getFever())==0 ) {
+        
+        int fev = patient.getFever().intValue();
+        if ( fev == 0 ) {
             fever.selectToggle(fever_low);
-        } else if ((int) (patient.getFever())==1){
+        } else if ( fev == 1 ) {
             fever.selectToggle(fever_medium);
-        }
-        else if ((int) (patient.getFever())==2){
+        } else if ( fev == 2 ){
             fever.selectToggle(fever_high);
         }
-
-        if ( (int) (patient.getPerianalDiscom()) == 0 ){
+        
+        int dis = patient.getPerianalDiscom().intValue();
+        if ( dis == 0 ) {
             discomfort.selectToggle(discomfort_none);
-        } else if ( (int) (patient.getPerianalDiscom()) == 1 ){
+        } else if ( dis == 1 ) {
             discomfort.selectToggle(discomfort_focalized);
-        } else if ( (int) (patient.getPerianalDiscom()) == 2 ){
+        } else if ( dis == 2 ){
             discomfort.selectToggle(discomfort_extended);
         }
-
-        if ( (int) (patient.getCramps()) == 0 ){
+        
+        int cr = patient.getCramps().intValue();
+        if ( cr == 0 ) {
             cramps.selectToggle(cramps_none);
-        } else if ( (int) (patient.getCramps()) == 1 ){
+        } else if ( cr == 1 ) {
             cramps.selectToggle(cramps_mild);
-        } else if ( (int) (patient.getCramps()) == 2 ){
+        } else if ( cr == 2 ){
             cramps.selectToggle(cramps_disabling);
         }
-        
 
-        if ( (int) patient.isMelenas()== 0) {
+        int mel = patient.isMelenas().intValue();
+        if ( mel == 0 ) {
             melenas.selectToggle(melenas_none);
-        } else if ( (int) patient.isMelenas()== 1) {
+        } else if ( mel == 1 ) {
             melenas.selectToggle(melenas_few);
-        } else if ( (int) patient.getNausea() == 2) {
+        } else if ( mel == 2 ){
             melenas.selectToggle(melenas_substantially);
         }
 
-        if ( (int) (patient.isDermatitis()) == 0 ){
+        int derm = patient.isDermatitis().intValue();
+        if ( derm == 0 ) {
             dermatitis.selectToggle(dermatitis_none);
-        } else if ( (int) (patient.isDermatitis()) == 1 ){
+        } else if ( derm == 1 ) {
             dermatitis.selectToggle(dermatitis_focalized);
-        } else if ( (int) (patient.isDermatitis()) == 2 ){
+        } else if ( derm == 2 ){
             dermatitis.selectToggle(dermatitis_extended);
         }
-        
+
     }
 
 
@@ -190,19 +193,19 @@ public class Questions3 {
             }
             
                  if ( melenas_selected == melenas_none ){
-                patient.setMelenas(0);
+                patient.setMelenas(0F);
             } else if ( melenas_selected == melenas_few ) {
-                patient.setMelenas(1);
+                patient.setMelenas(1F);
             } else if ( melenas_selected == melenas_substantially ) {
-                patient.setMelenas(2);
+                patient.setMelenas(2F);
             }
                  
                 if ( dermatitis_selected == dermatitis_none ){
-                patient.setDermatitis(0);
+                patient.setDermatitis(0F);
             } else if ( dermatitis_selected == dermatitis_focalized ) {
-                patient.setDermatitis(1);
+                patient.setDermatitis(1F);
             } else if ( dermatitis_selected == dermatitis_extended ) {
-                patient.setDermatitis(2);
+                patient.setDermatitis(2F);
             }
 
         }

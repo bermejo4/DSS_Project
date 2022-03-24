@@ -131,7 +131,7 @@ public class Questions2 implements Initializable, QuestionPanel {
             constipation_toggle.selectToggle(constipation_no);
         }
 
-        int pee = (int)patient.getPee();
+        int pee = patient.getPee().intValue();
         if ( pee == 0 ) {
             pee_toggle.selectToggle(increasedpee_none);
         } else if ( pee == 1 ) {
@@ -140,7 +140,7 @@ public class Questions2 implements Initializable, QuestionPanel {
             pee_toggle.selectToggle(increasedpee_frequent);
         }
 
-        int exhaustion = (int) patient.getExhaustion();
+        int exhaustion = patient.getExhaustion().intValue();
         if ( exhaustion == 0 ) {
             exhaustion_toggle.selectToggle(exhaustion_none);
         } else if ( exhaustion == 1 ) {
@@ -149,7 +149,7 @@ public class Questions2 implements Initializable, QuestionPanel {
             exhaustion_toggle.selectToggle(exhaustion_disabling);
         }
 
-        int weightloss = (int) patient.getWeightLoss();
+        int weightloss =  patient.getWeightLoss().intValue();
         if ( weightloss == 0 ) {
             weightloss_toggle.selectToggle(weightloss_no);
         } else if ( weightloss == 1 ) {

@@ -120,11 +120,12 @@ public class Questions1 implements Initializable, QuestionPanel {
             lump_toggle.selectToggle(lump_no);
         }
 
-        if ( (int) (patient.getDistention()) == 0 ){
+        int dist = patient.getDistention().intValue();
+        if ( dist == 0 ) {
             swelling_toggle.selectToggle(abdominalSwelling_none);
-        } else if ( (int) (patient.getDistention()) == 1 ){
+        } else if ( dist == 1 ) {
             swelling_toggle.selectToggle(abdominalSwelling_low);
-        } else if ( (int) (patient.getDistention()) == 2 ){
+        } else if ( dist == 2 ){
             swelling_toggle.selectToggle(abdominalSwelling_high);
         }
 
@@ -134,11 +135,12 @@ public class Questions1 implements Initializable, QuestionPanel {
             diarrhea_toggle.selectToggle(diarrhea_no);
         }
 
-        if ( (int) patient.getNausea() == 0) {
+        int nau = patient.getDistention().intValue();
+        if ( nau == 0 ) {
             nausea_toggle.selectToggle(nausea_none);
-        } else if ( (int) patient.getNausea() == 1) {
+        } else if ( nau == 1 ) {
             nausea_toggle.selectToggle(nausea_sporadic);
-        } else if ( (int) patient.getNausea() == 2) {
+        } else if ( nau == 2 ){
             nausea_toggle.selectToggle(nausea_frequent);
         }
 

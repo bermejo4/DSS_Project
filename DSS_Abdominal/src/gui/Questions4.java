@@ -103,37 +103,40 @@ public class Questions4 {
     public void initComponents(MainWindow main, Patient patient) {
         this.main = main;
         this.patient = patient;
-
-        if ( (int) (patient.isChills())==0 ) {
+        
+        int ch = patient.isChills().intValue();
+        if ( ch == 0 ) {
             chills.selectToggle(chill_none);
-        } else if ((int) (patient.isChills())==1){
+        } else if ( ch == 1 ) {
             chills.selectToggle(chill_sporadic);
-        }
-        else if ((int) (patient.isChills())==2){
+        } else if ( ch == 2 ){
             chills.selectToggle(chill_frequent);
-        } 
-
-        if ( (int) (patient.isPoo()) == 0 ){
+        }
+        
+        int po = patient.isChills().intValue();
+        if ( po == 0 ) {
             poo.selectToggle(poo_none);
-        } else if ( (int) (patient.isPoo()) == 1 ){
+        } else if ( po == 1 ) {
             poo.selectToggle(poo_mild);
-        } else if ( (int) (patient.isPoo()) == 2 ){
+        } else if ( po == 2 ){
             poo.selectToggle(poo_disabling);
         }
-
-        if ( (int) (patient.getFatigue()) == 0 ){
+ 
+        int fat = patient.isChills().intValue();
+        if ( fat == 0 ) {
             fatigue.selectToggle(fatigue_none);
-        } else if ( (int) (patient.getCramps()) == 1 ){
+        } else if ( fat == 1 ) {
             fatigue.selectToggle(fatigue_sporadic);
-        } else if ( (int) (patient.getCramps()) == 2 ){
+        } else if ( fat == 2 ){
             fatigue.selectToggle(fatigue_frequent);
         }
 
-        if ( (int) patient.getVomiting()== 0) {
+        int vom = patient.isChills().intValue();
+        if ( vom == 0 ) {
             vomiting.selectToggle(vomiting_none);
-        } else if ( (int) patient.getNausea() == 1) {
+        } else if ( vom == 1 ) {
             vomiting.selectToggle(vomiting_sporadic);
-        } else if ( (int) patient.getNausea() == 2) {
+        } else if ( vom == 2 ){
             vomiting.selectToggle(vomiting_frequent);
         }
 
@@ -148,19 +151,19 @@ public class Questions4 {
         
 
         if ( chills_selected == chill_none ){
-            patient.setChills(0);
+            patient.setChills(0F);
         } else if ( chills_selected == chill_sporadic ) {
-            patient.setChills(1);
+            patient.setChills(1F);
         } else if ( chills_selected == chill_frequent ) {
-            patient.setChills(2);
+            patient.setChills(2F);
         }
         
         if ( poo_selected == poo_none ){
-            patient.setPoo(0);
+            patient.setPoo(0F);
         } else if ( poo_selected == poo_mild ) {
-            patient.setPoo(1);
+            patient.setPoo(1F);
         } else if ( poo_selected == poo_disabling ) {
-            patient.setPoo(2);
+            patient.setPoo(2F);
         }
 
         if ( fatigue_selected == fatigue_none ){
