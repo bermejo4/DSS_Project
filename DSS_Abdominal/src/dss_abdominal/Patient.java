@@ -333,6 +333,54 @@ public class Patient {
         return p_IBS;
     }
 
+    public void setAbdpain(Float abdpain) {
+        this.abdpain = abdpain;
+    }
+
+    public void setDistention(Float distention) {
+        this.distention = distention;
+    }
+
+    public void setNausea(Float nausea) {
+        this.nausea = nausea;
+    }
+
+    public void setVomiting(Float vomiting) {
+        this.vomiting = vomiting;
+    }
+
+    public void setRectalHemo(Float rectalHemo) {
+        this.rectalHemo = rectalHemo;
+    }
+
+    public void setExhaustion(Float exhaustion) {
+        this.exhaustion = exhaustion;
+    }
+
+    public void setWeightLoss(Float weightLoss) {
+        this.weightLoss = weightLoss;
+    }
+
+    public void setCramps(Float cramps) {
+        this.cramps = cramps;
+    }
+
+    public void setPee(Float pee) {
+        this.pee = pee;
+    }
+
+    public void setFever(Float fever) {
+        this.fever = fever;
+    }
+
+    public void setPerianalDiscom(Float perianalDiscom) {
+        this.perianalDiscom = perianalDiscom;
+    }
+
+    public void setFatigue(Float fatigue) {
+        this.fatigue = fatigue;
+    }
+
     public void setP_IBS(Float p_IBS) {
         this.p_IBS = p_IBS;
     }
