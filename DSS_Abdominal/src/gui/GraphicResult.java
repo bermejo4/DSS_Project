@@ -25,7 +25,7 @@ public class GraphicResult implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         XYChart.Series series1 = new XYChart.Series();
         series1.setName("Diseases");
-        series1.getData().add(new XYChart(x:"Chron's disease",y: MainWindow.));
+        //series1.getData().add(new XYChart(x:"Chron's disease",y: MainWindow.));
         
         CategoryAxis xAxis=new CategoryAxis(); //We use this class of category because each disease is a category
         //xAxis.setLabel("Diseases");
