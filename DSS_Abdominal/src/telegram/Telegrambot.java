@@ -51,18 +51,16 @@ public class Telegrambot extends TelegramLongPollingBot {
         acceptable_answers_set.add("m");
     }
 
-
-    @Override
     public String getBotUsername() {
         return "Abdominal Pain DSS";
     }
 
-    @Override
+
     public String getBotToken() {
         return token;
     }
 
-    @Override
+
     public void onUpdateReceived(Update update) {
         // We check if the update has a message and the message has text
 
@@ -252,10 +250,13 @@ public class Telegrambot extends TelegramLongPollingBot {
             }
         } else if ( patient.getAbdpain() == null ){
             switch (answer) {
-                case "1" -> patient.setAbdpain(0);
-                case "2" -> patient.setAbdpain(1);
-                case "3" -> patient.setAbdpain(2);
-                default -> {
+                case "1" : patient.setAbdpain(0);
+                break;
+                case "2" : patient.setAbdpain(1);
+                break;
+                case "3" : patient.setAbdpain(2);
+                break;
+                default : {
                     message.setText("Sorry, I couldn't understand you.\nHow would you rate your abdominal pain?\n1. None\n2. Mild\n3. Severe");
                     sendMessage(message);
                     return;
@@ -265,10 +266,13 @@ public class Telegrambot extends TelegramLongPollingBot {
             sendMessage(message);
         } else if ( patient.getDistention() == null ){
             switch (answer) {
-                case "1" -> patient.setDistention(0);
-                case "2" -> patient.setDistention(1);
-                case "3" -> patient.setDistention(2);
-                default -> {
+                case "1" : patient.setDistention(0);
+                break;
+                case "2" : patient.setDistention(1);
+                break;
+                case "3" : patient.setDistention(2);
+                break;
+                default : {
                     message.setText("Sorry, I couldn't understand you.\nDo you suffer abdominal distention (inflated belly)?\n1. No\n2. Low\n3. High");
                     sendMessage(message);
                     return;
@@ -278,10 +282,13 @@ public class Telegrambot extends TelegramLongPollingBot {
             sendMessage(message);
         } else if ( patient.getNausea() == null ){
             switch (answer) {
-                case "1" -> patient.setNausea(0);
-                case "2" -> patient.setNausea(1);
-                case "3" -> patient.setNausea(2);
-                default -> {
+                case "1" : patient.setNausea(0);
+                break;
+                case "2" : patient.setNausea(1);
+                break;
+                case "3" : patient.setNausea(2);
+                break;
+                default : {
                     message.setText("Sorry, I couldn't understand you.\nDo you suffer nausea?\n1. No\n2. Sporadically\n3. Frequently");
                     sendMessage(message);
                     return;
@@ -291,10 +298,13 @@ public class Telegrambot extends TelegramLongPollingBot {
             sendMessage(message);
         } else if ( patient.getVomiting() == null ){
             switch (answer) {
-                case "1" -> patient.setVomiting(0);
-                case "2" -> patient.setVomiting(1);
-                case "3" -> patient.setVomiting(2);
-                default -> {
+                case "1" : patient.setVomiting(0);
+                break;
+                case "2" : patient.setVomiting(1);
+                break;
+                case "3" : patient.setVomiting(2);
+                break;
+                default : {
                     message.setText("Sorry, I couldn't understand you.\nHave you experience vomiting lately?\n1. No\n2. Sporadically\n3. Frequently");
                     sendMessage(message);
                     return;
@@ -304,9 +314,15 @@ public class Telegrambot extends TelegramLongPollingBot {
             sendMessage(message);
         } else if ( patient.isAnxiety() == null ){
             switch (answer) {
-                case "yes", "y" -> patient.setAnxiety(true);
-                case "no", "n" -> patient.setAnxiety(false);
-                default -> {
+                case "yes": patient.setAnxiety(true);
+                break;
+                case "y": patient.setAnxiety(true);
+                break;
+                case "no": patient.setAnxiety(false);
+                break;
+                case "n": patient.setAnxiety(false);
+                break;
+                default : {
                     message.setText("Sorry, I couldn't understand you.\nHave you felt unusually anxious or depressed lately?(yes/no)");
                     sendMessage(message);
                     return;
@@ -316,9 +332,15 @@ public class Telegrambot extends TelegramLongPollingBot {
             sendMessage(message);
         } else if ( patient.isGenetic() == null ){
             switch (answer) {
-                case "yes", "y" -> patient.setGenetic(true);
-                case "no", "n" -> patient.setGenetic(false);
-                default -> {
+                case "yes": patient.setGenetic(true);
+                break;
+                case "y": patient.setGenetic(true);
+                break;
+                case "no": patient.setGenetic(false);
+                break;
+                case "n": patient.setGenetic(false);
+                break;
+                default : {
                     message.setText("Sorry, I couldn't understand you.\nDo you have any antecedents of intestinal diseases in your close family?(yes/no)");
                     sendMessage(message);
                     return;
@@ -328,9 +350,15 @@ public class Telegrambot extends TelegramLongPollingBot {
             sendMessage(message);
         } else if ( patient.isTobacco() == null ){
             switch (answer) {
-                case "yes", "y" -> patient.setTobacco(true);
-                case "no", "n" -> patient.setTobacco(false);
-                default -> {
+                case "yes": patient.setTobacco(true);
+                break;
+                case "y": patient.setTobacco(true);
+                break;
+                case "no": patient.setTobacco(false);
+                break;
+                case "n": patient.setTobacco(false);
+                break;
+                default : {
                     message.setText("Sorry, I couldn't understand you.\nDo you smoke?(yes/no)");
                     sendMessage(message);
                     return;
@@ -340,9 +368,15 @@ public class Telegrambot extends TelegramLongPollingBot {
             sendMessage(message);
         } else if ( patient.isDiarrhea() == null ){
             switch (answer) {
-                case "yes", "y" -> patient.setDiarrhea(true);
-                case "no", "n" -> patient.setDiarrhea(false);
-                default -> {
+                case "yes": patient.setDiarrhea(true);
+                break;
+                case "y": patient.setDiarrhea(true);
+                break;
+                case "no": patient.setDiarrhea(false);
+                break;
+                case "n": patient.setDiarrhea(false);
+                break;
+                default : {
                     message.setText("Sorry, I couldn't understand you.\nDo you suffer Diarrhea?(yes/no)");
                     sendMessage(message);
                     return;
@@ -352,10 +386,13 @@ public class Telegrambot extends TelegramLongPollingBot {
             sendMessage(message);
         } else if ( patient.getRectalHemo() == null ){
             switch (answer) {
-                case "1" -> patient.setRectalHemo(0);
-                case "2" -> patient.setRectalHemo(1);
-                case "3" -> patient.setRectalHemo(2);
-                default -> {
+                case "1" : patient.setRectalHemo(0);
+                break;
+                case "2" : patient.setRectalHemo(1);
+                break;
+                case "3" : patient.setRectalHemo(2);
+                break;
+                default : {
                     message.setText("Sorry, I couldn't understand you.\nHave you suffered discomfort around the anus?\n1. None\n2. Focalized\n3. Extended");
                     sendMessage(message);
                     return;
@@ -365,10 +402,13 @@ public class Telegrambot extends TelegramLongPollingBot {
             sendMessage(message);
         } else if ( patient.getExhaustion() == null ){
             switch (answer) {
-                case "1" -> patient.setExhaustion(0);
-                case "2" -> patient.setExhaustion(1);
-                case "3" -> patient.setExhaustion(2);
-                default -> {
+                case "1" : patient.setExhaustion(0);
+                break;
+                case "2" : patient.setExhaustion(1);
+                break;
+                case "3" : patient.setExhaustion(2);
+                break;
+                default : {
                     message.setText("Sorry, I couldn't understand you.\nHave you felt exhausted?\n1. No\n2. Mildly\n3. Absolutely");
                     sendMessage(message);
                     return;
@@ -378,10 +418,13 @@ public class Telegrambot extends TelegramLongPollingBot {
             sendMessage(message);
         } else if ( patient.getWeightLoss() == null ){
             switch (answer) {
-                case "1" -> patient.setWeightLoss(0);
-                case "2" -> patient.setWeightLoss(1);
-                case "3" -> patient.setWeightLoss(2);
-                default -> {
+                case "1" : patient.setWeightLoss(0);
+                break;
+                case "2" : patient.setWeightLoss(1);
+                break;
+                case "3" : patient.setWeightLoss(2);
+                break;
+                default : {
                     message.setText("Sorry, I couldn't understand you.\nHave you lost weight lately?\n1. No\n2. Very little(0-5%)\n3. A lot(>5%)");
                     sendMessage(message);
                     return;
@@ -391,17 +434,200 @@ public class Telegrambot extends TelegramLongPollingBot {
             sendMessage(message);
         }  else if ( patient.getCramps() == null ){
             switch (answer) {
-                case "1" -> patient.setCramps(0);
-                case "2" -> patient.setCramps(1);
-                case "3" -> patient.setCramps(2);
-                default -> {
+                case "1" : patient.setCramps(0);
+                break;
+                case "2" : patient.setCramps(1);
+                break;
+                case "3" : patient.setCramps(2);
+                break;
+                default : {
                     message.setText("Sorry, I couldn't understand you.\nHave you been experiencing abdominal cramps?\n1. No\n2. A few\n3. A lot(can't stand)");
                     sendMessage(message);
                     return;
                 }
-            }
+            } //->
             message.setText("Have you been experiencing constipation?(yes/no)");
             sendMessage(message);
+        } else if ( patient.isConstipation()== null ){
+            switch (answer) {
+               case "yes": patient.setConstipation(true);
+                break;
+                case "y": patient.setConstipation(true);
+                break;
+                case "no": patient.setConstipation(false);
+                break;
+                case "n": patient.setConstipation(false);
+                break;
+                default : {
+                    message.setText("Sorry, I couldn't understand you.\nDo you suffer Constipation?(yes/no)");
+                    sendMessage(message);
+                    return;
+                }
+            }
+            message.setText("Have you been experiencing an increase in pee frequency?\n 1.No\n 2. few\n 3. A lot (can't stand)");
+            sendMessage(message);
+        } else if ( patient.getPee()== null ){
+            switch (answer) {
+                case "1" : patient.setPee(0);
+                break;
+                case "2" : patient.setPee(1);
+                break;
+                case "3" : patient.setPee(2);
+                break;
+                default : {
+                    message.setText("Sorry, I couldn't understand you.\nHave you been experiencing an increase in pee frequency?\n1. No\n2. few \n3. A lot(can't stand)");
+                    sendMessage(message);
+                    return;
+                }
+            }
+             message.setText("Do you have a bulk(s)?(yes/no)");
+            sendMessage(message);   
+        } else if ( patient.isBulks()== null ){
+            switch (answer) {
+                 case "yes": patient.setBulks(true);
+                break;
+                case "y": patient.setBulks(true);
+                break;
+                case "no": patient.setBulks(false);
+                break;
+                case "n": patient.setBulks(false);
+                break;
+                default : {
+                    message.setText("Sorry, I couldn't understand you.\nDo you have Bulk(s)?(yes/no)");
+                    sendMessage(message);
+                    return;
+                }
+            }
+            message.setText("Have you been experiencing fever lately?\1.37.5 or lowerº\n2. Between 37.5 and 39º\n 3. Higher than 39º");
+            sendMessage(message);
+        } else if ( patient.getFever()== null ){
+            switch (answer) {
+                case "1" : patient.setFever(0);
+                break;
+                case "2" : patient.setFever(1);
+                break;
+                case "3" : patient.setFever(2);
+                break;
+                default : {
+                    message.setText("Sorry, I couldn't understand you.\nHave you been experiencing fever lately?\1.37.5 or lowerº\n2. Between 37.5 and 39º\n 3. Higher than 39º");
+                    sendMessage(message);
+                    return;
+                }
+            }
+            message.setText("Have you experienced perianal discomfort?\n1. No\n2. Mildly\n3. Absolutely");
+            sendMessage(message);
+        } else if ( patient.getPerianalDiscom()== null ){
+            switch (answer) {
+                case "1" : patient.setPerianalDiscom(0);
+                break;
+                case "2" : patient.setPerianalDiscom(1);
+                break;
+                case "3" : patient.setPerianalDiscom(2);
+                break;
+                default : {
+                    message.setText("Sorry, I couldn't understand you.\nHave you experienced perianal discomfort?\1. No\n2. Mildly\n3. Absolutely");
+                    sendMessage(message);
+                    return;
+                }
+            }
+            message.setText("Do you have ulcers?(yes/no");
+            sendMessage(message);    
+        }else if ( patient.isUlcers()== null ){
+            switch (answer) {
+                case "yes": patient.setUlcers(true);
+                break;
+                case "y": patient.setUlcers(true);
+                break;
+                case "no": patient.setUlcers(false);
+                break;
+                case "n": patient.setUlcers(false);
+                break;
+                default : {
+                    message.setText("Sorry, I couldn't understand you.\nDo you have Ulecers?(yes/no)");
+                    sendMessage(message);
+                    return;
+                }
+            }
+             message.setText("Do you suffer from blood in your feces?\n1. No\n2. Mildly\n 3. Absolutely");
+            sendMessage(message); 
+        }else if ( patient.isMelenas()== null ){
+            switch (answer) {
+                case "1" : patient.setMelenas(0F);
+                break;
+                case "2" : patient.setMelenas(1F);
+                break;
+                case "3" : patient.setMelenas(2F);
+                break;
+                default : {
+                    message.setText("Sorry, I couldn't understand you.\nDo you suffer from blood in your feces?\n1. No\n 2.Mildly\n3. Absolutely");
+                    sendMessage(message);
+                    return;
+                }
+            }
+            message.setText("Have you experienced chills?\n1. No\n2. Sporadic\n 3. Frequent");
+            sendMessage(message);       
+        } else if ( patient.isChills()== null ){
+            switch (answer) {
+                case "1" : patient.setChills(0F);
+                break;
+                case "2" : patient.setChills(1F);
+                break;
+                case "3" : patient.setChills(2F);
+                break;
+                default : {
+                    message.setText("Sorry, I couldn't understand you.\nHave you experienced chills?\n1. No\n2. Sporadic\n 3. Frequent");
+                    sendMessage(message);
+                    return;
+                }
+            }
+             message.setText("Have you experienced constant fatigue?\n1. No\n2. Sporadic\n 3. Frequent");
+            sendMessage(message); 
+        } else if ( patient.getFatigue()== null ){
+            switch (answer) {
+                case "1" : patient.setFatigue(0);
+                break;
+                case "2" : patient.setFatigue(1);
+                break;
+                case "3" : patient.setFatigue(2);
+                break;
+                default : {
+                    message.setText("Sorry, I couldn't understand you.\nHave you experienced constant fatigue?\n1. No\n2. Sporadic\n 3. Frequent");
+                    sendMessage(message);
+                    return;
+                }
+            }
+             message.setText("Have you experienced a constant need to defecate?\n1. No\n2. Mildly\n 3. Absolutely");
+            sendMessage(message);
+        } else if ( patient.isPoo()== null ){
+            switch (answer) {
+                case "1" : patient.setPoo(0F);
+                break;
+                case "2" : patient.setPoo(1F);
+                break;
+                case "3" : patient.setPoo(2F);
+                break;
+                default : {
+                    message.setText("Sorry, I couldn't understand you.\nHave you experienced a constant need to defecate?\n1. No\n2. Mildly\n 3. Absolutely");
+                    sendMessage(message);
+                    return;
+                }
+            }
+             message.setText("Have you suffered from dermatitis lately?\n1. No\n2. Focalized\n 3. Extended");
+            sendMessage(message); 
+        } else if ( patient.isDermatitis()== null ){
+            switch (answer) {
+                case "1" : patient.setDermatitis(0F);
+                break;
+                case "2" : patient.setDermatitis(1F);
+                break;
+                case "3" : patient.setDermatitis(2F);
+                break;
+                default : {
+                    message.setText("Sorry, I couldn't understand you.\nHave you suffered from dermatitis lately?\n1. No\n2. Focalized\n 3. Extended");
+                    sendMessage(message);
+                    return;
+                }
+            }
         }
     }
 
