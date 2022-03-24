@@ -13,9 +13,11 @@ import javafx.scene.chart.*;
  */
 public class GraphicResult {
     
+    
     CategoryAxis xAxis=new CategoryAxis(); //We use this class of category because each disease is a category
     //xAxis.setLabel("Diseases");
     
     NumberAxis yAxis = new NumberAxis();
     //yAxis.setLabel("Approximation percentage");
+     //BarChart 11 = new BarChart(xAxis,yAxis);
 }
