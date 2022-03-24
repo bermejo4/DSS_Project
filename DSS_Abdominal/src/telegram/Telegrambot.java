@@ -245,7 +245,11 @@ public class Telegrambot extends TelegramLongPollingBot {
         } else if (patient.getAge() == null) {
             try {
                 int age = Integer.parseInt(answer);
-                if (age < 10) {
+                if ( age < 0 ) {
+                    message.setText("Sorry, I couldn't understand you.\nWhat is your age?");
+                    sendMessage(message);
+                    return;
+                } else if (age < 10) {
                     patient.setAge(Patient.AgeRange.CHILD);
                 } else if (age < 14) {
                     patient.setAge(Patient.AgeRange.YOUNG);
