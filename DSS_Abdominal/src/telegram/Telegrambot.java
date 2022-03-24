@@ -26,6 +26,8 @@ public class Telegrambot extends TelegramLongPollingBot {
     private ArrayList<Long> times;
     private Set<String> acceptable_answers_set;
 
+    private boolean askingAge;
+
     protected static final long TIMEOUT = 5000; //3600000; // in ms
 
     public Telegrambot( String token ){
@@ -37,10 +39,16 @@ public class Telegrambot extends TelegramLongPollingBot {
 
         acceptable_answers_set = new HashSet<String>();
         acceptable_answers_set.add("yes");
+        acceptable_answers_set.add("y");
         acceptable_answers_set.add("no");
+        acceptable_answers_set.add("n");
         acceptable_answers_set.add("1");
         acceptable_answers_set.add("2");
         acceptable_answers_set.add("3");
+        acceptable_answers_set.add("female");
+        acceptable_answers_set.add("f");
+        acceptable_answers_set.add("male");
+        acceptable_answers_set.add("m");
     }
 
 
@@ -97,8 +105,9 @@ public class Telegrambot extends TelegramLongPollingBot {
         if ( message_received.startsWith("/")){
             // It's a command
             processCommand(message_received, update);
-        } else if ( acceptable_answers_set.contains(message_received.toLowerCase())) {
+        } else if ( acceptable_answers_set.contains(message_received.toLowerCase()) || askingAge) {
             // It's an acceptable answer, but we still have to check for each symptom if it makes sense.
+            addAnswer(pos, message_received);
 
         } else {
 
@@ -192,6 +201,45 @@ public class Telegrambot extends TelegramLongPollingBot {
                 i--;
             }
         }
+    }
+
+    private void addAnswer(int sessionPos, String answer){
+        Patient patient = patients.get(sessionPos);
+        SendMessage message = new SendMessage();
+        message.setChatId(sessions.get(sessionPos));
+
+        if ( patient.getGender() == null ) {
+            if (answer == "female" ) {
+                patient.setGender(Patient.Gender.FEMALE);
+            } else if ( answer == "male" ) {
+                patient.setGender(Patient.Gender.MALE);
+            }
+            // ask for age
+            askingAge=true;
+            message.setText("What is your age?");
+            sendMessage(message);
+        } else if ( patient.getAge() == null ) {
+            try{
+                int age = Integer.parseInt(answer);
+                if ( age < 10) {
+                    patient.setAge(Patient.AgeRange.CHILD);
+                } else if ( age < 14 ) {
+                    patient.setAge(Patient.AgeRange.YOUNG);
+                } else if ( age < 35 ){
+                    patient.setAge(Patient.AgeRange.YOUNGADULT);
+                } else if ( age < 115 ) {
+                    patient.setAge(Patient.AgeRange.ADULT);
+                }
+                // ask for abpain
+                message.setText("How would you rate your abdominal pain\n1. None\n2. Mild\n3. Severe");
+                sendMessage(message);
+            } catch (NumberFormatException e ){
+                message.setText("Please introduce a number");
+            }
+
+            sendMessage(message);
+        }
+
     }
 
 
