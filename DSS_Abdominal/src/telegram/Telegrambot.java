@@ -28,7 +28,7 @@ public class Telegrambot extends TelegramLongPollingBot {
 
     private boolean askingAge;
 
-    protected static final long TIMEOUT = 5000; //3600000; // in ms
+    protected static final long TIMEOUT = 3600000; // in ms
 
     public Telegrambot( String token ){
         super();
@@ -144,8 +144,12 @@ public class Telegrambot extends TelegramLongPollingBot {
             patients.set(session_pos, new Patient());
             SendMessage answer = new SendMessage();
             answer.setChatId(chatId);
-            answer.setText("We are going to start asking you questions now.");
+            answer.setText("We are going to start asking you questions now. Please answer with the numbers at the left " +
+                    "of the options. If no number is provided you can answer freely\n\nWere you born male(m) or female(f)?");
+
             sendMessage(answer);
+
+
 
         } else if ( command.equals("help") ) {
             SendMessage answer = new SendMessage();
@@ -209,10 +213,12 @@ public class Telegrambot extends TelegramLongPollingBot {
         message.setChatId(sessions.get(sessionPos));
 
         if ( patient.getGender() == null ) {
-            if (answer == "female" ) {
+            if (answer.equals("female") || answer.equals("f") ) {
                 patient.setGender(Patient.Gender.FEMALE);
-            } else if ( answer == "male" ) {
+            } else if ( answer.equals("male") || answer.equals("m") ) {
                 patient.setGender(Patient.Gender.MALE);
+            } else {
+                System.out.println("Couldn't find it");
             }
             // ask for age
             askingAge=true;
@@ -231,13 +237,13 @@ public class Telegrambot extends TelegramLongPollingBot {
                     patient.setAge(Patient.AgeRange.ADULT);
                 }
                 // ask for abpain
-                message.setText("How would you rate your abdominal pain\n1. None\n2. Mild\n3. Severe");
+                message.setText("How would you rate your abdominal pain?\n1. None\n2. Mild\n3. Severe");
                 sendMessage(message);
             } catch (NumberFormatException e ){
                 message.setText("Please introduce a number");
+                sendMessage(message);
             }
 
-            sendMessage(message);
         }
 
     }
