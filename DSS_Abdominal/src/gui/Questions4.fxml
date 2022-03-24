@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Questions0">
+<GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="background22" stylesheets="@mainStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Questions0">
    <columnConstraints>
       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
       <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
@@ -19,22 +19,22 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
    </rowConstraints>
    <children>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Has the patient experienced chills frequently?" textAlignment="CENTER" wrappingWidth="302.21875" GridPane.hgrow="ALWAYS">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Has the patient experienced chills frequently?" wrappingWidth="302.21875" GridPane.hgrow="ALWAYS">
          <font>
-            <Font size="14.0" />
+            <Font size="18.0" />
          </font>
       </Text>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Has the patient suffered from a costant urge of defecate?" textAlignment="CENTER" wrappingWidth="291.2314453125" GridPane.rowIndex="1">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Has the patient suffered from a costant urge of defecate?" wrappingWidth="291.2314453125" GridPane.rowIndex="1">
          <font>
-            <Font size="14.0" />
+            <Font size="18.0" />
          </font>
       </Text>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Has the patient experienced abnormal fatigue?" textAlignment="CENTER" wrappingWidth="295.623046875" GridPane.rowIndex="2">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Has the patient experienced abnormal fatigue?" wrappingWidth="295.623046875" GridPane.rowIndex="2">
          <font>
-            <Font size="14.0" />
+            <Font size="18.0" />
          </font>
       </Text>
-      <GridPane GridPane.columnIndex="1">
+      <GridPane styleClass="background22" stylesheets="@mainStyle.css" GridPane.columnIndex="1">
          <columnConstraints>
             <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
          </columnConstraints>
@@ -51,7 +51,7 @@
             <RadioButton mnemonicParsing="false" text="Frequent" GridPane.rowIndex="3" />
          </children>
       </GridPane>
-      <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <GridPane styleClass="background22" stylesheets="@mainStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
          </columnConstraints>
@@ -68,7 +68,7 @@
             <RadioButton mnemonicParsing="false" text="Disabling" GridPane.rowIndex="3" />
          </children>
       </GridPane>
-      <GridPane GridPane.columnIndex="1" GridPane.rowIndex="2">
+      <GridPane styleClass="background22" stylesheets="@mainStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
          </columnConstraints>
@@ -86,7 +86,7 @@
             <RadioButton mnemonicParsing="false" text="Frequent" GridPane.rowIndex="3" />
          </children>
       </GridPane>
-      <GridPane GridPane.columnIndex="1" GridPane.rowIndex="3">
+      <GridPane styleClass="background22" stylesheets="@mainStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="3">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
          </columnConstraints>
@@ -103,9 +103,9 @@
             <RadioButton mnemonicParsing="false" text="Frequent" GridPane.rowIndex="3" />
          </children>
       </GridPane>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Has the patient experienced vomiting?" textAlignment="CENTER" wrappingWidth="302.623046875" GridPane.rowIndex="3">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Has the patient experienced vomiting?" wrappingWidth="302.623046875" GridPane.rowIndex="3">
          <font>
-            <Font size="14.0" />
+            <Font size="18.0" />
          </font>
       </Text>
    </children>
