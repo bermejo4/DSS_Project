@@ -49,9 +49,9 @@ public class Dss_abdominal {
         
         //ATENCIOOOOOOON!!!!!!
         //Estos argumentos que he metido abajo son falsísimos, no fiarse, son para probar la función de comparación de patient.
-        Patient ibs = new Patient("Irritable Bowel Syndrom",Patient.Gender.FEMALE,Patient.AgeRange.YOUNG,0,0,0,1,true,false,false,true,0,2,1,1,true,2,false,2,0,false,false,false,0,false,false);
+        Patient ibs = new Patient("Irritable Bowel Syndrom",Patient.Gender.FEMALE,Patient.AgeRange.YOUNG,0f,0f,0f,1f,true,false,false,true,0f,2f,1f,1f,true,2f,false,2f,0f,false,0f,0f,0f,0f,0f);
         
-        Patient chron = new Patient("Chron",Patient.Gender.FEMALE,Patient.AgeRange.YOUNGADULT,1,0,0,1,true,true,false,true,0,0,1,1,true,1,true,0,0,false,false,false,0,false,true);
+        Patient chron = new Patient("Chron",Patient.Gender.FEMALE,Patient.AgeRange.YOUNGADULT,1f,0f,0f,1f,true,true,false,true,0f,0f,1f,1f,true,1f,true,0f,0f,false,0f,0f,0f,0f,1f);
         /////-------------------------------------------------------------------------------------
         
         
@@ -255,11 +255,11 @@ public class Dss_abdominal {
             } else {
                 DEBUG("Answer = " + answer);
                 if (answer.equalsIgnoreCase("yes") || answer.equalsIgnoreCase("y")) {
-                    prediction.setChills(true);
-                    patient.setChills(true);
+                    //prediction.setChills(true);
+                    //patient.setChills(true);
                 } else if (answer.equalsIgnoreCase("no") || answer.equalsIgnoreCase("n")) {
-                    prediction.setChills(false);
-                    patient.setChills(false);
+                    //prediction.setChills(false);
+                    //patient.setChills(false);
                 } else {
                     System.out.println("Please enter Yes(y) or No(n)");
                 }
@@ -278,11 +278,11 @@ public class Dss_abdominal {
             } else {
                 DEBUG("Answer = " + answer);
                 if (answer.equalsIgnoreCase("yes") || answer.equalsIgnoreCase("y")) {
-                    prediction.setDermatitis(true);
-                    patient.setDermatitis(true);
+                    //prediction.setDermatitis(true);
+                    //patient.setDermatitis(true);
                 } else if (answer.equalsIgnoreCase("no") || answer.equalsIgnoreCase("n")) {
-                    prediction.setDermatitis(false);
-                    patient.setDermatitis(false);
+                    //prediction.setDermatitis(false);
+                    //patient.setDermatitis(false);
                 } else {
                     System.out.println("Please enter Yes(y) or No(n)");
                 }
@@ -324,11 +324,11 @@ public class Dss_abdominal {
             } else {
                 DEBUG("Answer = " + answer);
                 if (answer.equalsIgnoreCase("yes") || answer.equalsIgnoreCase("y")) {
-                    prediction.setMelenas(true);
-                    patient.setMelenas(true);
+                    //prediction.setMelenas(true);
+                    //patient.setMelenas(true);
                 } else if (answer.equalsIgnoreCase("no") || answer.equalsIgnoreCase("n")) {
-                    prediction.setMelenas(false);
-                    patient.setMelenas(false);
+                    //prediction.setMelenas(false);
+                    //patient.setMelenas(false);
                 } else {
                     System.out.println("Please enter Yes(y) or No(n)");
                 }
