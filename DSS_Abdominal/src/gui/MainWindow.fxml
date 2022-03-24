@@ -39,7 +39,7 @@
             </GridPane>
          </bottom>
          <top>
-            <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="154.0" prefWidth="600.0" styleClass="title" stylesheets="@mainStyle.css" text="Patient's information" textAlignment="CENTER" wrapText="true" BorderPane.alignment="CENTER">
+            <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="122.0" prefWidth="591.0" styleClass="title" stylesheets="@mainStyle.css" text="Patient's information" textAlignment="CENTER" wrapText="true" BorderPane.alignment="CENTER">
                <font>
                   <Font name="Arial Bold" size="96.0" />
                </font>
