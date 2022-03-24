@@ -74,7 +74,7 @@ public class Telegrambot extends TelegramLongPollingBot {
                 SendMessage message = new SendMessage(); // Create a SendMessage object with mandatory fields
 
                 message.setChatId(update.getMessage().getChatId().toString()); // Answer to the same chat.
-                message.setText("Welcome to the DSS for Abdominal Pain. Type **/start** to start your analysis or **/help** to see a list of commands.");
+                message.setText("Welcome to the DSS for Abdominal Pain. Type /start to start your analysis or /help to see a list of commands.");
 
                 System.out.println("Adding chatId: " + chatId);
                 // We add this new Client to the list of clients.
@@ -148,7 +148,12 @@ public class Telegrambot extends TelegramLongPollingBot {
         } else if (command.equals("help")) {
             SendMessage answer = new SendMessage();
             answer.setChatId(chatId);
-            answer.setText("This is a list of the current available commands:\n/help\n/start\n/stop\n/hellothere");
+            answer.setText("This is a list of the current available commands:" +
+                    "\n/help: displays this message" +
+                    "\n/start: Initiates the symptom questionnaire" +
+                    "\n/stop: Ends the connection" +
+                    "\n/back: Goes back one question" +
+                    "\n/hellothere: easter egg");
             sendMessage(answer);
 
         } else if (command.equals("stop")) {
@@ -677,6 +682,8 @@ public class Telegrambot extends TelegramLongPollingBot {
                 }
             }
 
+            message.setText("That's all we have for now!");
+            sendMessage(message);
             //TODO: get a diagnosis.
         }
     }
