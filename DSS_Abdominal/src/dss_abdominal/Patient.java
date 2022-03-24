@@ -48,9 +48,9 @@ public class Patient {
     private Float exhaustion;
     private Float weightLoss;
     private Float cramps;
-    private boolean constipation;
+    private Boolean constipation;
     private Float pee;
-    private boolean bulks;
+    private Boolean bulks;
     private Float fever;
     private Float perianalDiscom;
     private Boolean ulcers;
