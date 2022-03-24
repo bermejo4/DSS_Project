@@ -59,6 +59,8 @@ public class Patient {
     private Float fatigue;
     private Float poo;
     private Float dermatitis;
+    
+    ArrayList<Object> diseaseArrayList = new ArrayList<Object>();
 
     public Patient() {
         p_IBS = 0;
@@ -205,6 +207,7 @@ public class Patient {
     public Boolean isGenetic() {
         return genetic;
     }
+    
 
     public void setGenetic(Boolean genetic) {
         this.genetic = genetic;
@@ -398,6 +401,12 @@ public class Patient {
         this.p_rectal_cancer = p_rectal_cancer;
     }
 
+    public ArrayList<Object> getDiseaseArrayList() {
+        return diseaseArrayList;
+    }
+    
+    
+
     @Override
     public String toString() {
         return "Prediction:"
@@ -414,7 +423,6 @@ public class Patient {
     }
 
     public ArrayList<Object> patientSynmptomsToArrayList() {
-        ArrayList<Object> diseaseArrayList = new ArrayList<Object>();
 
         diseaseArrayList.add(this.abdpain);
         diseaseArrayList.add(this.distention);

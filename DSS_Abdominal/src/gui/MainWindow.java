@@ -127,15 +127,15 @@ public class MainWindow implements Initializable {
         celiac_Disease.patientSynmptomsToArrayList();
         colorectal_cancer.patientSynmptomsToArrayList();
         
-        ibsPorcentage = patient.ComparationArrayListSymptoms(ibs.symptonsArrayList());
-        chronPorcentage = patient.ComparationArrayListSymptoms(chron.symptonsArrayList());
-        ulcerativeColitisPorcentage = patient.ComparationArrayListSymptoms(ulcerative_colitis.symptonsArrayList());
-        diverticulosisPorcentage = patient.ComparationArrayListSymptoms(diverticulosis.symptonsArrayList());
-        herniaPorcentage = patient.ComparationArrayListSymptoms(hernia.symptonsArrayList());
-        appendicitisPorcentage = patient.ComparationArrayListSymptoms(appendicitis.symptonsArrayList());
-        enterocolitisPorcentage=patient.ComparationArrayListSymptoms(enterocolitis.symptonsArrayList());
-        celiacPorcentage=patient.ComparationArrayListSymptoms(celiac_Disease.symptonsArrayList());
-        colorectalCancerPorcentage=patient.ComparationArrayListSymptoms(colorectal_cancer.symptonsArrayList());
+        ibsPorcentage = patient.ComparationArrayListSymptoms(ibs.getDiseaseArrayList());
+        chronPorcentage = patient.ComparationArrayListSymptoms(chron.getDiseaseArrayList());
+        ulcerativeColitisPorcentage = patient.ComparationArrayListSymptoms(ulcerative_colitis.getDiseaseArrayList());
+        diverticulosisPorcentage = patient.ComparationArrayListSymptoms(diverticulosis.getDiseaseArrayList());
+        herniaPorcentage = patient.ComparationArrayListSymptoms(hernia.getDiseaseArrayList());
+        appendicitisPorcentage = patient.ComparationArrayListSymptoms(appendicitis.getDiseaseArrayList());
+        enterocolitisPorcentage=patient.ComparationArrayListSymptoms(enterocolitis.getDiseaseArrayList());
+        celiacPorcentage=patient.ComparationArrayListSymptoms(celiac_Disease.getDiseaseArrayList());
+        colorectalCancerPorcentage=patient.ComparationArrayListSymptoms(colorectal_cancer.getDiseaseArrayList());
         
         
         
