@@ -103,24 +103,24 @@ public class Questions4 {
     public void initComponents(MainWindow main, Patient patient) {
         this.main = main;
         this.patient = patient;
-/*CHILLS & POO
-        if ( (int) (patient.get())==0 ) {
-            fever.selectToggle(fever_low);
-        } else if ((int) (patient.getFever())==1){
-            fever.selectToggle(fever_medium);
+
+        if ( (int) (patient.isChills())==0 ) {
+            chills.selectToggle(chill_none);
+        } else if ((int) (patient.isChills())==1){
+            chills.selectToggle(chill_sporadic);
         }
-        else if ((int) (patient.getFever())==2){
-            fever.selectToggle(fever_high);
+        else if ((int) (patient.isChills())==2){
+            chills.selectToggle(chill_frequent);
         } 
 
-        if ( (int) (patient.()) == 0 ){
-            discomfort.selectToggle(discomfort_none);
-        } else if ( (int) (patient.getPerianalDiscom()) == 1 ){
-            discomfort.selectToggle(discomfort_focalized);
-        } else if ( (int) (patient.getPerianalDiscom()) == 2 ){
-            discomfort.selectToggle(discomfort_extended);
+        if ( (int) (patient.isPoo()) == 0 ){
+            poo.selectToggle(poo_none);
+        } else if ( (int) (patient.isPoo()) == 1 ){
+            poo.selectToggle(poo_mild);
+        } else if ( (int) (patient.isPoo()) == 2 ){
+            poo.selectToggle(poo_disabling);
         }
-*/
+
         if ( (int) (patient.getFatigue()) == 0 ){
             fatigue.selectToggle(fatigue_none);
         } else if ( (int) (patient.getCramps()) == 1 ){
@@ -138,36 +138,49 @@ public class Questions4 {
         }
 
     }
-/*
-    @Override
+
+
     public void getQuestionValues() {
         Toggle chills_selected = chills.getSelectedToggle();
         Toggle poo_selected = poo.getSelectedToggle();
         Toggle fatigue_selected = fatigue.getSelectedToggle();
         Toggle vomiting_selected = vomiting.getSelectedToggle();
         
-        patient.setFever(fever_selected == fever_medium);
-        patient.setAnxiety( anxiety_selected == anxiety_depress_yes);
-        patient.setDiarrhea( diarrhea_selected == diarrhea_yes );
 
-        if ( nausea_selected == nausea_none ){
-            patient.setNausea(0);
-        } else if ( nausea_selected == nausea_sporadic ) {
-            patient.setNausea(1);
-        } else if ( nausea_selected == nausea_frequent ) {
-            patient.setNausea(2);
+        if ( chills_selected == chill_none ){
+            patient.setChills(0);
+        } else if ( chills_selected == chill_sporadic ) {
+            patient.setChills(1);
+        } else if ( chills_selected == chill_frequent ) {
+            patient.setChills(2);
+        }
+        
+        if ( poo_selected == poo_none ){
+            patient.setPoo(0);
+        } else if ( poo_selected == poo_mild ) {
+            patient.setPoo(1);
+        } else if ( poo_selected == poo_disabling ) {
+            patient.setPoo(2);
         }
 
-        if ( swelling_selected == abdominalSwelling_none ){
-            patient.setDistention(0);
-        } else if ( nausea_selected == abdominalSwelling_low ) {
-            patient.setDistention(1);
-        } else if ( nausea_selected == abdominalSwelling_high ) {
-            patient.setDistention(2);
+        if ( fatigue_selected == fatigue_none ){
+            patient.setFatigue(0);
+        } else if ( fatigue_selected == fatigue_sporadic ) {
+            patient.setFatigue(1);
+        } else if ( fatigue_selected == fatigue_frequent ) {
+            patient.setFatigue(2);
+        }
+        
+         if ( vomiting_selected == vomiting_none ){
+            patient.setVomiting(0);
+        } else if ( vomiting_selected == vomiting_sporadic ) {
+            patient.setVomiting(1);
+        } else if ( vomiting_selected == vomiting_frequent ) {
+            patient.setVomiting(2);
         }
 
     }
-*/
+
     @FXML
     public void checkRadialButtons(javafx.event.ActionEvent evnt){
         Toggle chills_selected = chills.getSelectedToggle();
