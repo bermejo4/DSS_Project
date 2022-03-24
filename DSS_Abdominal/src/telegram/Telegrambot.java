@@ -1,13 +1,10 @@
 package telegram;
 
 import dss_abdominal.Patient;
-import org.checkerframework.checker.units.qual.A;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendAnimation;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
-import org.telegram.telegrambots.meta.api.methods.send.SendVideo;
 import org.telegram.telegrambots.meta.api.objects.InputFile;
-import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
@@ -28,7 +25,7 @@ public class Telegrambot extends TelegramLongPollingBot {
 
     private boolean askingAge;
 
-    protected static final long TIMEOUT = 3600000; // in ms
+    protected static final long TIMEOUT = 600000; // in ms
 
     public Telegrambot( String token ){
         super();
@@ -314,14 +311,14 @@ public class Telegrambot extends TelegramLongPollingBot {
             sendMessage(message);
         } else if ( patient.isAnxiety() == null ){
             switch (answer) {
-                case "yes": patient.setAnxiety(true);
-                break;
-                case "y": patient.setAnxiety(true);
-                break;
-                case "no": patient.setAnxiety(false);
-                break;
-                case "n": patient.setAnxiety(false);
-                break;
+                case "yes":
+                case "y":
+                    patient.setAnxiety(true);
+                    break;
+                case "no":
+                case "n":
+                    patient.setAnxiety(false);
+                    break;
                 default : {
                     message.setText("Sorry, I couldn't understand you.\nHave you felt unusually anxious or depressed lately?(yes/no)");
                     sendMessage(message);
@@ -332,14 +329,14 @@ public class Telegrambot extends TelegramLongPollingBot {
             sendMessage(message);
         } else if ( patient.isGenetic() == null ){
             switch (answer) {
-                case "yes": patient.setGenetic(true);
-                break;
-                case "y": patient.setGenetic(true);
-                break;
-                case "no": patient.setGenetic(false);
-                break;
-                case "n": patient.setGenetic(false);
-                break;
+                case "yes":
+                case "y":
+                    patient.setGenetic(true);
+                    break;
+                case "no":
+                case "n":
+                    patient.setGenetic(false);
+                    break;
                 default : {
                     message.setText("Sorry, I couldn't understand you.\nDo you have any antecedents of intestinal diseases in your close family?(yes/no)");
                     sendMessage(message);
@@ -350,14 +347,14 @@ public class Telegrambot extends TelegramLongPollingBot {
             sendMessage(message);
         } else if ( patient.isTobacco() == null ){
             switch (answer) {
-                case "yes": patient.setTobacco(true);
-                break;
-                case "y": patient.setTobacco(true);
-                break;
-                case "no": patient.setTobacco(false);
-                break;
-                case "n": patient.setTobacco(false);
-                break;
+                case "yes":
+                case "y":
+                    patient.setTobacco(true);
+                    break;
+                case "no":
+                case "n":
+                    patient.setTobacco(false);
+                    break;
                 default : {
                     message.setText("Sorry, I couldn't understand you.\nDo you smoke?(yes/no)");
                     sendMessage(message);
@@ -368,14 +365,14 @@ public class Telegrambot extends TelegramLongPollingBot {
             sendMessage(message);
         } else if ( patient.isDiarrhea() == null ){
             switch (answer) {
-                case "yes": patient.setDiarrhea(true);
-                break;
-                case "y": patient.setDiarrhea(true);
-                break;
-                case "no": patient.setDiarrhea(false);
-                break;
-                case "n": patient.setDiarrhea(false);
-                break;
+                case "yes":
+                case "y":
+                    patient.setDiarrhea(true);
+                    break;
+                case "no":
+                case "n":
+                    patient.setDiarrhea(false);
+                    break;
                 default : {
                     message.setText("Sorry, I couldn't understand you.\nDo you suffer Diarrhea?(yes/no)");
                     sendMessage(message);
@@ -448,16 +445,17 @@ public class Telegrambot extends TelegramLongPollingBot {
             } //->
             message.setText("Have you been experiencing constipation?(yes/no)");
             sendMessage(message);
-        } else if ( patient.isConstipation()== null ){
+        } else if ( patient.isConstipation() == null ){
+            // For  some reason doesn't catch errors
             switch (answer) {
-               case "yes": patient.setConstipation(true);
-                break;
-                case "y": patient.setConstipation(true);
-                break;
-                case "no": patient.setConstipation(false);
-                break;
-                case "n": patient.setConstipation(false);
-                break;
+                case "yes":
+                case "y":
+                    patient.setConstipation(true);
+                    break;
+                case "no":
+                case "n":
+                    patient.setConstipation(false);
+                    break;
                 default : {
                     message.setText("Sorry, I couldn't understand you.\nDo you suffer Constipation?(yes/no)");
                     sendMessage(message);
@@ -484,13 +482,13 @@ public class Telegrambot extends TelegramLongPollingBot {
             sendMessage(message);   
         } else if ( patient.isBulks()== null ){
             switch (answer) {
-                 case "yes": patient.setBulks(true);
+                 case "yes":
+                case "y":
+                    patient.setBulks(true);
                 break;
-                case "y": patient.setBulks(true);
-                break;
-                case "no": patient.setBulks(false);
-                break;
-                case "n": patient.setBulks(false);
+                case "no":
+                case "n":
+                    patient.setBulks(false);
                 break;
                 default : {
                     message.setText("Sorry, I couldn't understand you.\nDo you have Bulk(s)?(yes/no)");
@@ -498,7 +496,7 @@ public class Telegrambot extends TelegramLongPollingBot {
                     return;
                 }
             }
-            message.setText("Have you been experiencing fever lately?\1.37.5 or lowerº\n2. Between 37.5 and 39º\n 3. Higher than 39º");
+            message.setText("Have you been experiencing fever lately?\n1. 37.5º or lower\n2. Between 37.5 and 39º\n3. Higher than 39º");
             sendMessage(message);
         } else if ( patient.getFever()== null ){
             switch (answer) {
@@ -509,7 +507,7 @@ public class Telegrambot extends TelegramLongPollingBot {
                 case "3" : patient.setFever(2);
                 break;
                 default : {
-                    message.setText("Sorry, I couldn't understand you.\nHave you been experiencing fever lately?\1.37.5 or lowerº\n2. Between 37.5 and 39º\n 3. Higher than 39º");
+                    message.setText("Sorry, I couldn't understand you.\nHave you been experiencing fever lately?\n1. 37.5º or lower\n2. Between 37.5 and 39º\n3. Higher than 39º");
                     sendMessage(message);
                     return;
                 }
@@ -525,30 +523,30 @@ public class Telegrambot extends TelegramLongPollingBot {
                 case "3" : patient.setPerianalDiscom(2);
                 break;
                 default : {
-                    message.setText("Sorry, I couldn't understand you.\nHave you experienced perianal discomfort?\1. No\n2. Mildly\n3. Absolutely");
+                    message.setText("Sorry, I couldn't understand you.\nHave you experienced perianal discomfort?\n1. No\n2. Mildly\n3. Absolutely");
                     sendMessage(message);
                     return;
                 }
             }
-            message.setText("Do you have ulcers?(yes/no");
+            message.setText("Do you have ulcers?(yes/no)");
             sendMessage(message);    
         }else if ( patient.isUlcers()== null ){
             switch (answer) {
-                case "yes": patient.setUlcers(true);
+                case "yes":
+                case "y":
+                    patient.setUlcers(true);
                 break;
-                case "y": patient.setUlcers(true);
-                break;
-                case "no": patient.setUlcers(false);
-                break;
-                case "n": patient.setUlcers(false);
+                case "no":
+                case "n":
+                    patient.setUlcers(false);
                 break;
                 default : {
-                    message.setText("Sorry, I couldn't understand you.\nDo you have Ulecers?(yes/no)");
+                    message.setText("Sorry, I couldn't understand you.\nDo you have Ulcers?(yes/no)");
                     sendMessage(message);
                     return;
                 }
             }
-             message.setText("Do you suffer from blood in your feces?\n1. No\n2. Mildly\n 3. Absolutely");
+             message.setText("Do you suffer from blood in your feces?\n1. No\n2. Mildly\n3. Absolutely");
             sendMessage(message); 
         }else if ( patient.isMelenas()== null ){
             switch (answer) {
@@ -559,12 +557,12 @@ public class Telegrambot extends TelegramLongPollingBot {
                 case "3" : patient.setMelenas(2F);
                 break;
                 default : {
-                    message.setText("Sorry, I couldn't understand you.\nDo you suffer from blood in your feces?\n1. No\n 2.Mildly\n3. Absolutely");
+                    message.setText("Sorry, I couldn't understand you.\nDo you suffer from blood in your feces?\n1. No\n2. Mildly\n3. Absolutely");
                     sendMessage(message);
                     return;
                 }
             }
-            message.setText("Have you experienced chills?\n1. No\n2. Sporadic\n 3. Frequent");
+            message.setText("Have you experienced chills?\n1. No\n2. Sporadic\n3. Frequent");
             sendMessage(message);       
         } else if ( patient.isChills()== null ){
             switch (answer) {
@@ -575,12 +573,12 @@ public class Telegrambot extends TelegramLongPollingBot {
                 case "3" : patient.setChills(2F);
                 break;
                 default : {
-                    message.setText("Sorry, I couldn't understand you.\nHave you experienced chills?\n1. No\n2. Sporadic\n 3. Frequent");
+                    message.setText("Sorry, I couldn't understand you.\nHave you experienced chills?\n1. No\n2. Sporadic\n3. Frequent");
                     sendMessage(message);
                     return;
                 }
             }
-             message.setText("Have you experienced constant fatigue?\n1. No\n2. Sporadic\n 3. Frequent");
+             message.setText("Have you experienced constant fatigue?\n1. No\n2. Sporadic\n3. Frequent");
             sendMessage(message); 
         } else if ( patient.getFatigue()== null ){
             switch (answer) {
@@ -591,12 +589,12 @@ public class Telegrambot extends TelegramLongPollingBot {
                 case "3" : patient.setFatigue(2);
                 break;
                 default : {
-                    message.setText("Sorry, I couldn't understand you.\nHave you experienced constant fatigue?\n1. No\n2. Sporadic\n 3. Frequent");
+                    message.setText("Sorry, I couldn't understand you.\nHave you experienced constant fatigue?\n1. No\n2. Sporadic\n3. Frequent");
                     sendMessage(message);
                     return;
                 }
             }
-             message.setText("Have you experienced a constant need to defecate?\n1. No\n2. Mildly\n 3. Absolutely");
+             message.setText("Have you experienced a constant need to defecate?\n1. No\n2. Mildly\n3. Absolutely");
             sendMessage(message);
         } else if ( patient.isPoo()== null ){
             switch (answer) {
@@ -607,12 +605,12 @@ public class Telegrambot extends TelegramLongPollingBot {
                 case "3" : patient.setPoo(2F);
                 break;
                 default : {
-                    message.setText("Sorry, I couldn't understand you.\nHave you experienced a constant need to defecate?\n1. No\n2. Mildly\n 3. Absolutely");
+                    message.setText("Sorry, I couldn't understand you.\nHave you experienced a constant need to defecate?\n1. No\n2. Mildly\n3. Absolutely");
                     sendMessage(message);
                     return;
                 }
             }
-             message.setText("Have you suffered from dermatitis lately?\n1. No\n2. Focalized\n 3. Extended");
+             message.setText("Have you suffered from dermatitis lately?\n1. No\n2. Focalized\n3. Extended");
             sendMessage(message); 
         } else if ( patient.isDermatitis()== null ){
             switch (answer) {
@@ -623,11 +621,13 @@ public class Telegrambot extends TelegramLongPollingBot {
                 case "3" : patient.setDermatitis(2F);
                 break;
                 default : {
-                    message.setText("Sorry, I couldn't understand you.\nHave you suffered from dermatitis lately?\n1. No\n2. Focalized\n 3. Extended");
+                    message.setText("Sorry, I couldn't understand you.\nHave you suffered from dermatitis lately?\n1. No\n2. Focalized\n3. Extended");
                     sendMessage(message);
                     return;
                 }
             }
+
+            //TODO: get a diagnosis.
         }
     }
 
