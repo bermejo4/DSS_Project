@@ -138,76 +138,91 @@ public class Questions3 {
             cramps.selectToggle(cramps_disabling);
         }
         
-        /*
 
-        if ( (int) patient.ge()== 0) {
+        if ( (int) patient.isMelenas()== 0) {
             melenas.selectToggle(melenas_none);
-        } else if ( (int) patient.getNausea() == 1) {
-            nausea_toggle.selectToggle(nausea_sporadic);
+        } else if ( (int) patient.isMelenas()== 1) {
+            melenas.selectToggle(melenas_few);
         } else if ( (int) patient.getNausea() == 2) {
-            nausea_toggle.selectToggle(nausea_frequent);
+            melenas.selectToggle(melenas_substantially);
         }
 
-        if ( (int) (patient.()) == 0 ){
-            discomfort.selectToggle(discomfort_none);
-        } else if ( (int) (patient.getPerianalDiscom()) == 1 ){
-            discomfort.selectToggle(discomfort_focalized);
-        } else if ( (int) (patient.getPerianalDiscom()) == 2 ){
-            discomfort.selectToggle(discomfort_extended);
+        if ( (int) (patient.isDermatitis()) == 0 ){
+            dermatitis.selectToggle(dermatitis_none);
+        } else if ( (int) (patient.isDermatitis()) == 1 ){
+            dermatitis.selectToggle(dermatitis_focalized);
+        } else if ( (int) (patient.isDermatitis()) == 2 ){
+            dermatitis.selectToggle(dermatitis_extended);
         }
-        if ( patient.isAnxiety() ) {
-            anxiety_toggle.selectToggle(anxiety_depress_yes);
-        } else {
-            anxiety_toggle.selectToggle(anxiety_depress_no);
-        }
-*/
-    }
-/*
-    @Override
-    public void getQuestionValues() {
-        Toggle fever_selected = fever.getSelectedToggle();
-        Toggle discomfort_selected = discomfort.getSelectedToggle();
-        Toggle cramps_selected = cramps.getSelectedToggle();
-        Toggle melenas_selected = melenas.getSelectedToggle();
-        Toggle dermatitis_selected = dermatitis.getSelectedToggle();
-
-        patient.setFever(fever_selected == fever_medium);
-        patient.setAnxiety( anxiety_selected == anxiety_depress_yes);
-        patient.setDiarrhea( diarrhea_selected == diarrhea_yes );
-
-        if ( nausea_selected == nausea_none ){
-            patient.setNausea(0);
-        } else if ( nausea_selected == nausea_sporadic ) {
-            patient.setNausea(1);
-        } else if ( nausea_selected == nausea_frequent ) {
-            patient.setNausea(2);
-        }
-
-        if ( swelling_selected == abdominalSwelling_none ){
-            patient.setDistention(0);
-        } else if ( nausea_selected == abdominalSwelling_low ) {
-            patient.setDistention(1);
-        } else if ( nausea_selected == abdominalSwelling_high ) {
-            patient.setDistention(2);
-        }
-
-    }
-*/
-    @FXML
-    public void checkRadialButtons(javafx.event.ActionEvent evnt){
-        Toggle fever_selected = fever.getSelectedToggle();
-        Toggle discomfort_selected = discomfort.getSelectedToggle();
-        Toggle cramps_selected = cramps.getSelectedToggle();
-        Toggle melenas_selected = melenas.getSelectedToggle();
-        Toggle dermatitis_selected = dermatitis.getSelectedToggle();
-
-        if ( fever_selected == null || discomfort_selected == null || cramps_selected == null || melenas_selected == null || dermatitis_selected ==null ) {
-            main.button_next.setDisable(true);
-        } else {
-            main.button_next.setDisable(false);
-        }
-
+        
     }
 
 
-}
+        public void getQuestionValues() {
+            Toggle fever_selected = fever.getSelectedToggle();
+            Toggle discomfort_selected = discomfort.getSelectedToggle();
+            Toggle cramps_selected = cramps.getSelectedToggle();
+            Toggle melenas_selected = melenas.getSelectedToggle();
+            Toggle dermatitis_selected = dermatitis.getSelectedToggle();
+
+            if ( fever_selected == fever_low ){
+                patient.setFever(0);
+            } else if ( fever_selected == fever_medium ) {
+                patient.setFever(1);
+            } else if ( fever_selected == fever_high ) {
+                patient.setFever(2);
+            }
+            
+               if ( discomfort_selected == discomfort_none ){
+                patient.setPerianalDiscom(0);
+            } else if ( discomfort_selected == discomfort_focalized ) {
+                patient.setPerianalDiscom(1);
+            } else if ( discomfort_selected == discomfort_extended ) {
+                patient.setPerianalDiscom(2);
+            }
+
+            if ( cramps_selected == cramps_none ){
+                patient.setCramps(0);
+            } else if ( cramps_selected == cramps_mild ) {
+                patient.setCramps(1);
+            } else if ( cramps_selected == cramps_disabling ) {
+                patient.setCramps(2);
+            }
+            
+                 if ( melenas_selected == melenas_none ){
+                patient.setMelenas(0);
+            } else if ( melenas_selected == melenas_few ) {
+                patient.setMelenas(1);
+            } else if ( melenas_selected == melenas_substantially ) {
+                patient.setMelenas(2);
+            }
+                 
+                if ( dermatitis_selected == dermatitis_none ){
+                patient.setDermatitis(0);
+            } else if ( dermatitis_selected == dermatitis_focalized ) {
+                patient.setDermatitis(1);
+            } else if ( dermatitis_selected == dermatitis_extended ) {
+                patient.setDermatitis(2);
+            }
+
+        }
+    
+        
+        @FXML
+        public void checkRadialButtons(javafx.event.ActionEvent evnt){
+            Toggle fever_selected = fever.getSelectedToggle();
+            Toggle discomfort_selected = discomfort.getSelectedToggle();
+            Toggle cramps_selected = cramps.getSelectedToggle();
+            Toggle melenas_selected = melenas.getSelectedToggle();
+            Toggle dermatitis_selected = dermatitis.getSelectedToggle();
+
+            if ( fever_selected == null || discomfort_selected == null || cramps_selected == null || melenas_selected == null || dermatitis_selected ==null ) {
+                main.button_next.setDisable(true);
+            } else {
+                main.button_next.setDisable(false);
+            }
+
+        }
+
+
+    }

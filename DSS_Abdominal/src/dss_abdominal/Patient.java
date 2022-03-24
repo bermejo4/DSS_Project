@@ -36,29 +36,29 @@ public class Patient {
     };
     private Gender gender;
     private AgeRange age;
-    private float abdpain;
-    private float distention;
-    private float nausea;
-    private float vomiting;
-    private boolean anxiety;
-    private boolean genetic;
-    private boolean tobacco;
-    private boolean diarrhea;
-    private float rectalHemo;
-    private float exhaustion;
-    private float weightLoss;
-    private float cramps;
+    private Float abdpain;
+    private Float distention;
+    private Float nausea;
+    private Float vomiting;
+    private Boolean anxiety;
+    private Boolean genetic;
+    private Boolean tobacco;
+    private Boolean diarrhea;
+    private Float rectalHemo;
+    private Float exhaustion;
+    private Float weightLoss;
+    private Float cramps;
     private boolean constipation;
-    private float pee;
+    private Float pee;
     private boolean bulks;
-    private float fever;
-    private float perianalDiscom;
-    private boolean ulcers;
-    private boolean melenas;
-    private boolean chills;
-    private float fatigue;
-    private boolean poo;
-    private boolean dermatitis;
+    private Float fever;
+    private Float perianalDiscom;
+    private Boolean ulcers;
+    private Float melenas;
+    private Float chills;
+    private Float fatigue;
+    private Float poo;
+    private Float dermatitis;
 
     public Patient() {
         p_IBS = 0;
@@ -89,7 +89,7 @@ public class Patient {
         this.age = age;
     }
 
-    public Patient(String diseaseName, Gender gender, AgeRange age, float abdpain, float distention, float nausea, float vomiting, boolean anxiety, boolean genetic, boolean tobacco, boolean diarrhea, float rectalHemo, float exhaustion, float weightLoss, float cramps, boolean constipation, float pee, boolean bulks, float fever, float perianalDiscom, boolean ulcers, boolean melenas, boolean chills, float fatigue, boolean poo, boolean dermatitis) {
+    public Patient(String diseaseName, Gender gender, AgeRange age, Float abdpain, Float distention, Float nausea, Float vomiting, Boolean anxiety, Boolean genetic, Boolean tobacco, Boolean diarrhea, Float rectalHemo, Float exhaustion, Float weightLoss, Float cramps, Boolean constipation, Float pee, Boolean bulks, Float fever, Float perianalDiscom, Boolean ulcers, Float melenas, Float chills, Float fatigue, Float poo, Float dermatitis) {
         this.diseaseName = diseaseName;
         this.gender = gender;
         this.age = age;
@@ -142,51 +142,51 @@ public class Patient {
         this.diseaseName = diseaseName;
     }
 
-    public float getAbdpain() {
+    public Float getAbdpain() {
         return abdpain;
     }
 
-    public float getDistention() {
+    public Float getDistention() {
         return distention;
     }
 
-    public float getVomiting() {
+    public Float getVomiting() {
         return vomiting;
     }
 
-    public float getRectalHemo() {
+    public Float getRectalHemo() {
         return rectalHemo;
     }
 
-    public float getExhaustion() {
+    public Float getExhaustion() {
         return exhaustion;
     }
 
-    public float getWeightLoss() {
+    public Float getWeightLoss() {
         return weightLoss;
     }
 
-    public float getCramps() {
+    public Float getCramps() {
         return cramps;
     }
 
-    public float getPee() {
+    public Float getPee() {
         return pee;
     }
 
-    public float getFever() {
+    public Float getFever() {
         return fever;
     }
 
-    public float getPerianalDiscom() {
+    public Float getPerianalDiscom() {
         return perianalDiscom;
     }
 
-    public float getFatigue() {
+    public Float getFatigue() {
         return fatigue;
     }
 
-    public float getNausea() {
+    public Float getNausea() {
         return nausea;
     }
 
@@ -194,51 +194,51 @@ public class Patient {
         this.nausea = nausea;
     }
 
-    public boolean isAnxiety() {
+    public Boolean isAnxiety() {
         return anxiety;
     }
 
-    public void setAnxiety(boolean anxiety) {
+    public void setAnxiety(Boolean anxiety) {
         this.anxiety = anxiety;
     }
 
-    public boolean isGenetic() {
+    public Boolean isGenetic() {
         return genetic;
     }
 
-    public void setGenetic(boolean genetic) {
+    public void setGenetic(Boolean genetic) {
         this.genetic = genetic;
     }
 
-    public boolean isTobacco() {
+    public Boolean isTobacco() {
         return tobacco;
     }
 
-    public void setTobacco(boolean tobacco) {
+    public void setTobacco(Boolean tobacco) {
         this.tobacco = tobacco;
     }
 
-    public boolean isDiarrhea() {
+    public Boolean isDiarrhea() {
         return diarrhea;
     }
 
-    public void setDiarrhea(boolean diarrhea) {
+    public void setDiarrhea(Boolean diarrhea) {
         this.diarrhea = diarrhea;
     }
 
-    public boolean isConstipation() {
+    public Boolean isConstipation() {
         return constipation;
     }
 
-    public void setConstipation(boolean constipation) {
+    public void setConstipation(Boolean constipation) {
         this.constipation = constipation;
     }
 
-    public boolean isBulks() {
+    public Boolean isBulks() {
         return bulks;
     }
 
-    public void setBulks(boolean bulks) {
+    public void setBulks(Boolean bulks) {
         this.bulks = bulks;
     }
 
@@ -286,115 +286,115 @@ public class Patient {
         this.fatigue = fatigue;
     }
 
-    public boolean isUlcers() {
+    public Boolean isUlcers() {
         return ulcers;
     }
 
-    public void setUlcers(boolean ulcers) {
+    public void setUlcers(Boolean ulcers) {
         this.ulcers = ulcers;
     }
 
-    public boolean isMelenas() {
+    public Float isMelenas() {
         return melenas;
     }
 
-    public void setMelenas(boolean melenas) {
+    public void setMelenas(Float melenas) {
         this.melenas = melenas;
     }
 
-    public boolean isChills() {
+    public Float isChills() {
         return chills;
     }
 
-    public void setChills(boolean chills) {
+    public void setChills(Float chills) {
         this.chills = chills;
     }
 
-    public boolean isPoo() {
+    public Float isPoo() {
         return poo;
     }
 
-    public void setPoo(boolean poo) {
+    public void setPoo(Float poo) {
         this.poo = poo;
     }
 
-    public boolean isDermatitis() {
+    public Float isDermatitis() {
         return dermatitis;
     }
 
-    public void setDermatitis(boolean dermatitis) {
+    public void setDermatitis(Float dermatitis) {
         this.dermatitis = dermatitis;
     }
 
-    public float getP_IBS() {
+    public Float getP_IBS() {
         return p_IBS;
     }
 
-    public void setP_IBS(float p_IBS) {
+    public void setP_IBS(Float p_IBS) {
         this.p_IBS = p_IBS;
     }
 
-    public float getP_chrons() {
+    public Float getP_chrons() {
         return p_chrons;
     }
 
-    public void setP_chrons(float p_chrons) {
+    public void setP_chrons(Float p_chrons) {
         this.p_chrons = p_chrons;
     }
 
-    public float getP_ulcerative() {
+    public Float getP_ulcerative() {
         return p_ulcerative;
     }
 
-    public void setP_ulcerative(float p_ulcerative) {
+    public void setP_ulcerative(Float p_ulcerative) {
         this.p_ulcerative = p_ulcerative;
     }
 
-    public float getP_diverticulosis() {
+    public Float getP_diverticulosis() {
         return p_diverticulosis;
     }
 
-    public void setP_diverticulosis(float p_diverticulosis) {
+    public void setP_diverticulosis(Float p_diverticulosis) {
         this.p_diverticulosis = p_diverticulosis;
     }
 
-    public float getP_hernia() {
+    public Float getP_hernia() {
         return p_hernia;
     }
 
-    public void setP_hernia(float p_hernia) {
+    public void setP_hernia(Float p_hernia) {
         this.p_hernia = p_hernia;
     }
 
-    public float getP_appendicitis() {
+    public Float getP_appendicitis() {
         return p_appendicitis;
     }
 
-    public void setP_appendicitis(float p_appendicitis) {
+    public void setP_appendicitis(Float p_appendicitis) {
         this.p_appendicitis = p_appendicitis;
     }
 
-    public float getP_enterocolitis() {
+    public Float getP_enterocolitis() {
         return p_enterocolitis;
     }
 
-    public void setP_enterocolitis(float p_enterocolitis) {
+    public void setP_enterocolitis(Float p_enterocolitis) {
         this.p_enterocolitis = p_enterocolitis;
     }
 
-    public float getP_coeliac() {
+    public Float getP_coeliac() {
         return p_coeliac;
     }
 
-    public void setP_coeliac(float p_coeliac) {
+    public void setP_coeliac(Float p_coeliac) {
         this.p_coeliac = p_coeliac;
     }
 
-    public float getP_rectal_cancer() {
+    public Float getP_rectal_cancer() {
         return p_rectal_cancer;
     }
 
-    public void setP_rectal_cancer(float p_rectal_cancer) {
+    public void setP_rectal_cancer(Float p_rectal_cancer) {
         this.p_rectal_cancer = p_rectal_cancer;
     }
 
