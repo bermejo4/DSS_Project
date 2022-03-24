@@ -34,6 +34,17 @@ public class MainWindow implements Initializable {
 
     private int page_num = 0;
     private final int MAX_PAGE = 4;
+    
+    float ibsPorcentage = -1;
+    float chronPorcentage = -1;
+    float ulcerativeColitisPorcentage=-1;
+    float diverticulosisPorcentage = -1;
+    float herniaPorcentage=-1;
+    float appendicitisPorcentage=-1;
+    float enterocolitisPorcentage=-1;
+    float celiacPorcentage=-1;
+    float colorectalCancerPorcentage=-1;
+    
 
     private QuestionPanel current_panel;
 
@@ -76,7 +87,14 @@ public class MainWindow implements Initializable {
                 button_prev.setDisable(true);
             }
         }
-        changeQuestionPanel();
+        if(page_num>0){
+            if(page_num<4){
+                changeQuestionPanel();
+            }else{
+                calculatePorcentageFromSymptoms();
+            }
+        }
+        
     }
 
     public void changeQuestionPanel() throws IOException {
@@ -96,5 +114,31 @@ public class MainWindow implements Initializable {
             main_window.setCenter(root);
 
         }
+    }
+    
+    public void calculatePorcentageFromSymptoms(){
+        ibs.patientSynmptomsToArrayList();
+        chron.patientSynmptomsToArrayList();
+        ulcerative_colitis.patientSynmptomsToArrayList();
+        diverticulosis.patientSynmptomsToArrayList();
+        hernia.patientSynmptomsToArrayList();
+        appendicitis.patientSynmptomsToArrayList();
+        enterocolitis.patientSynmptomsToArrayList();
+        celiac_Disease.patientSynmptomsToArrayList();
+        colorectal_cancer.patientSynmptomsToArrayList();
+        
+        ibsPorcentage = patient.ComparationArrayListSymptoms(ibs.symptonsArrayList());
+        chronPorcentage = patient.ComparationArrayListSymptoms(chron.symptonsArrayList());
+        ulcerativeColitisPorcentage = patient.ComparationArrayListSymptoms(ulcerative_colitis.symptonsArrayList());
+        diverticulosisPorcentage = patient.ComparationArrayListSymptoms(diverticulosis.symptonsArrayList());
+        herniaPorcentage = patient.ComparationArrayListSymptoms(hernia.symptonsArrayList());
+        appendicitisPorcentage = patient.ComparationArrayListSymptoms(appendicitis.symptonsArrayList());
+        enterocolitisPorcentage=patient.ComparationArrayListSymptoms(enterocolitis.symptonsArrayList());
+        celiacPorcentage=patient.ComparationArrayListSymptoms(celiac_Disease.symptonsArrayList());
+        colorectalCancerPorcentage=patient.ComparationArrayListSymptoms(colorectal_cancer.symptonsArrayList());
+        
+        
+        
+        
     }
 }
