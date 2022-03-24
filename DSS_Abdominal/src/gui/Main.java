@@ -9,10 +9,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-/**
- *
- * @author AdriCortellucci
- */
 public class Main extends Application {
 
     private Stage window;

@@ -149,4 +149,7 @@ public class MainWindow implements Initializable {
         colorectalCancerPorcentage=patient.ComparationArrayListSymptoms(colorectal_cancer.getDiseaseArrayList());
         
     }
+    public void getPercentage(){
+        
+    }
 }

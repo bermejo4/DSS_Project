@@ -12,30 +12,24 @@ import javafx.fxml.Initializable;
 import javafx.scene.chart.*;
 import javafx.stage.Stage;
 import gui.MainWindow;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+
+
+
+
 
 /**
  *
  * @author marin
  */
-public class GraphicResult implements Initializable {
+public class GraphicResult {
 
-    private BarChart barChart;
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        XYChart.Series series1 = new XYChart.Series();
-        series1.setName("Diseases");
-        series1.getData().add(new XYChart(x:"Chron's disease",y: MainWindow.));
-        
-        CategoryAxis xAxis=new CategoryAxis(); //We use this class of category because each disease is a category
-        //xAxis.setLabel("Diseases");
+    private BarChartSample barChart;
     
-        NumberAxis yAxis = new NumberAxis();
-        //yAxis.setLabel("Approximation percentage");
-        //BarChart 11 = new BarChart(xAxis,yAxis);
+ 
 
-        
-        
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }
