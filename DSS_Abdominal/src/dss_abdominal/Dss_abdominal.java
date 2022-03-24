@@ -49,26 +49,26 @@ public class Dss_abdominal {
         
         //ATENCIOOOOOOON!!!!!!
 
-        //Estos argumentos que he metido abajo son falsísimos, no fiarse, son para probar la función de comparación de patient.
-        Patient ibs = new Patient("Irritable Bowel Syndrom",Patient.Gender.FEMALE,Patient.AgeRange.YOUNG,0f,0f,0f,1f,true,false,false,true,0f,2f,1f,1f,true,2f,false,2f,0f,false,0f,0f,0f,0f,0f);
+        //float abdpain, float distention, float nausea, float vomiting, boolean anxiety, boolean genetic, boolean tobacco, boolean diarrhea, float rectalHemo, float exhaustion,
+        //float weightLoss, float cramps, boolean constipation, float pee, boolean bulks, float fever, float perianalDiscom, boolean ulcers, boolean melenas, boolean chills, float fatigue, boolean poo, boolean dermatitis
+        Patient ibs = new Patient("Irritable Bowel Syndrom",Patient.Gender.FEMALE,Patient.AgeRange.YOUNG,1f,1f,1f,1f,true,false,false,true,1f,0f,0f,0f,true,1f,false,0f,0f,false,0f,0f,0f,0f,0f);
         
-        Patient chron = new Patient("Chron",Patient.Gender.FEMALE,Patient.AgeRange.YOUNGADULT,1f,0f,0f,1f,true,true,false,true,0f,0f,1f,1f,true,1f,true,0f,0f,false,0f,0f,0f,0f,1f);
-        /////-------------------------------------------------------------------------------------
+        Patient chron = new Patient("Chron",Patient.Gender.FEMALE,Patient.AgeRange.YOUNGADULT,1f,2f,1f,1f,true,true,true,true,0f,1f,2f,0f,true,0f,false,1f,0f,false,1f,0f,0f,0f,0f);        
 
         
-        Patient ulcerative_colitis = new Patient("Ulcerative Colitis",Patient.Gender.MALE,Patient.AgeRange.YOUNGADULT,2,1,0,0,true,true,false,true,2,1,2,0,true,0,false,0,0,false,false,false,1,true,false);
+        Patient ulcerative_colitis = new Patient("Ulcerative Colitis",Patient.Gender.MALE,Patient.AgeRange.YOUNGADULT,2f,1f,0f,0f,true,true,false,true,2f,1f,2f,0f,true,0f,false,0f,0f,false,0f,0f,1f,1f,0f);
         
-        Patient diverticulosis = new Patient("Diverticulosis",Patient.Gender.FEMALE,Patient.AgeRange.ADULT,2,0,2,0,false,false,true,true,2,0,0,0,false,2,false,1,0,false,false,true,1,false,false);
+        Patient diverticulosis = new Patient("Diverticulosis",Patient.Gender.FEMALE,Patient.AgeRange.ADULT,2f,0f,2f,0f,false,false,true,true,2f,0f,0f,0f,false,2f,false,1f,0f,false,0f,1f,1f,0f,0f);
         
-        Patient hernia = new Patient("Inguinal or Abdominal Hernia",Patient.Gender.MALE,Patient.AgeRange.CHILD,2,0,2,2,false,false,false,false,2,0,0,0,true,0,true,2,0,false,false,false,0,false,false);
+        Patient hernia = new Patient("Inguinal or Abdominal Hernia",Patient.Gender.MALE,Patient.AgeRange.CHILD,2f,0f,2f,2f,false,false,false,false,2f,0f,0f,0f,true,0f,true,2f,0f,false,0f,0f,0f,0f,0f);
         
-        Patient appendicitis = new Patient("Appendicitis",Patient.Gender.MALE,Patient.AgeRange.YOUNGADULT,2,2,2,2,false,false,true,true,0,0,0,2,false,0,false,2,0,);
+        Patient appendicitis = new Patient("Appendicitis",Patient.Gender.MALE,Patient.AgeRange.YOUNGADULT,2f,2f,2f,2f,false,false,true,true,0f,0f,0f,2f,false,0f,false,2f,0f,false,0f,0f,0f,0f,0f);
         
-        Patient enterocolitis = new Patient("Infectious Enterocolitis",null,Patient.AgeRange.CHILD,1,1,0,0,false,false,false,true,1,2,0,false,0,false,false,true,true,true,false,false,false,false,false);
+        Patient enterocolitis = new Patient("Infectious Enterocolitis",null,Patient.AgeRange.CHILD,2f,0f,1f,1f,false,false,false,true,2f,1f,0f,0f,false,0f,false,1f,2f,true,0f,0f,0f,0f,0f);
         
-        Patient celiac_Disease = new Patient("Celiac Disease",Patient.Gender.FEMALE,Patient.AgeRange.ADULT,1,2,1,0,true,true,false,true,0,1,0,false,0,false,false,false,false,false,false,false,false,false,true);
+        Patient celiac_Disease = new Patient("Celiac Disease",Patient.Gender.FEMALE,Patient.AgeRange.ADULT,1f,2f,1f,1f,true,true,false,true,0f,1f,0f,0f,true,0f,false,0f,0f,false,0f,0f,0f,0f,0f);
         
-        Patient colorectal_cancer = new Patient("Colorectal Cancer",Patient.Gender.MALE,Patient.AgeRange.ADULT,2,1,1,0,true,true,true,true,1,2,2,false,0,false,false,false,false,false,false,false,false,false,false);
+        Patient colorectal_cancer = new Patient("Colorectal Cancer",Patient.Gender.MALE,Patient.AgeRange.ADULT,2f,1f,2f,2f,true,true,true,false,2f,2f,2f,0f,true,0f,false,0f,0f,false,0f,0f,0f,0f,0f);
         
         //Código molón para probar mis funciones, salu2 Bermejo:
         
