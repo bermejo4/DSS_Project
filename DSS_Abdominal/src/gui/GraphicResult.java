@@ -5,10 +5,17 @@
  */
 package gui;
 
+import javafx.scene.chart.*;
+
 /**
  *
  * @author marin
  */
 public class GraphicResult {
     
+    CategoryAxis xAxis=new CategoryAxis(); //We use this class of category because each disease is a category
+    //xAxis.setLabel("Diseases");
+    
+    NumberAxis yAxis = new NumberAxis();
+    //yAxis.setLabel("Approximation percentage");
 }

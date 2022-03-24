@@ -63,6 +63,22 @@
     -fx-border-radius: 0;
     -fx-border-style:0;
 }
+.bar-chart {
+    -fx-bar-gap: 6;
+    -fx-category-gap: 10;
+}
+
+.chart-bar.default-color0 {
+    -fx-bar-fill: blue;
+}
+
+.chart-bar.default-color1 {
+    -fx-bar-fill: green;
+}
+
+.chart-bar.default-color2 {
+    -fx-bar-fill: red;
+}
 
 
 
