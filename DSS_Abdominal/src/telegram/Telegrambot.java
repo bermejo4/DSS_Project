@@ -88,7 +88,10 @@ public class Telegrambot extends TelegramLongPollingBot {
     }
 
     private void processMessage(Update update){
-
+        // We update the last time we saw a client.
+        String chatId = update.getMessage().getChatId().toString();
+        int pos = sessions.indexOf(chatId);
+        times.set(pos, System.currentTimeMillis());
 
         String message_received = update.getMessage().getText();
         if ( message_received.startsWith("/")){
