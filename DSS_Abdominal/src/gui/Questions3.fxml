@@ -97,7 +97,7 @@
          <children>
             <RadioButton fx:id="melenas_none" mnemonicParsing="false" onAction="#checkRadialButtons" text="None" GridPane.rowIndex="1" />
             <RadioButton fx:id="melenas_few" mnemonicParsing="false" onAction="#checkRadialButtons" text="few" GridPane.rowIndex="2" />
-            <RadioButton fx:id="fever_medium" mnemonicParsing="false" onAction="#checkRadialButtons" text="Substancially" GridPane.rowIndex="3" />
+            <RadioButton fx:id="melenas_substantially" mnemonicParsing="false" onAction="#checkRadialButtons" text="Substancially" GridPane.rowIndex="3" />
          </children>
       </GridPane>
       <GridPane GridPane.columnIndex="1" GridPane.rowIndex="4">
