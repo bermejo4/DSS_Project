@@ -13,7 +13,7 @@ public class TelegramMain {
     public static void main(String[] args) {
         String token;
         try {
-            File f = new File("DSS_Abdominal/src/telegram/token.txt");
+            File f = new File("src/telegram/token.txt");
             System.out.println(f.getAbsolutePath());
             Scanner scanner = new Scanner(f);
             token = scanner.nextLine();
