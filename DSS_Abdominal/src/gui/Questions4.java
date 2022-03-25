@@ -14,6 +14,7 @@ import java.util.ResourceBundle;
 import static javafx.application.ConditionalFeature.FXML;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.RadioButton;
@@ -22,7 +23,7 @@ import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 
 
-public class Questions4 {
+public class Questions4 implements Initializable, QuestionPanel {
      
       @FXML
     private RadioButton chill_none;
