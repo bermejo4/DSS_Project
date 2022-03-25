@@ -36,11 +36,19 @@ public class Questions0 implements Initializable, QuestionPanel {
 
     @FXML
     private  RadioButton age_child;
+    
+    @FXML
+    private  RadioButton genetic_yes;
+    
+    @FXML
+    private  RadioButton genetic_no;
+    
 
 
     private ToggleGroup smoker;
     private ToggleGroup gender;
     private ToggleGroup age;
+    private ToggleGroup genetic;
 
     private MainWindow main;
     private Patient patient;
@@ -60,6 +68,8 @@ public class Questions0 implements Initializable, QuestionPanel {
         this.age_young_adult.setToggleGroup(age);
         this.age_young.setToggleGroup(age);
         this.age_child.setToggleGroup(age);
+        this.genetic_yes.setToggleGroup(genetic);
+        this.genetic_no.setToggleGroup(genetic);
 
 
 
@@ -107,6 +117,13 @@ public class Questions0 implements Initializable, QuestionPanel {
                 smoker.selectToggle(smoker_yes);
             } else {
                 smoker.selectToggle(smoker_no);
+            }
+        }
+        if ( patient.isGenetic() != null) {
+            if (patient.isGenetic()) {
+                genetic.selectToggle(genetic_yes);
+            } else {
+                genetic.selectToggle(genetic_no);
             }
         }
 
