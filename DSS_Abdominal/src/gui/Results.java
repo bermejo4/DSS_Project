@@ -5,6 +5,7 @@
  */
 package gui;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -44,13 +45,22 @@ public class Results implements Initializable {
             stage.show();
         }
     }
+     public void gobackques4(javafx.event.ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+
+        loader.setLocation(getClass().getResource("Questions4.fxml"));
+        Parent parent = loader.load();
+
+        Scene scene = new Scene(parent);
+
+    }
         
      
     
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
     
 }

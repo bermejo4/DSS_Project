@@ -43,12 +43,19 @@ public class Questions0 implements Initializable, QuestionPanel {
     @FXML
     private  RadioButton genetic_no;
     
+    @FXML
+    private  RadioButton ulcers_yes;
+    
+    @FXML
+    private  RadioButton ulcers_no;
+    
 
 
     private ToggleGroup smoker;
     private ToggleGroup gender;
     private ToggleGroup age;
     private ToggleGroup genetic;
+    private ToggleGroup ulcers;
 
     private MainWindow main;
     private Patient patient;
@@ -59,6 +66,8 @@ public class Questions0 implements Initializable, QuestionPanel {
         smoker = new ToggleGroup();
         gender = new ToggleGroup();
         age = new ToggleGroup();
+        genetic = new ToggleGroup();
+        ulcers= new ToggleGroup();
 
         this.smoker_yes.setToggleGroup(smoker);
         this.smoker_no.setToggleGroup(smoker);
@@ -70,7 +79,8 @@ public class Questions0 implements Initializable, QuestionPanel {
         this.age_child.setToggleGroup(age);
         this.genetic_yes.setToggleGroup(genetic);
         this.genetic_no.setToggleGroup(genetic);
-
+        this.ulcers_yes.setToggleGroup(ulcers);
+        this.ulcers_no.setToggleGroup(ulcers);
 
 
     }
@@ -126,6 +136,13 @@ public class Questions0 implements Initializable, QuestionPanel {
                 genetic.selectToggle(genetic_no);
             }
         }
+        if ( patient.isUlcers() != null) {
+            if (patient.isGenetic()) {
+                ulcers.selectToggle(ulcers_yes);
+            } else {
+                ulcers.selectToggle(ulcers_no);
+            }
+        }
 
         try {
             checkRadialButtons(null);
@@ -144,6 +161,14 @@ public class Questions0 implements Initializable, QuestionPanel {
             smokes = true;
         } else if (smokes_selected == smoker_no){
             smokes = false;
+        }
+        
+        Toggle genetic_selected = genetic.getSelectedToggle();
+        boolean genetics = false;
+        if (genetic_selected == genetic_yes){
+            genetics = true;
+        } else if (genetic_selected  == genetic_no){
+            genetics = false;
         }
 
         Toggle gender_toggle = gender.getSelectedToggle();
@@ -165,10 +190,22 @@ public class Questions0 implements Initializable, QuestionPanel {
         } else if ( age_toggle == age_child){
             age = Patient.AgeRange.CHILD;
         }
+        
+         Toggle ulcer_selected = ulcers.getSelectedToggle();
+        boolean ulcer = false;
+        if (ulcer_selected == ulcers_yes){
+            ulcer = true;
+        } else if (ulcer_selected  == ulcers_no){
+            ulcer = false;
+        }
+        
+        
 
         patient.setAge(age);
         patient.setGender(gender);
         patient.setTobacco(smokes);
+        patient.setGenetic(genetics);
+        patient.setUlcers(ulcer);
 
 
     }

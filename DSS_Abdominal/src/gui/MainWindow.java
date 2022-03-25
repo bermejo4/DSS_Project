@@ -100,7 +100,7 @@ public class MainWindow implements Initializable {
 
         System.out.println("Moving to page: "+page_num);
         if(page_num>0){
-            if(page_num<4){
+            if(page_num<=4){
                 changeQuestionPanel();
             }else{
                 calculatePorcentageFromSymptoms();

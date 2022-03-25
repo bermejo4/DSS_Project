@@ -170,25 +170,25 @@ public class Questions4 implements Initializable, QuestionPanel {
         }
 
         if ( fatigue_selected == fatigue_none ){
-            patient.setFatigue(0);
+            patient.setFatigue(0F);
         } else if ( fatigue_selected == fatigue_sporadic ) {
-            patient.setFatigue(1);
+            patient.setFatigue(1F);
         } else if ( fatigue_selected == fatigue_frequent ) {
-            patient.setFatigue(2);
+            patient.setFatigue(2F);
         }
         
          if ( vomiting_selected == vomiting_none ){
-            patient.setVomiting(0);
+            patient.setVomiting(0F);
         } else if ( vomiting_selected == vomiting_sporadic ) {
-            patient.setVomiting(1);
+            patient.setVomiting(1F);
         } else if ( vomiting_selected == vomiting_frequent ) {
-            patient.setVomiting(2);
+            patient.setVomiting(2F);
         }
 
     }
 
 
-    public void gobackques1(javafx.event.ActionEvent event) throws IOException {
+    public void gobackques3(javafx.event.ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
 
         loader.setLocation(getClass().getResource("Questions3.fxml"));

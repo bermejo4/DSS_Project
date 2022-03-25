@@ -53,6 +53,15 @@ public class Questions2 implements Initializable, QuestionPanel {
 
     @FXML
     private RadioButton exhaustion_disabling;
+    
+     @FXML
+    private RadioButton abdominal_none;
+
+    @FXML
+    private RadioButton abdominal_mild;
+
+    @FXML
+    private RadioButton abdominal_severe;
 
     @FXML
     private RadioButton weightloss_no;
@@ -69,6 +78,7 @@ public class Questions2 implements Initializable, QuestionPanel {
     private ToggleGroup pee_toggle;
     private ToggleGroup exhaustion_toggle;
     private ToggleGroup weightloss_toggle;
+    private ToggleGroup abdominal_toggle;
 
     private MainWindow main;
     private Patient patient;
@@ -80,6 +90,7 @@ public class Questions2 implements Initializable, QuestionPanel {
         pee_toggle = new ToggleGroup();
         exhaustion_toggle = new ToggleGroup();
         weightloss_toggle = new ToggleGroup();
+        abdominal_toggle = new ToggleGroup();
 
         this.constipation_yes.setToggleGroup(constipation_toggle);
         this.constipation_no.setToggleGroup(constipation_toggle);
@@ -95,6 +106,10 @@ public class Questions2 implements Initializable, QuestionPanel {
         this.weightloss_no.setToggleGroup(weightloss_toggle);
         this.weightloss_zerotofive.setToggleGroup(weightloss_toggle);
         this.weightloss_morefive.setToggleGroup(weightloss_toggle);
+        
+        this.abdominal_none.setToggleGroup(abdominal_toggle);
+        this.abdominal_mild.setToggleGroup(abdominal_toggle);
+        this.abdominal_severe.setToggleGroup(abdominal_toggle);
 
     }
 
@@ -153,6 +168,17 @@ public class Questions2 implements Initializable, QuestionPanel {
                 weightloss_toggle.selectToggle(weightloss_morefive);
             }
         }
+        if (patient.getAbdpain()!=null) {
+            int abd = patient.getAbdpain().intValue();
+            if ( abd == 0 ) {
+                exhaustion_toggle.selectToggle(abdominal_none);
+            } else if ( abd == 1 ) {
+                exhaustion_toggle.selectToggle(abdominal_mild);
+            } else if ( abd == 2 ){
+                exhaustion_toggle.selectToggle(abdominal_severe);
+            }
+        }
+        
         try {
             checkRadialButtons(null);
         } catch ( Exception e ){
@@ -168,27 +194,34 @@ public class Questions2 implements Initializable, QuestionPanel {
         patient.setConstipation( constipation_toggle.getSelectedToggle() == constipation_yes );
 
         if ( pee_toggle.getSelectedToggle() == increasedpee_none ) {
-            patient.setPee(0);
+            patient.setPee(0F);
         } else if ( pee_toggle.getSelectedToggle() == increasedpee_sporadic ) {
-            patient.setPee(1);
+            patient.setPee(1F);
         } else if ( pee_toggle.getSelectedToggle() == increasedpee_none ) {
-            patient.setPee(2);
+            patient.setPee(2F);
         }
 
         if ( exhaustion_toggle.getSelectedToggle() == exhaustion_none ) {
-            patient.setExhaustion(0);
+            patient.setExhaustion(0F);
         } else if ( exhaustion_toggle.getSelectedToggle() == exhaustion_mild ) {
-            patient.setExhaustion(1);
+            patient.setExhaustion(1F);
         } else if ( exhaustion_toggle.getSelectedToggle() == exhaustion_disabling ) {
-            patient.setExhaustion(2);
+            patient.setExhaustion(2F);
         }
 
         if ( weightloss_toggle.getSelectedToggle() == weightloss_no ) {
-            patient.setWeightLoss(0);
+            patient.setWeightLoss(0F);
         } else if ( weightloss_toggle.getSelectedToggle() == weightloss_zerotofive ) {
-            patient.setWeightLoss(1);
+            patient.setWeightLoss(1f);
         } else if ( weightloss_toggle.getSelectedToggle() == weightloss_morefive ) {
-            patient.setWeightLoss(2);
+            patient.setWeightLoss(2F);
+        }
+        if ( abdominal_toggle.getSelectedToggle() == abdominal_none ) {
+            patient.setAbdpain(0F);
+        } else if (abdominal_toggle.getSelectedToggle() == abdominal_mild ) {
+            patient.setAbdpain(1F);
+        } else if ( abdominal_toggle.getSelectedToggle() == abdominal_severe ) {
+            patient.setAbdpain(2F);
         }
 
     }

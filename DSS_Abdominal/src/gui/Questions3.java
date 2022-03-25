@@ -180,27 +180,27 @@ public class Questions3 implements Initializable, QuestionPanel {
             Toggle dermatitis_selected = dermatitis.getSelectedToggle();
 
             if ( fever_selected == fever_low ){
-                patient.setFever(0);
+                patient.setFever(0F);
             } else if ( fever_selected == fever_medium ) {
-                patient.setFever(1);
+                patient.setFever(1F);
             } else if ( fever_selected == fever_high ) {
-                patient.setFever(2);
+                patient.setFever(2F);
             }
             
                if ( discomfort_selected == discomfort_none ){
-                patient.setPerianalDiscom(0);
+                patient.setPerianalDiscom(0F);
             } else if ( discomfort_selected == discomfort_focalized ) {
-                patient.setPerianalDiscom(1);
+                patient.setPerianalDiscom(1F);
             } else if ( discomfort_selected == discomfort_extended ) {
-                patient.setPerianalDiscom(2);
+                patient.setPerianalDiscom(2F);
             }
 
             if ( cramps_selected == cramps_none ){
-                patient.setCramps(0);
+                patient.setCramps(0F);
             } else if ( cramps_selected == cramps_mild ) {
-                patient.setCramps(1);
+                patient.setCramps(1F);
             } else if ( cramps_selected == cramps_disabling ) {
-                patient.setCramps(2);
+                patient.setCramps(2F);
             }
             
                  if ( melenas_selected == melenas_none ){

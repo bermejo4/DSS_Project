@@ -187,11 +187,14 @@ public class Questions1 implements Initializable, QuestionPanel {
         }
 
         if (swelling_selected == abdominalSwelling_none) {
-            patient.setDistention(0);
+            patient.setDistention(0F);
+            System.out.println("hola");
         } else if (nausea_selected == abdominalSwelling_low) {
-            patient.setDistention(1);
+            patient.setDistention(1F);
+            System.out.println("hola");
         } else if (nausea_selected == abdominalSwelling_high) {
-            patient.setDistention(2);
+            patient.setDistention(2F);
+            System.out.println("hola");
         }
 
     }
