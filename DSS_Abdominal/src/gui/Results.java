@@ -63,29 +63,16 @@ public class Results implements Initializable {
     public void button_pressed2(ActionEvent event) throws Exception {
         if ( event.getSource() == button_view ) {
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("BarChartSample.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("GraphicStadistics.fxml"));
             Parent root = loader.load();
             BarChartSample chartSample = loader.getController();
             chartSample.initComponents(this);
 
+            Stage stage = new Stage();
             Scene scene = new Scene(root);
-
-            //stage.setScene(scene);
-            //stage.show();
-            System.out.println("Button pressed");
+            chartSample.start(stage);
         }
     }
-     public void gobackques4(javafx.event.ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-
-        loader.setLocation(getClass().getResource("Questions4.fxml"));
-        Parent parent = loader.load();
-
-        Scene scene = new Scene(parent);
-
-    }
-        
-     
     
     
     @Override
