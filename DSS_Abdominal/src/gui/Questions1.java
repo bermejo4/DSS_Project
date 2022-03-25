@@ -22,9 +22,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 
-/**
- * @author marin
- */
+
 public class Questions1 implements Initializable, QuestionPanel {
 
     @FXML
