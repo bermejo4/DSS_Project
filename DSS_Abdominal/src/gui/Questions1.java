@@ -186,15 +186,13 @@ public class Questions1 implements Initializable, QuestionPanel {
             patient.setNausea(2);
         }
 
+        //System.out.println("Swelling selected: "+ swelling_selected);
         if (swelling_selected == abdominalSwelling_none) {
             patient.setDistention(0F);
-            System.out.println("hola");
         } else if (nausea_selected == abdominalSwelling_low) {
             patient.setDistention(1F);
-            System.out.println("hola");
         } else if (nausea_selected == abdominalSwelling_high) {
             patient.setDistention(2F);
-            System.out.println("hola");
         }
 
     }
@@ -205,8 +203,9 @@ public class Questions1 implements Initializable, QuestionPanel {
         Toggle diarrhea_selected = diarrhea_toggle.getSelectedToggle();
         Toggle nausea_selected = nausea_toggle.getSelectedToggle();
         Toggle anxiety_selected = anxiety_toggle.getSelectedToggle();
+        Toggle swelling_selected = swelling_toggle.getSelectedToggle();
 
-        if (lump_selected == null || diarrhea_selected == null || nausea_selected == null || anxiety_selected == null) {
+        if (lump_selected == null || diarrhea_selected == null || nausea_selected == null || anxiety_selected == null || swelling_selected == null) {
             main.button_next.setDisable(true);
         } else {
             main.button_next.setDisable(false);
