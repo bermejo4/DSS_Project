@@ -47,9 +47,9 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <RadioButton mnemonicParsing="false" text="&lt;37.5º" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
-            <RadioButton mnemonicParsing="false" text="37.5-39º" GridPane.rowIndex="2" />
-            <RadioButton mnemonicParsing="false" text="&gt;39º" GridPane.rowIndex="3" />
+            <RadioButton fx:id="fewer_low" mnemonicParsing="false" text="&lt;37.5º" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
+            <RadioButton fx:id="fewer_medium" mnemonicParsing="false" text="37.5-39º" GridPane.rowIndex="2" />
+            <RadioButton fx:id="fever_high" mnemonicParsing="false" text="&gt;39º" GridPane.rowIndex="3" />
          </children>
       </GridPane>
       <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -64,9 +64,9 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <RadioButton mnemonicParsing="false" text="None" GridPane.rowIndex="1" />
-            <RadioButton mnemonicParsing="false" text="Focalized" GridPane.rowIndex="2" />
-            <RadioButton mnemonicParsing="false" text="Extended" GridPane.rowIndex="3" />
+            <RadioButton fx:id="discomfort_none" mnemonicParsing="false" text="None" GridPane.rowIndex="1" />
+            <RadioButton fx:id="discomfort_focalized" mnemonicParsing="false" text="Focalized" GridPane.rowIndex="2" />
+            <RadioButton fx:id="discomfort_extended" mnemonicParsing="false" text="Extended" GridPane.rowIndex="3" />
          </children>
       </GridPane>
       <GridPane GridPane.columnIndex="1" GridPane.rowIndex="2">
@@ -81,9 +81,9 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <RadioButton mnemonicParsing="false" text="Disabling" GridPane.rowIndex="3" />
-            <RadioButton mnemonicParsing="false" text="None" GridPane.rowIndex="1" />
-            <RadioButton mnemonicParsing="false" text="Mild" GridPane.rowIndex="2" />
+            <RadioButton fx:id="cramps_disabling" mnemonicParsing="false" text="Disabling" GridPane.rowIndex="3" />
+            <RadioButton fx:id="cramps_none" mnemonicParsing="false" text="None" GridPane.rowIndex="1" />
+            <RadioButton fx:id="cramps_mild" mnemonicParsing="false" text="Mild" GridPane.rowIndex="2" />
          </children>
       </GridPane>
       <GridPane GridPane.columnIndex="1" GridPane.rowIndex="3">
@@ -98,9 +98,9 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <RadioButton mnemonicParsing="false" text="None" GridPane.rowIndex="1" />
-            <RadioButton mnemonicParsing="false" text="few" GridPane.rowIndex="2" />
-            <RadioButton mnemonicParsing="false" text="Substancially" GridPane.rowIndex="3" />
+            <RadioButton fx:id="melenas_none" mnemonicParsing="false" text="None" GridPane.rowIndex="1" />
+            <RadioButton fx:id="melenas_few" mnemonicParsing="false" text="few" GridPane.rowIndex="2" />
+            <RadioButton fx:id="fever_medium" mnemonicParsing="false" text="Substancially" GridPane.rowIndex="3" />
          </children>
       </GridPane>
       <GridPane GridPane.columnIndex="1" GridPane.rowIndex="4">
@@ -115,9 +115,9 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <RadioButton mnemonicParsing="false" text="None" GridPane.rowIndex="1" />
-            <RadioButton mnemonicParsing="false" text="Extended" GridPane.rowIndex="2" />
-            <RadioButton mnemonicParsing="false" text="Focalized" GridPane.rowIndex="3" />
+            <RadioButton fx:id="dermatitis_none" mnemonicParsing="false" text="None" GridPane.rowIndex="1" />
+            <RadioButton fx:id="dermatitis_extended" mnemonicParsing="false" text="Extended" GridPane.rowIndex="2" />
+            <RadioButton fx:id="dermatitis_focalized" mnemonicParsing="false" text="Focalized" GridPane.rowIndex="3" />
          </children>
       </GridPane>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Has the patient experienced blood in their feces?" wrappingWidth="293.623046875" GridPane.rowIndex="3">
