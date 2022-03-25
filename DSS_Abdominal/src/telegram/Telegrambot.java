@@ -436,7 +436,7 @@ public class Telegrambot extends TelegramLongPollingBot {
                     return;
                 }
             }
-            message.setText("Have you suffered discomfort around the anus?\n1. None\n2. Focalized\n3. Extended");
+            message.setText("Have you bled from the anus?\n1. None\n2. Focalized\n3. Extended");
             sendMessage(message);
         } else if (patient.getRectalHemo() == null) {
             switch (answer) {
@@ -450,7 +450,7 @@ public class Telegrambot extends TelegramLongPollingBot {
                     patient.setRectalHemo(2);
                     break;
                 default: {
-                    message.setText("Sorry, I couldn't understand you.\nHave you suffered discomfort around the anus?\n1. None\n2. Focalized\n3. Extended");
+                    message.setText("Sorry, I couldn't understand you.\nHave you bled from the anus?\n1. None\n2. Focalized\n3. Extended");
                     sendMessage(message);
                     return;
                 }
