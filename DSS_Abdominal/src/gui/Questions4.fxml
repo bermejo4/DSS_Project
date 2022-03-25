@@ -7,12 +7,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="background22" stylesheets="@mainStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Questions4">
+<GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="background22" stylesheets="@mainStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Questions4">
    <columnConstraints>
       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
       <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
    </columnConstraints>
    <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
@@ -108,5 +109,27 @@
             <Font size="18.0" />
          </font>
       </Text>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Has the patient bled from the anus?" wrappingWidth="291.2314453125" GridPane.rowIndex="4">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <GridPane styleClass="background22" stylesheets="@mainStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="4">
+         <columnConstraints>
+            <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <RadioButton fx:id="rectHemo_none" mnemonicParsing="false" onAction="#checkRadialButtons" text="None" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
+            <RadioButton fx:id="rectHemo_med" mnemonicParsing="false" onAction="#checkRadialButtons" text="A bit" GridPane.rowIndex="2" />
+            <RadioButton fx:id="rectHemo_max" mnemonicParsing="false" onAction="#checkRadialButtons" text="A lot" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
    </children>
 </GridPane>

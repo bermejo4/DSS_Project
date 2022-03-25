@@ -53,8 +53,8 @@ public class Questions2 implements Initializable, QuestionPanel {
 
     @FXML
     private RadioButton exhaustion_disabling;
-    
-     @FXML
+
+    @FXML
     private RadioButton abdominal_none;
 
     @FXML
@@ -106,7 +106,7 @@ public class Questions2 implements Initializable, QuestionPanel {
         this.weightloss_no.setToggleGroup(weightloss_toggle);
         this.weightloss_zerotofive.setToggleGroup(weightloss_toggle);
         this.weightloss_morefive.setToggleGroup(weightloss_toggle);
-        
+
         this.abdominal_none.setToggleGroup(abdominal_toggle);
         this.abdominal_mild.setToggleGroup(abdominal_toggle);
         this.abdominal_severe.setToggleGroup(abdominal_toggle);
@@ -124,64 +124,62 @@ public class Questions2 implements Initializable, QuestionPanel {
     }
 
 
-    
-
-
     @Override
     public void initComponents(MainWindow mainWindow, Patient patient) {
         this.main = mainWindow;
         this.patient = patient;
-        if ( patient.isConstipation() != null ) {
+        if (patient.isConstipation() != null) {
             if (patient.isConstipation()) {
                 constipation_toggle.selectToggle(constipation_yes);
             } else {
                 constipation_toggle.selectToggle(constipation_no);
             }
         }
-        if (patient.getPee() !=null) {
+        if (patient.getPee() != null) {
             int pee = patient.getPee().intValue();
-            if ( pee == 0 ) {
+            if (pee == 0) {
                 pee_toggle.selectToggle(increasedpee_none);
-            } else if ( pee == 1 ) {
+            } else if (pee == 1) {
                 pee_toggle.selectToggle(increasedpee_sporadic);
-            } else if ( pee == 2 ){
+            } else if (pee == 2) {
                 pee_toggle.selectToggle(increasedpee_frequent);
             }
         }
-        if (patient.getExhaustion()!=null) {
+        if (patient.getExhaustion() != null) {
             int exhaustion = patient.getExhaustion().intValue();
-            if ( exhaustion == 0 ) {
+            if (exhaustion == 0) {
                 exhaustion_toggle.selectToggle(exhaustion_none);
-            } else if ( exhaustion == 1 ) {
+            } else if (exhaustion == 1) {
                 exhaustion_toggle.selectToggle(exhaustion_mild);
-            } else if ( exhaustion == 2 ){
+            } else if (exhaustion == 2) {
                 exhaustion_toggle.selectToggle(exhaustion_disabling);
             }
         }
-        if ( patient.getWeightLoss()!=null) {
-            int weightloss =  patient.getWeightLoss().intValue();
-            if ( weightloss == 0 ) {
+        if (patient.getWeightLoss() != null) {
+            int weightloss = patient.getWeightLoss().intValue();
+            if (weightloss == 0) {
                 weightloss_toggle.selectToggle(weightloss_no);
-            } else if ( weightloss == 1 ) {
+            } else if (weightloss == 1) {
                 weightloss_toggle.selectToggle(weightloss_zerotofive);
-            } else if ( weightloss == 2 ) {
+            } else if (weightloss == 2) {
                 weightloss_toggle.selectToggle(weightloss_morefive);
             }
         }
-        if (patient.getAbdpain()!=null) {
+        System.out.println("is abdpain different from null? " + (patient.getAbdpain() != null));
+        if (patient.getAbdpain() != null) {
             int abd = patient.getAbdpain().intValue();
-            if ( abd == 0 ) {
+            if (abd == 0) {
                 exhaustion_toggle.selectToggle(abdominal_none);
-            } else if ( abd == 1 ) {
+            } else if (abd == 1) {
                 exhaustion_toggle.selectToggle(abdominal_mild);
-            } else if ( abd == 2 ){
+            } else if (abd == 2) {
                 exhaustion_toggle.selectToggle(abdominal_severe);
             }
         }
-        
+
         try {
             checkRadialButtons(null);
-        } catch ( Exception e ){
+        } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Error checking if radials already have buttons.");
         }
@@ -191,50 +189,59 @@ public class Questions2 implements Initializable, QuestionPanel {
     @Override
     public void getQuestionValues() {
 
-        patient.setConstipation( constipation_toggle.getSelectedToggle() == constipation_yes );
+        if ( constipation_toggle.getSelectedToggle() != null ) patient.setConstipation(constipation_toggle.getSelectedToggle() == constipation_yes);
 
-        if ( pee_toggle.getSelectedToggle() == increasedpee_none ) {
-            patient.setPee(0F);
-        } else if ( pee_toggle.getSelectedToggle() == increasedpee_sporadic ) {
-            patient.setPee(1F);
-        } else if ( pee_toggle.getSelectedToggle() == increasedpee_none ) {
-            patient.setPee(2F);
-        }
-
-        if ( exhaustion_toggle.getSelectedToggle() == exhaustion_none ) {
-            patient.setExhaustion(0F);
-        } else if ( exhaustion_toggle.getSelectedToggle() == exhaustion_mild ) {
-            patient.setExhaustion(1F);
-        } else if ( exhaustion_toggle.getSelectedToggle() == exhaustion_disabling ) {
-            patient.setExhaustion(2F);
+        if (pee_toggle.getSelectedToggle() == increasedpee_none) {
+            patient.setPee(0);
+        } else if (pee_toggle.getSelectedToggle() == increasedpee_sporadic) {
+            patient.setPee(1);
+        } else if (pee_toggle.getSelectedToggle() == increasedpee_none) {
+            patient.setPee(2);
         }
 
-        if ( weightloss_toggle.getSelectedToggle() == weightloss_no ) {
-            patient.setWeightLoss(0F);
-        } else if ( weightloss_toggle.getSelectedToggle() == weightloss_zerotofive ) {
-            patient.setWeightLoss(1f);
-        } else if ( weightloss_toggle.getSelectedToggle() == weightloss_morefive ) {
-            patient.setWeightLoss(2F);
+        if (exhaustion_toggle.getSelectedToggle() == exhaustion_none) {
+            patient.setExhaustion(0);
+        } else if (exhaustion_toggle.getSelectedToggle() == exhaustion_mild) {
+            patient.setExhaustion(1);
+        } else if (exhaustion_toggle.getSelectedToggle() == exhaustion_disabling) {
+            patient.setExhaustion(2);
         }
-        if ( abdominal_toggle.getSelectedToggle() == abdominal_none ) {
-            patient.setAbdpain(0F);
-        } else if (abdominal_toggle.getSelectedToggle() == abdominal_mild ) {
-            patient.setAbdpain(1F);
-        } else if ( abdominal_toggle.getSelectedToggle() == abdominal_severe ) {
-            patient.setAbdpain(2F);
+
+        if (weightloss_toggle.getSelectedToggle() == weightloss_no) {
+            patient.setWeightLoss(0);
+        } else if (weightloss_toggle.getSelectedToggle() == weightloss_zerotofive) {
+            patient.setWeightLoss(1);
+        } else if (weightloss_toggle.getSelectedToggle() == weightloss_morefive) {
+            patient.setWeightLoss(2);
         }
+
+        if (abdominal_toggle.getSelectedToggle() == abdominal_none) {
+            patient.setAbdpain(0);
+        } else if (abdominal_toggle.getSelectedToggle() == abdominal_mild) {
+            patient.setAbdpain(1);
+        } else if (abdominal_toggle.getSelectedToggle() == abdominal_severe) {
+            patient.setAbdpain(2);
+        }
+
+        System.out.println("Patient new values: " +
+                "\n\t Constipation: " + patient.isConstipation() +
+                "\n\t Pee: " + patient.getPee() +
+                "\n\t Exhaustion: " + patient.getExhaustion() +
+                "\n\t Weightloss: " + patient.getWeightLoss() +
+                "\n\t AbdPain: " + patient.getAbdpain());
 
     }
 
     @FXML
-    public void checkRadialButtons(ActionEvent event) throws Exception{
+    public void checkRadialButtons(ActionEvent event) throws Exception {
 
         Toggle constipation_selected = constipation_toggle.getSelectedToggle();
         Toggle pee_selected = pee_toggle.getSelectedToggle();
         Toggle exhaustion_selected = exhaustion_toggle.getSelectedToggle();
         Toggle weightloss_selected = weightloss_toggle.getSelectedToggle();
+        Toggle abdominal_selected = abdominal_toggle.getSelectedToggle();
 
-        if ( constipation_selected == null || pee_selected == null || exhaustion_selected == null || weightloss_selected == null ) {
+        if (constipation_selected == null || pee_selected == null || exhaustion_selected == null || weightloss_selected == null || abdominal_selected == null) {
             main.button_next.setDisable(true);
         } else {
             main.button_next.setDisable(false);

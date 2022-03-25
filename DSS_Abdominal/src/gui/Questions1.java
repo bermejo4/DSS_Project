@@ -112,7 +112,7 @@ public class Questions1 implements Initializable, QuestionPanel {
         this.main = main;
         this.patient = patient;
 
-        if ( patient.isBulks() != null ) {
+        if (patient.isBulks() != null) {
             if (patient.isBulks()) {
                 lump_toggle.selectToggle(lump_yes);
             } else {
@@ -174,9 +174,9 @@ public class Questions1 implements Initializable, QuestionPanel {
         Toggle nausea_selected = nausea_toggle.getSelectedToggle();
         Toggle swelling_selected = swelling_toggle.getSelectedToggle();
 
-        patient.setBulks(lump_selected == lump_yes);
-        patient.setAnxiety(anxiety_selected == anxiety_depress_yes);
-        patient.setDiarrhea(diarrhea_selected == diarrhea_yes);
+        if ( lump_selected != null ) patient.setBulks(lump_selected == lump_yes);
+        if ( anxiety_selected != null ) patient.setAnxiety(anxiety_selected == anxiety_depress_yes);
+        if ( diarrhea_selected != null ) patient.setDiarrhea(diarrhea_selected == diarrhea_yes);
 
         if (nausea_selected == nausea_none) {
             patient.setNausea(0);
@@ -186,14 +186,20 @@ public class Questions1 implements Initializable, QuestionPanel {
             patient.setNausea(2);
         }
 
-        //System.out.println("Swelling selected: "+ swelling_selected);
         if (swelling_selected == abdominalSwelling_none) {
-            patient.setDistention(0F);
-        } else if (nausea_selected == abdominalSwelling_low) {
-            patient.setDistention(1F);
-        } else if (nausea_selected == abdominalSwelling_high) {
-            patient.setDistention(2F);
+            patient.setDistention(0);
+        } else if (swelling_selected == abdominalSwelling_low) {
+            patient.setDistention(1);
+        } else if (swelling_selected == abdominalSwelling_high) {
+            patient.setDistention(2);
         }
+
+        System.out.println("Patient new values: " +
+                "\n\t lump: " + patient.isBulks() +
+                "\n\t Anxiety: " + patient.isAnxiety() +
+                "\n\t Diarrhea: " + patient.isDiarrhea() +
+                "\n\t Nausea: " + patient.getNausea() +
+                "\n\t Distention: " + patient.getDistention());
 
     }
 
