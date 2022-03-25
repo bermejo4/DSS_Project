@@ -46,9 +46,9 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <RadioButton fx:id="chill_none" mnemonicParsing="false" text="None" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
-            <RadioButton fx:id="chill_sporadic" mnemonicParsing="false" text="Sporadic" GridPane.rowIndex="2" />
-            <RadioButton fx:id="chill_frequent" mnemonicParsing="false" text="Frequent" GridPane.rowIndex="3" />
+            <RadioButton fx:id="chill_none" mnemonicParsing="false" onAction="#checkRadialButtons" text="None" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
+            <RadioButton fx:id="chill_sporadic" mnemonicParsing="false" onAction="#checkRadialButtons" text="Sporadic" GridPane.rowIndex="2" />
+            <RadioButton fx:id="chill_frequent" mnemonicParsing="false" onAction="#checkRadialButtons" text="Frequent" GridPane.rowIndex="3" />
          </children>
       </GridPane>
       <GridPane styleClass="background22" stylesheets="@mainStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -63,9 +63,9 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <RadioButton fx:id="poo_none" mnemonicParsing="false" text="None" GridPane.rowIndex="1" />
-            <RadioButton fx:id="poo_mild" mnemonicParsing="false" text="Mild" GridPane.rowIndex="2" />
-            <RadioButton fx:id="poo_disabling" mnemonicParsing="false" text="Disabling" GridPane.rowIndex="3" />
+            <RadioButton fx:id="poo_none" mnemonicParsing="false" onAction="#checkRadialButtons" text="None" GridPane.rowIndex="1" />
+            <RadioButton fx:id="poo_mild" mnemonicParsing="false" onAction="#checkRadialButtons" text="Mild" GridPane.rowIndex="2" />
+            <RadioButton fx:id="poo_disabling" mnemonicParsing="false" onAction="#checkRadialButtons" text="Disabling" GridPane.rowIndex="3" />
          </children>
       </GridPane>
       <GridPane styleClass="background22" stylesheets="@mainStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="2">
@@ -81,9 +81,9 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <RadioButton fx:id="fatigue_none" mnemonicParsing="false" text="None" GridPane.rowIndex="1" />
-            <RadioButton fx:id="fatigue_sporadic" mnemonicParsing="false" text="Sporadic" GridPane.rowIndex="2" />
-            <RadioButton fx:id="fatigue_frequent" mnemonicParsing="false" text="Frequent" GridPane.rowIndex="3" />
+            <RadioButton fx:id="fatigue_none" mnemonicParsing="false" onAction="#checkRadialButtons" text="None" GridPane.rowIndex="1" />
+            <RadioButton fx:id="fatigue_sporadic" mnemonicParsing="false" onAction="#checkRadialButtons" text="Sporadic" GridPane.rowIndex="2" />
+            <RadioButton fx:id="fatigue_frequent" mnemonicParsing="false" onAction="#checkRadialButtons" text="Frequent" GridPane.rowIndex="3" />
          </children>
       </GridPane>
       <GridPane styleClass="background22" stylesheets="@mainStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="3">
@@ -98,9 +98,9 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <RadioButton fx:id="vomiting_none" mnemonicParsing="false" text="None" GridPane.rowIndex="1" />
-            <RadioButton fx:id="vomiting_sporadic" mnemonicParsing="false" text="Sporadic" GridPane.rowIndex="2" />
-            <RadioButton fx:id="vomiting_frequent" mnemonicParsing="false" text="Frequent" GridPane.rowIndex="3" />
+            <RadioButton fx:id="vomiting_none" mnemonicParsing="false" onAction="#checkRadialButtons" text="None" GridPane.rowIndex="1" />
+            <RadioButton fx:id="vomiting_sporadic" mnemonicParsing="false" onAction="#checkRadialButtons" text="Sporadic" GridPane.rowIndex="2" />
+            <RadioButton fx:id="vomiting_frequent" mnemonicParsing="false" onAction="#checkRadialButtons" text="Frequent" GridPane.rowIndex="3" />
          </children>
       </GridPane>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Has the patient experienced vomiting?" wrappingWidth="302.623046875" GridPane.rowIndex="3">
