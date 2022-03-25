@@ -112,47 +112,54 @@ public class Questions1 implements Initializable, QuestionPanel {
         this.main = main;
         this.patient = patient;
 
-        if ( patient.isBulks() !=null ) {
-            lump_toggle.selectToggle(lump_yes);
-        } else {
-            lump_toggle.selectToggle(lump_no);
+        if ( patient.isBulks() != null ) {
+            if (patient.isBulks()) {
+                lump_toggle.selectToggle(lump_yes);
+            } else {
+                lump_toggle.selectToggle(lump_no);
+            }
         }
-        if (patient.getDistention()!=null) {
-        int dist = patient.getDistention().intValue();
-        if ( dist == 0 ) {
-            swelling_toggle.selectToggle(abdominalSwelling_none);
-        } else if ( dist == 1 ) {
-            swelling_toggle.selectToggle(abdominalSwelling_low);
-        } else if ( dist == 2 ){
-            swelling_toggle.selectToggle(abdominalSwelling_high);
-        }
+        if (patient.getDistention() != null) {
+            int dist = patient.getDistention().intValue();
+            if (dist == 0) {
+                swelling_toggle.selectToggle(abdominalSwelling_none);
+            } else if (dist == 1) {
+                swelling_toggle.selectToggle(abdominalSwelling_low);
+            } else if (dist == 2) {
+                swelling_toggle.selectToggle(abdominalSwelling_high);
+            }
         }
 
-        if ( patient.isDiarrhea() !=null ) {
-            diarrhea_toggle.selectToggle(diarrhea_yes);
-        } else {
-            diarrhea_toggle.selectToggle(diarrhea_no);
+        if (patient.isDiarrhea() != null) {
+            if (patient.isDiarrhea()) {
+                diarrhea_toggle.selectToggle(diarrhea_yes);
+            } else {
+                diarrhea_toggle.selectToggle(diarrhea_no);
+            }
         }
-        if (patient.getNausea()!=null) {
+
+        if (patient.getNausea() != null) {
             int nau = patient.getNausea().intValue();
-            if ( nau == 0 ) {
+            if (nau == 0) {
                 nausea_toggle.selectToggle(nausea_none);
-            } else if ( nau == 1 ) {
+            } else if (nau == 1) {
                 nausea_toggle.selectToggle(nausea_sporadic);
-            } else if ( nau == 2 ){
+            } else if (nau == 2) {
                 nausea_toggle.selectToggle(nausea_frequent);
             }
         }
-        if ( patient.isAnxiety() !=null ) {
-            anxiety_toggle.selectToggle(anxiety_depress_yes);
-        } else {
-            anxiety_toggle.selectToggle(anxiety_depress_no);
+        if (patient.isAnxiety() != null) {
+            if (patient.isAnxiety()) {
+                anxiety_toggle.selectToggle(anxiety_depress_yes);
+            } else {
+                anxiety_toggle.selectToggle(anxiety_depress_no);
+            }
         }
-        
+
 
         try {
             checkRadialButtons(null);
-        } catch ( Exception e ){
+        } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Error checking if radials already have buttons.");
         }
@@ -167,36 +174,36 @@ public class Questions1 implements Initializable, QuestionPanel {
         Toggle nausea_selected = nausea_toggle.getSelectedToggle();
         Toggle swelling_selected = swelling_toggle.getSelectedToggle();
 
-        patient.setBulks( lump_selected == lump_yes);
-        patient.setAnxiety( anxiety_selected == anxiety_depress_yes);
-        patient.setDiarrhea( diarrhea_selected == diarrhea_yes );
+        patient.setBulks(lump_selected == lump_yes);
+        patient.setAnxiety(anxiety_selected == anxiety_depress_yes);
+        patient.setDiarrhea(diarrhea_selected == diarrhea_yes);
 
-        if ( nausea_selected == nausea_none ){
+        if (nausea_selected == nausea_none) {
             patient.setNausea(0);
-        } else if ( nausea_selected == nausea_sporadic ) {
+        } else if (nausea_selected == nausea_sporadic) {
             patient.setNausea(1);
-        } else if ( nausea_selected == nausea_frequent ) {
+        } else if (nausea_selected == nausea_frequent) {
             patient.setNausea(2);
         }
 
-        if ( swelling_selected == abdominalSwelling_none ){
+        if (swelling_selected == abdominalSwelling_none) {
             patient.setDistention(0);
-        } else if ( nausea_selected == abdominalSwelling_low ) {
+        } else if (nausea_selected == abdominalSwelling_low) {
             patient.setDistention(1);
-        } else if ( nausea_selected == abdominalSwelling_high ) {
+        } else if (nausea_selected == abdominalSwelling_high) {
             patient.setDistention(2);
         }
 
     }
 
     @FXML
-    public void checkRadialButtons(ActionEvent evnt){
+    public void checkRadialButtons(ActionEvent evnt) {
         Toggle lump_selected = lump_toggle.getSelectedToggle();
         Toggle diarrhea_selected = diarrhea_toggle.getSelectedToggle();
         Toggle nausea_selected = nausea_toggle.getSelectedToggle();
         Toggle anxiety_selected = anxiety_toggle.getSelectedToggle();
 
-        if ( lump_selected == null || diarrhea_selected == null || nausea_selected == null || anxiety_selected == null ) {
+        if (lump_selected == null || diarrhea_selected == null || nausea_selected == null || anxiety_selected == null) {
             main.button_next.setDisable(true);
         } else {
             main.button_next.setDisable(false);

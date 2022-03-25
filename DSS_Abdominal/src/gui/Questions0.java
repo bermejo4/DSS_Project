@@ -102,11 +102,12 @@ public class Questions0 implements Initializable, QuestionPanel {
                 gender.selectToggle(male);
             }
         }
-
-        if ( patient.isTobacco() !=null ) {
-            smoker.selectToggle(smoker_yes);
-        } else {
-            smoker.selectToggle(smoker_no);
+        if ( patient.isTobacco() != null) {
+            if (patient.isTobacco()) {
+                smoker.selectToggle(smoker_yes);
+            } else {
+                smoker.selectToggle(smoker_no);
+            }
         }
 
         try {
