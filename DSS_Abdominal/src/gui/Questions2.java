@@ -116,11 +116,12 @@ public class Questions2 implements Initializable, QuestionPanel {
     public void initComponents(MainWindow mainWindow, Patient patient) {
         this.main = mainWindow;
         this.patient = patient;
-
-        if ( patient.isConstipation() !=null ) {
-            constipation_toggle.selectToggle(constipation_yes);
-        } else {
-            constipation_toggle.selectToggle(constipation_no);
+        if ( patient.isConstipation() != null ) {
+            if (patient.isConstipation()) {
+                constipation_toggle.selectToggle(constipation_yes);
+            } else {
+                constipation_toggle.selectToggle(constipation_no);
+            }
         }
         if (patient.getPee() !=null) {
             int pee = patient.getPee().intValue();
@@ -148,15 +149,15 @@ public class Questions2 implements Initializable, QuestionPanel {
                 weightloss_toggle.selectToggle(weightloss_no);
             } else if ( weightloss == 1 ) {
                 weightloss_toggle.selectToggle(weightloss_zerotofive);
-            } else if ( weightloss == 2 ){
+            } else if ( weightloss == 2 ) {
                 weightloss_toggle.selectToggle(weightloss_morefive);
             }
-            try {
-                checkRadialButtons(null);
-            } catch ( Exception e ){
-                e.printStackTrace();
-                System.out.println("Error checking if radials already have buttons.");
-            }
+        }
+        try {
+            checkRadialButtons(null);
+        } catch ( Exception e ){
+            e.printStackTrace();
+            System.out.println("Error checking if radials already have buttons.");
         }
 
     }
