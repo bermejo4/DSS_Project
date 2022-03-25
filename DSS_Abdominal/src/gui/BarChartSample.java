@@ -16,6 +16,7 @@ import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.stage.Stage;
+import gui.MainWindow;
  
 public class BarChartSample extends Application implements Initializable {
     
@@ -41,44 +42,44 @@ public class BarChartSample extends Application implements Initializable {
         xAxis.setLabel("Disease");       
         yAxis.setLabel("Percentage");
  
-        
+        System.out.println(MainWindow.ibsPorcentage);
         
         XYChart.Series series1 = new XYChart.Series(); 
         series1.setName("IBS"); 
-        series1.getData().add(new XYChart.Data("", 100));
+        series1.getData().add(new XYChart.Data("",MainWindow.ibsPorcentage));
         
         XYChart.Series series2 = new XYChart.Series(); 
         series2.setName("Chrons"); 
-        series2.getData().add(new XYChart.Data("", 3));
+        series2.getData().add(new XYChart.Data("", MainWindow.chronPorcentage));
         
         XYChart.Series series3 = new XYChart.Series();
         series3.setName("Ulcera"); 
-        series3.getData().add(new XYChart.Data("", 35));
+        series3.getData().add(new XYChart.Data("", MainWindow.ulcerativeColitisPorcentage));
          
         XYChart.Series series4 = new XYChart.Series();
         series4.setName("Diverticulosis"); 
-        series4.getData().add(new XYChart.Data("", 78.15));
+        series4.getData().add(new XYChart.Data("", MainWindow.diverticulosisPorcentage));
         
         XYChart.Series series5 = new XYChart.Series();
         series5.setName("Hernia"); 
-        series5.getData().add(new XYChart.Data("", 12.12)); 
+        series5.getData().add(new XYChart.Data("", MainWindow.herniaPorcentage)); 
         
         XYChart.Series series6 = new XYChart.Series();
         series6.setName("Appendicitis"); 
-        series6.getData().add(new XYChart.Data("", 41));  
+        series6.getData().add(new XYChart.Data("", MainWindow.appendicitisPorcentage));  
         
         
         XYChart.Series series7 = new XYChart.Series();
         series7.setName("Enterocolitis"); 
-        series7.getData().add(new XYChart.Data("", 1)); 
+        series7.getData().add(new XYChart.Data("", MainWindow.enterocolitisPorcentage )); 
         
         XYChart.Series series8 = new XYChart.Series();
         series8.setName("Celiac");
-        series8.getData().add(new XYChart.Data("", 56));  
+        series8.getData().add(new XYChart.Data("", MainWindow.celiacPorcentage));  
         
         XYChart.Series series9 = new XYChart.Series();
         series9.setName("Rectal cancer");
-        series9.getData().add(new XYChart.Data("", 8));  
+        series9.getData().add(new XYChart.Data("", MainWindow.colorectalCancerPorcentage));  
          
         
         Scene scene  = new Scene(bc,800,600);

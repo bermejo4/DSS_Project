@@ -35,15 +35,15 @@ public class MainWindow implements Initializable {
     private int page_num = 0;
     private final int MAX_PAGE = 4;
     
-    float ibsPorcentage = -1;
-    float chronPorcentage = -1;
-    float ulcerativeColitisPorcentage=-1;
-    float diverticulosisPorcentage = -1;
-    float herniaPorcentage=-1;
-    float appendicitisPorcentage=-1;
-    float enterocolitisPorcentage=-1;
-    float celiacPorcentage=-1;
-    float colorectalCancerPorcentage=-1;
+    public static float ibsPorcentage = -1;
+    public static float chronPorcentage = -1;
+    public static float ulcerativeColitisPorcentage=-1;
+    public static float diverticulosisPorcentage = -1;
+    public static float herniaPorcentage=-1;
+    public static float appendicitisPorcentage=-1;
+    public static float enterocolitisPorcentage=-1;
+    public static float celiacPorcentage=-1;
+    public static float colorectalCancerPorcentage=-1;
     
     Patient ibs = new Patient("Irritable Bowel Syndrom",Patient.Gender.FEMALE,Patient.AgeRange.YOUNG,1f,1f,1f,1f,true,false,false,true,1f,0f,0f,0f,true,1f,false,0f,0f,false,0f,0f,0f,0f,0f);    
     Patient chron = new Patient("Chron",Patient.Gender.FEMALE,Patient.AgeRange.YOUNGADULT,1f,2f,1f,1f,true,true,true,true,0f,1f,2f,0f,true,0f,false,1f,0f,false,1f,0f,0f,0f,0f);        
