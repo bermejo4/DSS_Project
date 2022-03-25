@@ -109,15 +109,7 @@ public class Questions2 implements Initializable, QuestionPanel {
     }
 
 
-    public void nextQuestions(Stage stage) throws Exception {
-
-        Parent root = FXMLLoader.load(getClass().getResource("Questions3.fxml"));
-
-        Scene scene = new Scene(root);
-
-        stage.setScene(scene);
-        stage.show();
-    }
+    
 
 
     @Override
@@ -125,43 +117,46 @@ public class Questions2 implements Initializable, QuestionPanel {
         this.main = mainWindow;
         this.patient = patient;
 
-        if ( patient.isConstipation() ) {
+        if ( patient.isConstipation() !=null ) {
             constipation_toggle.selectToggle(constipation_yes);
         } else {
             constipation_toggle.selectToggle(constipation_no);
         }
-
-        int pee = patient.getPee().intValue();
-        if ( pee == 0 ) {
-            pee_toggle.selectToggle(increasedpee_none);
-        } else if ( pee == 1 ) {
-            pee_toggle.selectToggle(increasedpee_sporadic);
-        } else if ( pee == 2 ){
-            pee_toggle.selectToggle(increasedpee_frequent);
+        if (patient.getPee() !=null) {
+            int pee = patient.getPee().intValue();
+            if ( pee == 0 ) {
+                pee_toggle.selectToggle(increasedpee_none);
+            } else if ( pee == 1 ) {
+                pee_toggle.selectToggle(increasedpee_sporadic);
+            } else if ( pee == 2 ){
+                pee_toggle.selectToggle(increasedpee_frequent);
+            }
         }
-
-        int exhaustion = patient.getExhaustion().intValue();
-        if ( exhaustion == 0 ) {
-            exhaustion_toggle.selectToggle(exhaustion_none);
-        } else if ( exhaustion == 1 ) {
-            exhaustion_toggle.selectToggle(exhaustion_mild);
-        } else if ( exhaustion == 2 ){
-            exhaustion_toggle.selectToggle(exhaustion_disabling);
+        if (patient.getExhaustion()!=null) {
+            int exhaustion = patient.getExhaustion().intValue();
+            if ( exhaustion == 0 ) {
+                exhaustion_toggle.selectToggle(exhaustion_none);
+            } else if ( exhaustion == 1 ) {
+                exhaustion_toggle.selectToggle(exhaustion_mild);
+            } else if ( exhaustion == 2 ){
+                exhaustion_toggle.selectToggle(exhaustion_disabling);
+            }
         }
-
-        int weightloss =  patient.getWeightLoss().intValue();
-        if ( weightloss == 0 ) {
-            weightloss_toggle.selectToggle(weightloss_no);
-        } else if ( weightloss == 1 ) {
-            weightloss_toggle.selectToggle(weightloss_zerotofive);
-        } else if ( weightloss == 2 ){
-            weightloss_toggle.selectToggle(weightloss_morefive);
-        }
-        try {
-            checkRadialButtons(null);
-        } catch ( Exception e ){
-            e.printStackTrace();
-            System.out.println("Error checking if radials already have buttons.");
+        if ( patient.getWeightLoss()!=null) {
+            int weightloss =  patient.getWeightLoss().intValue();
+            if ( weightloss == 0 ) {
+                weightloss_toggle.selectToggle(weightloss_no);
+            } else if ( weightloss == 1 ) {
+                weightloss_toggle.selectToggle(weightloss_zerotofive);
+            } else if ( weightloss == 2 ){
+                weightloss_toggle.selectToggle(weightloss_morefive);
+            }
+            try {
+                checkRadialButtons(null);
+            } catch ( Exception e ){
+                e.printStackTrace();
+                System.out.println("Error checking if radials already have buttons.");
+            }
         }
 
     }

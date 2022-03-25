@@ -5,7 +5,11 @@
  */
 package gui;
 
+import dss_abdominal.Patient;
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.application.Application;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
@@ -13,8 +17,19 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.stage.Stage;
  
-public class BarChartSample extends Application {
+public class BarChartSample extends Application implements Initializable {
     
+    private Patient patient;
+    private MainWindow main;
+    private Results results;
+    
+    public void initComponents(Results result, Patient patient) {
+        this.results = result;
+        this.patient = patient;
+        
+      
+
+    }
  
     @Override 
     public void start(Stage stage) {
@@ -75,10 +90,20 @@ public class BarChartSample extends Application {
     public static void main(String[] args) {
         launch(args);
         //calculatePorcentageFromSymptoms();
-         
+       
     
+    }
+    public void initComponents(MainWindow main, Patient patient) {
+        this.main=main;
+        this.patient=patient;
+        main.calculatePorcentageFromSymptoms();
+        
+    }
     
-    
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

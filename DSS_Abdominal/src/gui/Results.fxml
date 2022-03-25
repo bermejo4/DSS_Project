@@ -15,7 +15,7 @@
 
 <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="background22" stylesheets="@mainStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <BorderPane fx:id="results_window" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
@@ -35,10 +35,10 @@
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Graphical statistics:" textAlignment="CENTER" wrappingWidth="300.01914978027344" GridPane.rowIndex="1" />
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Other resources of information are: " textAlignment="CENTER" wrappingWidth="300.01914978027344" GridPane.rowIndex="2" />
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Treatment recommendation ideas:" textAlignment="CENTER" wrappingWidth="300.01914978027344" GridPane.rowIndex="3" />
-                        <TextField prefHeight="40.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="112.0" stylesheets="@mainStyle.css" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Hyperlink prefHeight="24.0" prefWidth="207.0" text="medline.com" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <TextField prefHeight="40.0" prefWidth="300.0" GridPane.columnIndex="1" />
+                        <TextField fx:id="disease_treatment" prefHeight="40.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Button fx:id="button_view" mnemonicParsing="false" prefHeight="31.0" prefWidth="112.0" stylesheets="@mainStyle.css" text="View" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Hyperlink fx:id="medline" prefHeight="24.0" prefWidth="207.0" text="medline.com" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="disease_solution" prefHeight="40.0" prefWidth="300.0" GridPane.columnIndex="1" />
                      </children>
                   </GridPane>
                </children>

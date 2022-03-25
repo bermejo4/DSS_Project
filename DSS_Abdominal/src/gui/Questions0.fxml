@@ -75,10 +75,10 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <RadioButton fx:id="age_adult" mnemonicParsing="false" onAction="#checkRadialButtons" text="Adult" />
-            <RadioButton fx:id="age_young_adult" mnemonicParsing="false" onAction="#checkRadialButtons" text="Young Adult" GridPane.rowIndex="1" />
-            <RadioButton fx:id="age_young" mnemonicParsing="false" onAction="#checkRadialButtons" text="Young" GridPane.rowIndex="2" />
-            <RadioButton fx:id="age_child" mnemonicParsing="false" onAction="#checkRadialButtons" text="Child" GridPane.rowIndex="3" />
+            <RadioButton fx:id="age_adult" mnemonicParsing="false" onAction="#checkRadialButtons" prefHeight="35.0" prefWidth="217.0" text="Adult (+40y)" />
+            <RadioButton fx:id="age_young_adult" mnemonicParsing="false" onAction="#checkRadialButtons" prefHeight="35.0" prefWidth="279.0" text="Young Adult (15-35y)" GridPane.rowIndex="1" />
+            <RadioButton fx:id="age_young" mnemonicParsing="false" onAction="#checkRadialButtons" prefHeight="35.0" prefWidth="223.0" text="Young (11-14y)" GridPane.rowIndex="2" />
+            <RadioButton fx:id="age_child" mnemonicParsing="false" onAction="#checkRadialButtons" prefHeight="35.0" prefWidth="226.0" text="Child (5-10y)" GridPane.rowIndex="3" />
          </children>
       </GridPane>
    </children>

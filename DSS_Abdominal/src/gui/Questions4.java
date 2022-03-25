@@ -21,10 +21,7 @@ import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 
-/**
- *
- * @author marin
- */
+
 public class Questions4 {
      
       @FXML
@@ -104,42 +101,47 @@ public class Questions4 {
         this.main = main;
         this.patient = patient;
         
-        int ch = patient.isChills().intValue();
-        if ( ch == 0 ) {
-            chills.selectToggle(chill_none);
-        } else if ( ch == 1 ) {
-            chills.selectToggle(chill_sporadic);
-        } else if ( ch == 2 ){
-            chills.selectToggle(chill_frequent);
+        if (patient.isChills()!=null) {
+            int ch = patient.isChills().intValue();
+            if ( ch == 0 ) {
+                chills.selectToggle(chill_none);
+            } else if ( ch == 1 ) {
+                chills.selectToggle(chill_sporadic);
+            } else if ( ch == 2 ){
+                chills.selectToggle(chill_frequent);
+            }
+        }
+        if (patient.isPoo()!=null) {
+            int po = patient.isPoo().intValue();
+            if ( po == 0 ) {
+                poo.selectToggle(poo_none);
+            } else if ( po == 1 ) {
+                poo.selectToggle(poo_mild);
+            } else if ( po == 2 ){
+                poo.selectToggle(poo_disabling);
+            }
+        }
+        if (patient.getFatigue()!=null) {
+            int fat = patient.getFatigue().intValue();
+            if ( fat == 0 ) {
+                fatigue.selectToggle(fatigue_none);
+            } else if ( fat == 1 ) {
+                fatigue.selectToggle(fatigue_sporadic);
+            } else if ( fat == 2 ){
+                fatigue.selectToggle(fatigue_frequent);
+            }
         }
         
-        int po = patient.isChills().intValue();
-        if ( po == 0 ) {
-            poo.selectToggle(poo_none);
-        } else if ( po == 1 ) {
-            poo.selectToggle(poo_mild);
-        } else if ( po == 2 ){
-            poo.selectToggle(poo_disabling);
+        if(patient.getVomiting()!=null) {
+            int vom = patient.getVomiting().intValue();
+            if ( vom == 0 ) {
+                vomiting.selectToggle(vomiting_none);
+            } else if ( vom == 1 ) {
+                vomiting.selectToggle(vomiting_sporadic);
+            } else if ( vom == 2 ){
+                vomiting.selectToggle(vomiting_frequent);
+            }
         }
- 
-        int fat = patient.isChills().intValue();
-        if ( fat == 0 ) {
-            fatigue.selectToggle(fatigue_none);
-        } else if ( fat == 1 ) {
-            fatigue.selectToggle(fatigue_sporadic);
-        } else if ( fat == 2 ){
-            fatigue.selectToggle(fatigue_frequent);
-        }
-
-        int vom = patient.isChills().intValue();
-        if ( vom == 0 ) {
-            vomiting.selectToggle(vomiting_none);
-        } else if ( vom == 1 ) {
-            vomiting.selectToggle(vomiting_sporadic);
-        } else if ( vom == 2 ){
-            vomiting.selectToggle(vomiting_frequent);
-        }
-
     }
 
 
@@ -182,6 +184,27 @@ public class Questions4 {
             patient.setVomiting(2);
         }
 
+    }
+
+
+    public void gobackques1(javafx.event.ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+
+        loader.setLocation(getClass().getResource("Questions3.fxml"));
+        Parent parent = loader.load();
+
+        Scene scene = new Scene(parent);
+
+    }    
+    
+    public void nextQuestions(Stage stage) throws Exception {
+
+        Parent root = FXMLLoader.load(getClass().getResource("Results.fxml"));
+
+        Scene scene = new Scene(root);
+
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML

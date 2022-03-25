@@ -114,12 +114,12 @@ public class Questions1 implements Initializable, QuestionPanel {
         this.main = main;
         this.patient = patient;
 
-        if ( patient.isBulks() ) {
+        if ( patient.isBulks() !=null ) {
             lump_toggle.selectToggle(lump_yes);
         } else {
             lump_toggle.selectToggle(lump_no);
         }
-
+        if (patient.getDistention()!=null) {
         int dist = patient.getDistention().intValue();
         if ( dist == 0 ) {
             swelling_toggle.selectToggle(abdominalSwelling_none);
@@ -128,27 +128,29 @@ public class Questions1 implements Initializable, QuestionPanel {
         } else if ( dist == 2 ){
             swelling_toggle.selectToggle(abdominalSwelling_high);
         }
+        }
 
-        if ( patient.isDiarrhea() ) {
+        if ( patient.isDiarrhea() !=null ) {
             diarrhea_toggle.selectToggle(diarrhea_yes);
         } else {
             diarrhea_toggle.selectToggle(diarrhea_no);
         }
-
-        int nau = patient.getDistention().intValue();
-        if ( nau == 0 ) {
-            nausea_toggle.selectToggle(nausea_none);
-        } else if ( nau == 1 ) {
-            nausea_toggle.selectToggle(nausea_sporadic);
-        } else if ( nau == 2 ){
-            nausea_toggle.selectToggle(nausea_frequent);
+        if (patient.getNausea()!=null) {
+            int nau = patient.getNausea().intValue();
+            if ( nau == 0 ) {
+                nausea_toggle.selectToggle(nausea_none);
+            } else if ( nau == 1 ) {
+                nausea_toggle.selectToggle(nausea_sporadic);
+            } else if ( nau == 2 ){
+                nausea_toggle.selectToggle(nausea_frequent);
+            }
         }
-
-        if ( patient.isAnxiety() ) {
+        if ( patient.isAnxiety() !=null ) {
             anxiety_toggle.selectToggle(anxiety_depress_yes);
         } else {
             anxiety_toggle.selectToggle(anxiety_depress_no);
         }
+        
 
         try {
             checkRadialButtons(null);

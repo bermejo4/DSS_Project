@@ -113,49 +113,59 @@ public class Questions3 {
         this.main = main;
         this.patient = patient;
         
-        int fev = patient.getFever().intValue();
-        if ( fev == 0 ) {
-            fever.selectToggle(fever_low);
-        } else if ( fev == 1 ) {
-            fever.selectToggle(fever_medium);
-        } else if ( fev == 2 ){
-            fever.selectToggle(fever_high);
+        if (patient.getFever()!=null) {
+            int fev = patient.getFever().intValue();
+            if ( fev == 0 ) {
+                fever.selectToggle(fever_low);
+            } else if ( fev == 1 ) {
+                fever.selectToggle(fever_medium);
+            } else if ( fev == 2 ){
+                fever.selectToggle(fever_high);
+            }
+        }
+        if (patient.getPerianalDiscom()!=null) {
+            int dis = patient.getPerianalDiscom().intValue();
+            if ( dis == 0 ) {
+                discomfort.selectToggle(discomfort_none);
+            } else if ( dis == 1 ) {
+                discomfort.selectToggle(discomfort_focalized);
+            } else if ( dis == 2 ){
+                discomfort.selectToggle(discomfort_extended);
+            }
         }
         
-        int dis = patient.getPerianalDiscom().intValue();
-        if ( dis == 0 ) {
-            discomfort.selectToggle(discomfort_none);
-        } else if ( dis == 1 ) {
-            discomfort.selectToggle(discomfort_focalized);
-        } else if ( dis == 2 ){
-            discomfort.selectToggle(discomfort_extended);
+        if (patient.getCramps()!=null) {
+            int cr = patient.getCramps().intValue();
+            if ( cr == 0 ) {
+                cramps.selectToggle(cramps_none);
+            } else if ( cr == 1 ) {
+                cramps.selectToggle(cramps_mild);
+            } else if ( cr == 2 ){
+                cramps.selectToggle(cramps_disabling);
+            }
         }
         
-        int cr = patient.getCramps().intValue();
-        if ( cr == 0 ) {
-            cramps.selectToggle(cramps_none);
-        } else if ( cr == 1 ) {
-            cramps.selectToggle(cramps_mild);
-        } else if ( cr == 2 ){
-            cramps.selectToggle(cramps_disabling);
+        
+        if (patient.isMelenas()!=null) {
+            int mel = patient.isMelenas().intValue();
+            if ( mel == 0 ) {
+                melenas.selectToggle(melenas_none);
+            } else if ( mel == 1 ) {
+                melenas.selectToggle(melenas_few);
+            } else if ( mel == 2 ){
+                melenas.selectToggle(melenas_substantially);
+            }
         }
-
-        int mel = patient.isMelenas().intValue();
-        if ( mel == 0 ) {
-            melenas.selectToggle(melenas_none);
-        } else if ( mel == 1 ) {
-            melenas.selectToggle(melenas_few);
-        } else if ( mel == 2 ){
-            melenas.selectToggle(melenas_substantially);
-        }
-
-        int derm = patient.isDermatitis().intValue();
-        if ( derm == 0 ) {
-            dermatitis.selectToggle(dermatitis_none);
-        } else if ( derm == 1 ) {
-            dermatitis.selectToggle(dermatitis_focalized);
-        } else if ( derm == 2 ){
-            dermatitis.selectToggle(dermatitis_extended);
+        
+        if (patient.isDermatitis()!=null) {
+            int derm = patient.isDermatitis().intValue();
+            if ( derm == 0 ) {
+                dermatitis.selectToggle(dermatitis_none);
+            } else if ( derm == 1 ) {
+                dermatitis.selectToggle(dermatitis_focalized);
+            } else if ( derm == 2 ){
+                dermatitis.selectToggle(dermatitis_extended);
+            }
         }
 
     }
@@ -209,6 +219,26 @@ public class Questions3 {
             }
 
         }
+        public void gobackques2(javafx.event.ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+
+        loader.setLocation(getClass().getResource("Questions2.fxml"));
+        Parent parent = loader.load();
+
+        Scene scene = new Scene(parent);
+
+    }
+
+
+    public void nextQuestions(Stage stage) throws Exception {
+
+        Parent root = FXMLLoader.load(getClass().getResource("Questions4.fxml"));
+
+        Scene scene = new Scene(root);
+
+        stage.setScene(scene);
+        stage.show();
+    }
     
         
         @FXML
