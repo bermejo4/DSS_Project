@@ -84,7 +84,6 @@ public class MainWindow implements Initializable {
     
     @FXML
     public void button_pressed(ActionEvent event) throws Exception {
-
         if ( event.getSource() == button_next ) {
             page_num++;
             // Will not be enabled until the questions of the new current panel are all selected
@@ -98,6 +97,8 @@ public class MainWindow implements Initializable {
                 button_prev.setDisable(true);
             }
         }
+
+        System.out.println("Moving to page: "+page_num);
         if(page_num>0){
             if(page_num<4){
                 changeQuestionPanel();
