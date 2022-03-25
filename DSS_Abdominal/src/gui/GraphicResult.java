@@ -22,10 +22,6 @@ import javafx.scene.chart.NumberAxis;
 
 
 
-/**
- *
- * @author marin
- */
 public class GraphicResult {
 
     private BarChartSample barChart;
