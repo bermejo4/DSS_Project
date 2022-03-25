@@ -167,6 +167,13 @@ public class Questions4 implements Initializable, QuestionPanel {
                 rectalHemo.selectToggle(rectHemo_max);
             }
         }
+
+        try {
+            checkRadialButtons(null);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Error checking if radials already have buttons.");
+        }
     }
 
 
@@ -226,27 +233,6 @@ public class Questions4 implements Initializable, QuestionPanel {
                 "\n\t Vomiting: " + patient.getVomiting() +
                 "\n\t RectalHemo: " + patient.getRectalHemo());
 
-    }
-
-
-    public void gobackques3(javafx.event.ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-
-        loader.setLocation(getClass().getResource("Questions3.fxml"));
-        Parent parent = loader.load();
-
-        Scene scene = new Scene(parent);
-
-    }
-
-    public void nextQuestions(Stage stage) throws Exception {
-
-        Parent root = FXMLLoader.load(getClass().getResource("Results.fxml"));
-
-        Scene scene = new Scene(root);
-
-        stage.setScene(scene);
-        stage.show();
     }
 
     @FXML

@@ -113,16 +113,6 @@ public class Questions2 implements Initializable, QuestionPanel {
 
     }
 
-    public void gobackques1(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-
-        loader.setLocation(getClass().getResource("Questions1.fxml"));
-        Parent parent = loader.load();
-
-        Scene scene = new Scene(parent);
-
-    }
-
 
     @Override
     public void initComponents(MainWindow mainWindow, Patient patient) {
@@ -168,12 +158,15 @@ public class Questions2 implements Initializable, QuestionPanel {
         System.out.println("is abdpain different from null? " + (patient.getAbdpain() != null));
         if (patient.getAbdpain() != null) {
             int abd = patient.getAbdpain().intValue();
+            System.out.println("abdpain value: " + patient.getAbdpain() );
+            System.out.println("abdpain value int: " + patient.getAbdpain().intValue() );
+
             if (abd == 0) {
-                exhaustion_toggle.selectToggle(abdominal_none);
+                abdominal_toggle.selectToggle(abdominal_none);
             } else if (abd == 1) {
-                exhaustion_toggle.selectToggle(abdominal_mild);
+                abdominal_toggle.selectToggle(abdominal_mild);
             } else if (abd == 2) {
-                exhaustion_toggle.selectToggle(abdominal_severe);
+                abdominal_toggle.selectToggle(abdominal_severe);
             }
         }
 
@@ -191,11 +184,12 @@ public class Questions2 implements Initializable, QuestionPanel {
 
         if ( constipation_toggle.getSelectedToggle() != null ) patient.setConstipation(constipation_toggle.getSelectedToggle() == constipation_yes);
 
+
         if (pee_toggle.getSelectedToggle() == increasedpee_none) {
             patient.setPee(0);
         } else if (pee_toggle.getSelectedToggle() == increasedpee_sporadic) {
             patient.setPee(1);
-        } else if (pee_toggle.getSelectedToggle() == increasedpee_none) {
+        } else if (pee_toggle.getSelectedToggle() == increasedpee_frequent) {
             patient.setPee(2);
         }
 

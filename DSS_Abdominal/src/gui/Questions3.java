@@ -171,6 +171,13 @@ public class Questions3 implements Initializable, QuestionPanel {
             }
         }
 
+        try {
+            checkRadialButtons(null);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Error checking if radials already have buttons.");
+        }
+
     }
 
 
@@ -230,26 +237,6 @@ public class Questions3 implements Initializable, QuestionPanel {
 
     }
 
-    public void gobackques2(javafx.event.ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-
-        loader.setLocation(getClass().getResource("Questions2.fxml"));
-        Parent parent = loader.load();
-
-        Scene scene = new Scene(parent);
-
-    }
-
-
-    public void nextQuestions(Stage stage) throws Exception {
-
-        Parent root = FXMLLoader.load(getClass().getResource("Questions4.fxml"));
-
-        Scene scene = new Scene(root);
-
-        stage.setScene(scene);
-        stage.show();
-    }
 
 
     @FXML

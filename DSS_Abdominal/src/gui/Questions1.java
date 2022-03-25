@@ -95,18 +95,7 @@ public class Questions1 implements Initializable, QuestionPanel {
         this.anxiety_depress_no.setToggleGroup(anxiety_toggle);
 
     }
-
-
-    public void goback(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-
-        loader.setLocation(getClass().getResource("MainWindow.fxml"));
-        Parent parent = loader.load();
-
-        Scene scene = new Scene(parent);
-
-    }
-
+    
     @Override
     public void initComponents(MainWindow main, Patient patient) {
         this.main = main;

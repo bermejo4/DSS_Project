@@ -113,8 +113,8 @@
          </rowConstraints>
          <children>
             <RadioButton fx:id="dermatitis_none" mnemonicParsing="false" onAction="#checkRadialButtons" text="None" GridPane.rowIndex="1" />
-            <RadioButton fx:id="dermatitis_extended" mnemonicParsing="false" onAction="#checkRadialButtons" text="Extended" GridPane.rowIndex="2" />
-            <RadioButton fx:id="dermatitis_focalized" mnemonicParsing="false" onAction="#checkRadialButtons" text="Focalized" GridPane.rowIndex="3" />
+            <RadioButton fx:id="dermatitis_extended" mnemonicParsing="false" onAction="#checkRadialButtons" text="Extended" GridPane.rowIndex="3" />
+            <RadioButton fx:id="dermatitis_focalized" mnemonicParsing="false" onAction="#checkRadialButtons" text="Focalized" GridPane.rowIndex="2" />
          </children>
       </GridPane>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Has the patient experienced blood in their feces?" wrappingWidth="293.623046875" GridPane.rowIndex="3">
