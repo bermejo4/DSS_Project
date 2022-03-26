@@ -60,6 +60,9 @@
             <RadioButton fx:id="male" mnemonicParsing="false" onAction="#checkRadialButtons" text="Male" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
             <RadioButton fx:id="female" mnemonicParsing="false" onAction="#checkRadialButtons" text="Female" GridPane.rowIndex="2" />
          </children>
+         <GridPane.margin>
+            <Insets left="10.0" />
+         </GridPane.margin>
       </GridPane>
       <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1">
          <columnConstraints>
@@ -75,6 +78,9 @@
             <RadioButton fx:id="smoker_yes" mnemonicParsing="false" onAction="#checkRadialButtons" text="Yes" GridPane.rowIndex="1" />
             <RadioButton fx:id="smoker_no" mnemonicParsing="false" onAction="#checkRadialButtons" text="No" GridPane.rowIndex="2" />
          </children>
+         <GridPane.margin>
+            <Insets left="10.0" />
+         </GridPane.margin>
       </GridPane>
       <GridPane GridPane.columnIndex="1" GridPane.rowIndex="2">
          <columnConstraints>
@@ -88,10 +94,16 @@
          </rowConstraints>
          <children>
             <RadioButton fx:id="age_adult" mnemonicParsing="false" onAction="#checkRadialButtons" prefHeight="35.0" prefWidth="217.0" text="Adult (+40y)" />
-            <RadioButton fx:id="age_young_adult" mnemonicParsing="false" onAction="#checkRadialButtons" prefHeight="35.0" prefWidth="279.0" text="Young Adult (15-35y)" GridPane.rowIndex="1" />
+            <RadioButton fx:id="age_young_adult" mnemonicParsing="false" onAction="#checkRadialButtons" prefHeight="35.0" prefWidth="279.0" text="Young Adult (15-35y)" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin></RadioButton>
             <RadioButton fx:id="age_young" mnemonicParsing="false" onAction="#checkRadialButtons" prefHeight="35.0" prefWidth="223.0" text="Young (11-14y)" GridPane.rowIndex="2" />
             <RadioButton fx:id="age_child" mnemonicParsing="false" onAction="#checkRadialButtons" prefHeight="35.0" prefWidth="226.0" text="Child (5-10y)" GridPane.rowIndex="3" />
          </children>
+         <GridPane.margin>
+            <Insets left="10.0" />
+         </GridPane.margin>
       </GridPane>
       <GridPane GridPane.columnIndex="1" GridPane.rowIndex="3">
          <columnConstraints>
@@ -107,6 +119,9 @@
             <RadioButton fx:id="genetic_yes" mnemonicParsing="false" onAction="#checkRadialButtons" text="Yes" GridPane.rowIndex="1" />
             <RadioButton fx:id="genetic_no" mnemonicParsing="false" onAction="#checkRadialButtons" text="No" GridPane.rowIndex="2" />
          </children>
+         <GridPane.margin>
+            <Insets left="10.0" />
+         </GridPane.margin>
       </GridPane>
       <GridPane GridPane.columnIndex="1" GridPane.rowIndex="4">
          <columnConstraints>
@@ -122,6 +137,9 @@
             <RadioButton fx:id="ulcers_yes" mnemonicParsing="false" onAction="#checkRadialButtons" text="Yes" GridPane.rowIndex="1" />
             <RadioButton fx:id="ulcers_no" mnemonicParsing="false" onAction="#checkRadialButtons" text="No" GridPane.rowIndex="2" />
          </children>
+         <GridPane.margin>
+            <Insets left="10.0" />
+         </GridPane.margin>
       </GridPane>
    </children>
    <padding>

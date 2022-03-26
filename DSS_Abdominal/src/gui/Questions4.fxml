@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -7,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="background22" stylesheets="@mainStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Questions4">
+<GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="background22" stylesheets="@mainStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Questions4">
    <columnConstraints>
       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
       <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
@@ -22,17 +23,17 @@
    <children>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Has the patient experienced chills frequently?" wrappingWidth="302.21875" GridPane.hgrow="ALWAYS">
          <font>
-            <Font size="18.0" />
+            <Font size="24.0" />
          </font>
       </Text>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Has the patient suffered from a costant urge of defecate?" wrappingWidth="291.2314453125" GridPane.rowIndex="1">
          <font>
-            <Font size="18.0" />
+            <Font size="24.0" />
          </font>
       </Text>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Has the patient experienced abnormal fatigue?" wrappingWidth="295.623046875" GridPane.rowIndex="2">
          <font>
-            <Font size="18.0" />
+            <Font size="24.0" />
          </font>
       </Text>
       <GridPane styleClass="background22" stylesheets="@mainStyle.css" GridPane.columnIndex="1">
@@ -51,6 +52,12 @@
             <RadioButton fx:id="chill_sporadic" mnemonicParsing="false" onAction="#checkRadialButtons" text="Sporadic" GridPane.rowIndex="2" />
             <RadioButton fx:id="chill_frequent" mnemonicParsing="false" onAction="#checkRadialButtons" text="Frequent" GridPane.rowIndex="3" />
          </children>
+         <opaqueInsets>
+            <Insets bottom="-10.0" left="10.0" />
+         </opaqueInsets>
+         <GridPane.margin>
+            <Insets bottom="-10.0" left="10.0" top="-10.0" />
+         </GridPane.margin>
       </GridPane>
       <GridPane styleClass="background22" stylesheets="@mainStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <columnConstraints>
@@ -68,6 +75,12 @@
             <RadioButton fx:id="poo_mild" mnemonicParsing="false" onAction="#checkRadialButtons" text="Mild" GridPane.rowIndex="2" />
             <RadioButton fx:id="poo_disabling" mnemonicParsing="false" onAction="#checkRadialButtons" text="Disabling" GridPane.rowIndex="3" />
          </children>
+         <opaqueInsets>
+            <Insets bottom="-10.0" left="10.0" top="-10.0" />
+         </opaqueInsets>
+         <GridPane.margin>
+            <Insets bottom="-10.0" left="10.0" top="-10.0" />
+         </GridPane.margin>
       </GridPane>
       <GridPane styleClass="background22" stylesheets="@mainStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <columnConstraints>
@@ -86,6 +99,12 @@
             <RadioButton fx:id="fatigue_sporadic" mnemonicParsing="false" onAction="#checkRadialButtons" text="Sporadic" GridPane.rowIndex="2" />
             <RadioButton fx:id="fatigue_frequent" mnemonicParsing="false" onAction="#checkRadialButtons" text="Frequent" GridPane.rowIndex="3" />
          </children>
+         <opaqueInsets>
+            <Insets bottom="-10.0" left="10.0" top="-10.0" />
+         </opaqueInsets>
+         <GridPane.margin>
+            <Insets bottom="-10.0" left="10.0" top="-10.0" />
+         </GridPane.margin>
       </GridPane>
       <GridPane styleClass="background22" stylesheets="@mainStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="3">
          <columnConstraints>
@@ -103,15 +122,21 @@
             <RadioButton fx:id="vomiting_sporadic" mnemonicParsing="false" onAction="#checkRadialButtons" text="Sporadic" GridPane.rowIndex="2" />
             <RadioButton fx:id="vomiting_frequent" mnemonicParsing="false" onAction="#checkRadialButtons" text="Frequent" GridPane.rowIndex="3" />
          </children>
+         <opaqueInsets>
+            <Insets bottom="-10.0" left="10.0" top="-10.0" />
+         </opaqueInsets>
+         <GridPane.margin>
+            <Insets bottom="-10.0" left="10.0" top="-10.0" />
+         </GridPane.margin>
       </GridPane>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Has the patient experienced vomiting?" wrappingWidth="302.623046875" GridPane.rowIndex="3">
          <font>
-            <Font size="18.0" />
+            <Font size="24.0" />
          </font>
       </Text>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Has the patient bled from the anus?" wrappingWidth="291.2314453125" GridPane.rowIndex="4">
          <font>
-            <Font size="18.0" />
+            <Font size="24.0" />
          </font>
       </Text>
       <GridPane styleClass="background22" stylesheets="@mainStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="4">
@@ -130,6 +155,12 @@
             <RadioButton fx:id="rectHemo_med" mnemonicParsing="false" onAction="#checkRadialButtons" text="A bit" GridPane.rowIndex="2" />
             <RadioButton fx:id="rectHemo_max" mnemonicParsing="false" onAction="#checkRadialButtons" text="A lot" GridPane.rowIndex="3" />
          </children>
+         <opaqueInsets>
+            <Insets bottom="-10.0" left="10.0" top="-10.0" />
+         </opaqueInsets>
+         <GridPane.margin>
+            <Insets bottom="-10.0" left="10.0" top="-10.0" />
+         </GridPane.margin>
       </GridPane>
    </children>
 </GridPane>

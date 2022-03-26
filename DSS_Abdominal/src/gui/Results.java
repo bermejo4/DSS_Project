@@ -18,6 +18,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -30,9 +31,9 @@ public class Results implements Initializable {
     @FXML
     private BorderPane results_window;
     @FXML
-    private TextField disease_solution;
+    private Label disease_solution;
     @FXML
-    private TextField disease_treatment; 
+    private Label disease_treatment; 
     @FXML
     private Hyperlink medline;
 
@@ -84,6 +85,10 @@ public class Results implements Initializable {
         Scene scene = new Scene(parent);
 
     }
+     
+     private void seeDiasease(ActionEvent ev){
+         disease_solution.setText(patient.getDiseaseName());
+     }
         
      
     
@@ -96,6 +101,8 @@ public class Results implements Initializable {
     protected void initComponents(Patient patient){
         this.patient = patient;
         this.calculatePercentageFromSymptoms();
+        patient.getDiseaseName();
+        
 
     }
 

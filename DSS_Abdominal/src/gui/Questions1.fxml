@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="background2" stylesheets="@mainStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Questions1">
+<GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="background2" stylesheets="@mainStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Questions1">
    <columnConstraints>
       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
       <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
@@ -19,17 +23,17 @@
    <children>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Does the patient have a lump?" wrappingWidth="302.21875" GridPane.hgrow="ALWAYS">
          <font>
-            <Font size="18.0" />
+            <Font size="24.0" />
          </font>
       </Text>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Has the patient suffered from abdominal swelling?" wrappingWidth="301.2314453125" GridPane.rowIndex="1">
          <font>
-            <Font size="18.0" />
+            <Font size="24.0" />
          </font>
       </Text>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Has the patient suffered diarrehea?" wrappingWidth="302.623046875" GridPane.rowIndex="2">
          <font>
-            <Font size="18.0" />
+            <Font size="24.0" />
          </font>
       </Text>
       <GridPane styleClass="background22" stylesheets="@mainStyle.css" GridPane.columnIndex="1">
@@ -43,9 +47,18 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <RadioButton fx:id="lump_yes" mnemonicParsing="false" onAction="#checkRadialButtons" text="Yes" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
-            <RadioButton fx:id="lump_no" mnemonicParsing="false" onAction="#checkRadialButtons" text="No" GridPane.rowIndex="2" />
+            <RadioButton fx:id="lump_yes" mnemonicParsing="false" onAction="#checkRadialButtons" text="Yes" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin></RadioButton>
+            <RadioButton fx:id="lump_no" mnemonicParsing="false" onAction="#checkRadialButtons" text="No" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin></RadioButton>
          </children>
+         <GridPane.margin>
+            <Insets bottom="-5.0" left="10.0" top="-5.0" />
+         </GridPane.margin>
       </GridPane>
       <GridPane styleClass="background22" stylesheets="@mainStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <columnConstraints>
@@ -63,6 +76,9 @@
             <RadioButton fx:id="abdominalSwelling_low" mnemonicParsing="false" onAction="#checkRadialButtons" text="Low" GridPane.rowIndex="2" />
             <RadioButton fx:id="abdominalSwelling_high" mnemonicParsing="false" onAction="#checkRadialButtons" text="High" GridPane.rowIndex="3" />
          </children>
+         <GridPane.margin>
+            <Insets bottom="-10.0" left="10.0" top="-10.0" />
+         </GridPane.margin>
       </GridPane>
       <GridPane styleClass="background22" stylesheets="@mainStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <columnConstraints>
@@ -78,6 +94,9 @@
             <RadioButton fx:id="diarrhea_yes" mnemonicParsing="false" onAction="#checkRadialButtons" text="Yes" GridPane.rowIndex="1" />
             <RadioButton fx:id="diarrhea_no" mnemonicParsing="false" onAction="#checkRadialButtons" text="No" GridPane.rowIndex="2" />
          </children>
+         <GridPane.margin>
+            <Insets bottom="-5.0" left="10.0" top="-5.0" />
+         </GridPane.margin>
       </GridPane>
       <GridPane styleClass="background22" stylesheets="@mainStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="3">
         <columnConstraints>
@@ -95,6 +114,9 @@
             <RadioButton fx:id="nausea_sporadic" mnemonicParsing="false" onAction="#checkRadialButtons" text="Sporadic" GridPane.rowIndex="2" />
             <RadioButton fx:id="nausea_frequent" mnemonicParsing="false" onAction="#checkRadialButtons" text="Frequent" GridPane.rowIndex="3" />
          </children>
+         <GridPane.margin>
+            <Insets bottom="-10.0" left="10.0" top="-10.0" />
+         </GridPane.margin>
       </GridPane>
       <GridPane styleClass="background22" stylesheets="@mainStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="4">
         <columnConstraints>
@@ -110,16 +132,22 @@
             <RadioButton fx:id="anxiety_depress_yes" mnemonicParsing="false" onAction="#checkRadialButtons" text="Yes" GridPane.rowIndex="1" />
             <RadioButton fx:id="anxiety_depress_no" mnemonicParsing="false" onAction="#checkRadialButtons" text="No" GridPane.rowIndex="2" />
          </children>
+         <GridPane.margin>
+            <Insets bottom="-5.0" left="10.0" top="-5.0" />
+         </GridPane.margin>
       </GridPane>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Has the patient experienced nausea?" wrappingWidth="302.623046875" GridPane.rowIndex="3">
          <font>
-            <Font size="18.0" />
+            <Font size="24.0" />
          </font>
       </Text>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Has the patient experienced anxiety or depression?" wrappingWidth="302.21875" GridPane.rowIndex="4">
          <font>
-            <Font size="18.0" />
+            <Font size="24.0" />
          </font>
       </Text>
    </children>
+   <padding>
+      <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+   </padding>
 </GridPane>
