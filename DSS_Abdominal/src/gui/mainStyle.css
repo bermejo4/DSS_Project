@@ -18,6 +18,7 @@
     -fx-border-width: 4;
     -fx-border-radius: 0;
     -fx-border-style:0;
+     padding: 5px 0 5px 60px;
 }
 
 .background22 {
@@ -53,6 +54,18 @@
     -fx-background-color: #a9a9a9;
     -fx-border-color: #a9a9a9;
 }
+.button:pressed, .button:default:hover:pressed {
+  -fx-background-color: white;
+  -fx-text-fill: #1d1d1d;
+}
+.button:focused {
+    -fx-border-color: white, white;
+    -fx-border-width: 1, 1;
+    -fx-border-style: solid, segments(1, 1);
+    -fx-border-radius: 0, 0;
+    -fx-border-insets: 1 1 1 1, 0;
+}
+
 
 .title {
     -fx-background-color: #008000;
