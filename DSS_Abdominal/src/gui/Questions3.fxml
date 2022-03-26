@@ -53,11 +53,14 @@
             <RadioButton fx:id="fever_high" mnemonicParsing="false" onAction="#checkRadialButtons" text="&gt;39º" GridPane.rowIndex="3" />
          </children>
          <opaqueInsets>
-            <Insets bottom="-10.0" left="10.0" top="-10.0" />
+            <Insets left="20.0" />
          </opaqueInsets>
          <GridPane.margin>
-            <Insets bottom="-10.0" left="10.0" top="-10.0" />
+            <Insets bottom="-10.0" left="20.0" top="-10.0" />
          </GridPane.margin>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
       </GridPane>
       <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1">
          <columnConstraints>
@@ -76,11 +79,14 @@
             <RadioButton fx:id="discomfort_extended" mnemonicParsing="false" onAction="#checkRadialButtons" text="Extended" GridPane.rowIndex="3" />
          </children>
          <opaqueInsets>
-            <Insets bottom="-10.0" left="10.0" top="-10.0" />
+            <Insets left="20.0" />
          </opaqueInsets>
          <GridPane.margin>
-            <Insets bottom="-10.0" left="10.0" top="-10.0" />
+            <Insets bottom="-10.0" left="20.0" top="-10.0" />
          </GridPane.margin>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
       </GridPane>
       <GridPane GridPane.columnIndex="1" GridPane.rowIndex="2">
          <columnConstraints>
@@ -99,11 +105,14 @@
             <RadioButton fx:id="cramps_mild" mnemonicParsing="false" onAction="#checkRadialButtons" text="Mild" GridPane.rowIndex="2" />
          </children>
          <opaqueInsets>
-            <Insets bottom="-10.0" left="10.0" top="-10.0" />
+            <Insets left="20.0" />
          </opaqueInsets>
          <GridPane.margin>
-            <Insets bottom="-10.0" left="10.0" top="-10.0" />
+            <Insets bottom="-10.0" left="20.0" top="-10.0" />
          </GridPane.margin>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
       </GridPane>
       <GridPane GridPane.columnIndex="1" GridPane.rowIndex="3">
          <columnConstraints>
@@ -122,11 +131,14 @@
             <RadioButton fx:id="melenas_substantially" mnemonicParsing="false" onAction="#checkRadialButtons" text="Substancially" GridPane.rowIndex="3" />
          </children>
          <opaqueInsets>
-            <Insets bottom="-10.0" left="10.0" top="-10.0" />
+            <Insets left="20.0" />
          </opaqueInsets>
          <GridPane.margin>
-            <Insets bottom="-10.0" left="10.0" top="-10.0" />
+            <Insets bottom="-10.0" left="20.0" top="-10.0" />
          </GridPane.margin>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
       </GridPane>
       <GridPane GridPane.columnIndex="1" GridPane.rowIndex="4">
          <columnConstraints>
@@ -145,11 +157,14 @@
             <RadioButton fx:id="dermatitis_focalized" mnemonicParsing="false" onAction="#checkRadialButtons" text="Focalized" GridPane.rowIndex="2" />
          </children>
          <opaqueInsets>
-            <Insets bottom="-10.0" left="10.0" top="-10.0" />
+            <Insets left="20.0" />
          </opaqueInsets>
          <GridPane.margin>
-            <Insets bottom="-10.0" left="10.0" top="-10.0" />
+            <Insets bottom="-10.0" left="20.0" top="-10.0" />
          </GridPane.margin>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
       </GridPane>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Has the patient experienced blood in their feces?" wrappingWidth="293.623046875" GridPane.rowIndex="3">
          <font>

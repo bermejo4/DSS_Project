@@ -56,7 +56,7 @@
             <Insets bottom="-10.0" left="10.0" />
          </opaqueInsets>
          <GridPane.margin>
-            <Insets bottom="-10.0" left="10.0" top="-10.0" />
+            <Insets bottom="-10.0" left="20.0" />
          </GridPane.margin>
       </GridPane>
       <GridPane styleClass="background22" stylesheets="@mainStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -79,7 +79,7 @@
             <Insets bottom="-10.0" left="10.0" top="-10.0" />
          </opaqueInsets>
          <GridPane.margin>
-            <Insets bottom="-10.0" left="10.0" top="-10.0" />
+            <Insets bottom="-10.0" left="20.0" top="-10.0" />
          </GridPane.margin>
       </GridPane>
       <GridPane styleClass="background22" stylesheets="@mainStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="2">
@@ -103,7 +103,7 @@
             <Insets bottom="-10.0" left="10.0" top="-10.0" />
          </opaqueInsets>
          <GridPane.margin>
-            <Insets bottom="-10.0" left="10.0" top="-10.0" />
+            <Insets bottom="-10.0" left="20.0" top="-10.0" />
          </GridPane.margin>
       </GridPane>
       <GridPane styleClass="background22" stylesheets="@mainStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="3">
@@ -126,7 +126,7 @@
             <Insets bottom="-10.0" left="10.0" top="-10.0" />
          </opaqueInsets>
          <GridPane.margin>
-            <Insets bottom="-10.0" left="10.0" top="-10.0" />
+            <Insets bottom="-10.0" left="20.0" top="-10.0" />
          </GridPane.margin>
       </GridPane>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Has the patient experienced vomiting?" wrappingWidth="302.623046875" GridPane.rowIndex="3">
@@ -139,7 +139,7 @@
             <Font size="24.0" />
          </font>
       </Text>
-      <GridPane styleClass="background22" stylesheets="@mainStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="4">
+      <GridPane styleClass="background22" stylesheets="@mainStyle.css" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="4" GridPane.rowSpan="2147483647">
          <columnConstraints>
             <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
          </columnConstraints>
@@ -156,10 +156,10 @@
             <RadioButton fx:id="rectHemo_max" mnemonicParsing="false" onAction="#checkRadialButtons" text="A lot" GridPane.rowIndex="3" />
          </children>
          <opaqueInsets>
-            <Insets bottom="-10.0" left="10.0" top="-10.0" />
+            <Insets left="10.0" top="-10.0" />
          </opaqueInsets>
          <GridPane.margin>
-            <Insets bottom="-10.0" left="10.0" top="-10.0" />
+            <Insets left="20.0" top="-10.0" />
          </GridPane.margin>
       </GridPane>
    </children>

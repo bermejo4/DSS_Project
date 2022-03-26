@@ -10,6 +10,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import dss_abdominal.Patient;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -38,6 +41,7 @@ public class Results implements Initializable {
     private Hyperlink medline;
 
     private Patient patient;
+    private Results results;
 
     public static float ibsPorcentage = -1;
     public static float chronPorcentage = -1;
@@ -87,7 +91,7 @@ public class Results implements Initializable {
     }
      
      private void seeDiasease(ActionEvent ev){
-         disease_solution.setText(patient.getDiseaseName());
+         disease_solution.setText(selectBestDisease());
      }
         
      
@@ -101,7 +105,9 @@ public class Results implements Initializable {
     protected void initComponents(Patient patient){
         this.patient = patient;
         this.calculatePercentageFromSymptoms();
+        this.selectBestDisease();
         patient.getDiseaseName();
+        disease_solution.setText("");
         
 
     }
@@ -127,6 +133,60 @@ public class Results implements Initializable {
         celiacPorcentage = patient.ComparationArrayListSymptoms(celiac_Disease.getDiseaseArrayList());
         colorectalCancerPorcentage = patient.ComparationArrayListSymptoms(colorectal_cancer.getDiseaseArrayList());
 
+    }
+    
+    public String selectBestDisease(){
+        ArrayList<Float> allPercentages= new ArrayList();
+        allPercentages.add(ibsPorcentage);
+        allPercentages.add(chronPorcentage);
+        allPercentages.add(ulcerativeColitisPorcentage);
+        allPercentages.add(diverticulosisPorcentage);
+        allPercentages.add(herniaPorcentage);
+        allPercentages.add(appendicitisPorcentage);
+        allPercentages.add(enterocolitisPorcentage);
+        allPercentages.add(celiacPorcentage);
+        allPercentages.add(colorectalCancerPorcentage);
+        String selectedDiseaseName="You do not have a problem";
+        float max = 0;
+        float position=0;
+        for (int i = 0; i < allPercentages.size(); i++) {
+            if (allPercentages.get(i) > max) {
+                max = allPercentages.get(i);
+                position=i;
+            }
+        }
+        if(position==0) {
+            selectedDiseaseName="Irritable Bowel Syndrom";
+        }
+        else if(position==1) {
+            selectedDiseaseName="Chron's disease";
+        }
+        else if(position==2) {
+            selectedDiseaseName="Ulcerative Colitis";
+        }
+        else if(position==3) {
+            selectedDiseaseName="Diverticulosis";
+        }
+        else if(position==4) {
+            selectedDiseaseName="Inguinal or Abdominal Hernia";
+        }
+        else if(position==5) {
+            selectedDiseaseName="Appendicitis";
+        }
+        else if(position==6) {
+            selectedDiseaseName="Infectious Enterocolitis";
+        }
+        else if(position==7) {
+            selectedDiseaseName="Celiac Disease";
+        }
+        else if(position==8) {
+            selectedDiseaseName="Colorectal Cancer";
+        }
+        
+        patient.setDiseaseName(selectedDiseaseName);
+        return selectedDiseaseName;
+    
+        
     }
     
 }
