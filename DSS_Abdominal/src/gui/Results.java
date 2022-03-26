@@ -29,6 +29,7 @@ import javafx.stage.Stage;
 
 public class Results implements Initializable {
 
+    
     @FXML
     protected Button button_view;
     @FXML
@@ -64,22 +65,24 @@ public class Results implements Initializable {
     Patient colorectal_cancer = new Patient("Colorectal Cancer", Patient.Gender.MALE, Patient.AgeRange.ADULT, 2f, 1f, 2f, 2f, true, true, true, false, 2f, 2f, 2f, 0f, true, 0f, false, 0f, 0f, false, 0f, 0f, 0f, 0f, 0f);
 
 
-
     public void button_pressed2(ActionEvent event) throws Exception {
-        if ( event.getSource() == button_view ) {
 
+        if (event.getSource() == button_view) {
+            button_view.setDisable(true);
+        }
+        System.out.println("Moving to page: Graphic");
+    }
+    
+    public void gotoGraph() throws Exception {
+       
             FXMLLoader loader = new FXMLLoader(getClass().getResource("BarChartSample.fxml"));
             Parent root = loader.load();
             BarChartSample chartSample = loader.getController();
             chartSample.initComponents(this);
 
-            Scene scene = new Scene(root);
 
-            //stage.setScene(scene);
-            //stage.show();
-            System.out.println("Button pressed");
         }
-    }
+    
      public void gobackques4(javafx.event.ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
 
@@ -87,6 +90,7 @@ public class Results implements Initializable {
         Parent parent = loader.load();
 
         Scene scene = new Scene(parent);
+        results_window.setCenter(parent);
 
     }
      
@@ -184,6 +188,8 @@ public class Results implements Initializable {
         }
         
         patient.setDiseaseName(selectedDiseaseName);
+        System.out.println(patient.getDiseaseName());
+        System.out.println(selectedDiseaseName);
         return selectedDiseaseName;
     
         

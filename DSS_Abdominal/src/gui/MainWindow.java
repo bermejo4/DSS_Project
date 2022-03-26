@@ -20,7 +20,7 @@ import java.util.ResourceBundle;
 
 public class MainWindow implements Initializable {
 
-    @FXML
+     @FXML
     private BorderPane main_window;
 
     @FXML
