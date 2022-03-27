@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
+import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -30,7 +31,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 
-public class Results implements Initializable {
+public class Results extends Application implements Initializable  {
 
 
     @FXML
@@ -45,7 +46,6 @@ public class Results implements Initializable {
     private Hyperlink medline;
 
     private Patient patient;
-    private Results results;
 
     private String selectedDiseaseName = "You do not have a problem";
     private String diseaseNameToURL;
@@ -72,15 +72,6 @@ public class Results implements Initializable {
 
 
     public void initialize(URL url, ResourceBundle rb) {
-        medline = new Hyperlink();
-        medline.setText("https://medlineplus.gov/" + diseaseNameToURL + ".html");
-        medline.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("This link is clicked");
-            }
-        });
-
 
     }
 
@@ -104,8 +95,9 @@ public class Results implements Initializable {
 
     }
 
-    private void seeDiasease(ActionEvent ev) {
-        disease_solution.setText(selectBestDisease());
+    public void seeDisease(ActionEvent e) {
+        System.out.println("Link clicked!");
+        getHostServices().showDocument(medline.getText());
     }
 
 
@@ -114,7 +106,9 @@ public class Results implements Initializable {
         this.calculatePercentageFromSymptoms();
         this.selectBestDisease();
         patient.getDiseaseName();
-        disease_solution.setText("");
+        disease_solution.setText(patient.getDiseaseName());
+
+        medline.setText("https://medlineplus.gov/" + diseaseNameToURL + ".html");
 
 
     }
@@ -212,4 +206,8 @@ public class Results implements Initializable {
 
     }
 
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        throw new UnsupportedOperationException("Not supported ");
+    }
 }
