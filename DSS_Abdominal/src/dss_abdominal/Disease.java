@@ -7,10 +7,6 @@ package dss_abdominal;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author gabri
- */
 public class Disease {
     
     private String diseaseName;

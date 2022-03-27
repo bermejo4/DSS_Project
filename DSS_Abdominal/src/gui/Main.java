@@ -28,8 +28,6 @@ public class Main extends Application {
             this.window.setTitle("Decision Support System");
             this.window.setHeight(1000);
             this.window.setWidth(1000);
-
-            //this.window.setResizable(false);
             this.window.show();
 
         } catch (IOException e) {

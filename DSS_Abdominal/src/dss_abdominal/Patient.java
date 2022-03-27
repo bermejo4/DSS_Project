@@ -9,10 +9,6 @@ import java.util.ArrayList;
 import java.lang.Math;
 
 
-/**
- *
- * @author gabri
- */
 public class Patient {
 
     private float p_IBS;
@@ -29,7 +25,10 @@ public class Patient {
     public enum Gender {
         MALE, FEMALE
     };
-    //CHILD(5-10), YOUNG(12-14), YOUNGADULT(15-35) AND ADULT(+40) 
+    
+    /**
+     * The age ranges are CHILD(5-10), YOUNG(12-14), YOUNGADULT(15-35) AND ADULT(+40)
+     */
 
     public enum AgeRange {
         CHILD, YOUNG, YOUNGADULT, ADULT
@@ -60,7 +59,7 @@ public class Patient {
     private Float poo;
     private Float dermatitis;
     
-    ArrayList<Object> diseaseArrayList = new ArrayList<Object>();
+    ArrayList<Object> diseaseArrayList = new ArrayList<>();
 
     public Patient() {
         p_IBS = 0;

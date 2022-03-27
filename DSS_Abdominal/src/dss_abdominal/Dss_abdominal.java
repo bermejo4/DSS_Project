@@ -47,10 +47,7 @@ public class Dss_abdominal {
         
         Patient patient = new Patient("",Patient.AgeRange.ADULT);
         
-        //ATENCIOOOOOOON!!!!!!
-
-        //float abdpain, float distention, float nausea, float vomiting, boolean anxiety, boolean genetic, boolean tobacco, boolean diarrhea, float rectalHemo, float exhaustion,
-        //float weightLoss, float cramps, boolean constipation, float pee, boolean bulks, float fever, float perianalDiscom, boolean ulcers, boolean melenas, boolean chills, float fatigue, boolean poo, boolean dermatitis
+        
         Patient ibs = new Patient("Irritable Bowel Syndrom",Patient.Gender.FEMALE,Patient.AgeRange.YOUNG,1f,1f,1f,1f,true,false,false,true,1f,0f,0f,0f,true,1f,false,0f,0f,false,0f,0f,0f,0f,0f);
         
         Patient chron = new Patient("Chron",Patient.Gender.FEMALE,Patient.AgeRange.YOUNGADULT,1f,2f,1f,1f,true,true,true,true,0f,1f,2f,0f,true,0f,false,1f,0f,false,1f,0f,0f,0f,0f);        
@@ -70,12 +67,7 @@ public class Dss_abdominal {
         
         Patient colorectal_cancer = new Patient("Colorectal Cancer",Patient.Gender.MALE,Patient.AgeRange.ADULT,2f,1f,2f,2f,true,true,true,false,2f,2f,2f,0f,true,0f,false,0f,0f,false,0f,0f,0f,0f,0f);
         
-        //Código molón para probar mis funciones, salu2 Bermejo:
-        
-        System.out.println(ibs.patientSynmptomsToArrayList());
-        System.out.println(ibs.ComparationArrayListSymptoms(chron.patientSynmptomsToArrayList()));
-        
-        // Fin del código molón :(
+       
         
         
         String answer="";
@@ -194,11 +186,8 @@ public class Dss_abdominal {
             } else {
                 DEBUG("Answer = " + answer);
                 if (answer.equalsIgnoreCase("yes") || answer.equalsIgnoreCase("y")) {
-                    //prediction.setRectalHemo(true);
-                    //patient.setRectalHemo(true);
                 } else if (answer.equalsIgnoreCase("no") || answer.equalsIgnoreCase("n")) {
-                    //prediction.setRectalHemo(false);
-                    //patient.setRectalHemo(false);
+                   
                 } else {
                     System.out.println("Please enter Yes(y) or No(n)");
                 }
@@ -279,17 +268,12 @@ public class Dss_abdominal {
             } else {
                 DEBUG("Answer = " + answer);
                 if (answer.equalsIgnoreCase("yes") || answer.equalsIgnoreCase("y")) {
-                    //prediction.setDermatitis(true);
-                    //patient.setDermatitis(true);
+                    
+                    patient.setDermatitis(true);
                 } else if (answer.equalsIgnoreCase("no") || answer.equalsIgnoreCase("n")) {
-                    //prediction.setDermatitis(false);
-                    //patient.setDermatitis(false);
                 } else {
                     System.out.println("Please enter Yes(y) or No(n)");
                 }
-            /*ksession.insert(disease);
-            ksession.fireAllRules();
-            ksession.dispose();*/
             }
         } while ( answer_not_acceptable );
 
@@ -310,9 +294,6 @@ public class Dss_abdominal {
                 } else {
                     System.out.println("Please enter Yes(y) or No(n)");
                 }
-            /*ksession.insert(disease);
-            ksession.fireAllRules();
-            ksession.dispose();*/
             }
         } while ( answer_not_acceptable );
 
@@ -333,9 +314,6 @@ public class Dss_abdominal {
                 } else {
                     System.out.println("Please enter Yes(y) or No(n)");
                 }
-            /*ksession.insert(disease);
-            ksession.fireAllRules();
-            ksession.dispose();*/
             }
         } while ( answer_not_acceptable );
 
@@ -348,17 +326,12 @@ public class Dss_abdominal {
             } else {
                 DEBUG("Answer = " + answer);
                 if (answer.equalsIgnoreCase("yes") || answer.equalsIgnoreCase("y")) {
-                    //prediction.setNausea(true);
-                    //patient.setNausea(true);
+                  
                 } else if (answer.equalsIgnoreCase("no") || answer.equalsIgnoreCase("n")) {
-                    //prediction.setNausea(false);
-                    //patient.setNausea(false);
+                    
                 } else {
                     System.out.println("Please enter Yes(y) or No(n)");
                 }
-            /*ksession.insert(disease);
-            ksession.fireAllRules();
-            ksession.dispose();*/
             }
         } while ( answer_not_acceptable );
 
