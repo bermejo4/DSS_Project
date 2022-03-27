@@ -184,7 +184,7 @@ public class Results extends Application implements Initializable  {
                 break;
             case 6:
                 selectedDiseaseName = "Infectious Enterocolitis";
-                diseaseNameToURL = "ency/article/000294";
+                diseaseNameToURL = "ency/article/001148";
                 break;
             case 7:
                 selectedDiseaseName = "Celiac Disease";
