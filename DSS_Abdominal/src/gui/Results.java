@@ -165,13 +165,20 @@ public class Results extends Application implements Initializable  {
         allPercentages.add(colorectalCancerPorcentage);
 
         float max = 0;
+        float min = 0;
         float position = 0;
         for (int i = 0; i < allPercentages.size(); i++) {
             if (allPercentages.get(i) > max) {
                 max = allPercentages.get(i);
                 position = i;
+            } else if ( allPercentages.get(i) < min ){
+                min = allPercentages.get(i);
             }
         }
+        for (int i = 0; i < allPercentages.size(); i++) {
+            allPercentages.set(i, allPercentages.get(i)/min);
+        }
+
         switch ((int) position) {
             case 0:
                 selectedDiseaseName = "Irritable Bowel Syndrom";
