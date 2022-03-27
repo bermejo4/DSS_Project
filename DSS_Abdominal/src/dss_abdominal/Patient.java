@@ -11,15 +11,6 @@ import java.lang.Math;
 
 public class Patient {
 
-    private float p_IBS;
-    private float p_chrons;
-    private float p_ulcerative;
-    private float p_diverticulosis;
-    private float p_hernia;
-    private float p_appendicitis;
-    private float p_enterocolitis;
-    private float p_coeliac;
-    private float p_rectal_cancer;
     private String diseaseName;
 
     public enum Gender {
@@ -29,10 +20,10 @@ public class Patient {
     /**
      * The age ranges are CHILD(5-10), YOUNG(12-14), YOUNGADULT(15-35) AND ADULT(+40)
      */
-
     public enum AgeRange {
         CHILD, YOUNG, YOUNGADULT, ADULT
     };
+    
     private Gender gender;
     private AgeRange age;
     private Float abdpain;
@@ -61,18 +52,12 @@ public class Patient {
     
     ArrayList<Object> diseaseArrayList = new ArrayList<>();
 
+   
     public Patient() {
-        p_IBS = 0;
-        p_chrons = 0;
-        p_ulcerative = 0;
-        p_diverticulosis = 0;
-        p_hernia = 0;
-        p_appendicitis = 0;
-        p_enterocolitis = 0;
-        p_coeliac = 0;
-        p_rectal_cancer = 0;
-    }
+        super();
 
+    }
+    
     public Patient(String name) {
         super();
         this.diseaseName = name;
@@ -328,10 +313,7 @@ public class Patient {
         this.dermatitis = dermatitis;
     }
 
-    public Float getP_IBS() {
-        return p_IBS;
-    }
-
+    
     public void setAbdpain(Float abdpain) {
         this.abdpain = abdpain;
     }
@@ -380,73 +362,7 @@ public class Patient {
         this.fatigue = fatigue;
     }
 
-    public void setP_IBS(Float p_IBS) {
-        this.p_IBS = p_IBS;
-    }
-
-    public Float getP_chrons() {
-        return p_chrons;
-    }
-
-    public void setP_chrons(Float p_chrons) {
-        this.p_chrons = p_chrons;
-    }
-
-    public Float getP_ulcerative() {
-        return p_ulcerative;
-    }
-
-    public void setP_ulcerative(Float p_ulcerative) {
-        this.p_ulcerative = p_ulcerative;
-    }
-
-    public Float getP_diverticulosis() {
-        return p_diverticulosis;
-    }
-
-    public void setP_diverticulosis(Float p_diverticulosis) {
-        this.p_diverticulosis = p_diverticulosis;
-    }
-
-    public Float getP_hernia() {
-        return p_hernia;
-    }
-
-    public void setP_hernia(Float p_hernia) {
-        this.p_hernia = p_hernia;
-    }
-
-    public Float getP_appendicitis() {
-        return p_appendicitis;
-    }
-
-    public void setP_appendicitis(Float p_appendicitis) {
-        this.p_appendicitis = p_appendicitis;
-    }
-
-    public Float getP_enterocolitis() {
-        return p_enterocolitis;
-    }
-
-    public void setP_enterocolitis(Float p_enterocolitis) {
-        this.p_enterocolitis = p_enterocolitis;
-    }
-
-    public Float getP_coeliac() {
-        return p_coeliac;
-    }
-
-    public void setP_coeliac(Float p_coeliac) {
-        this.p_coeliac = p_coeliac;
-    }
-
-    public Float getP_rectal_cancer() {
-        return p_rectal_cancer;
-    }
-
-    public void setP_rectal_cancer(Float p_rectal_cancer) {
-        this.p_rectal_cancer = p_rectal_cancer;
-    }
+    
 
     public ArrayList<Object> getDiseaseArrayList() {
         return diseaseArrayList;
@@ -454,21 +370,7 @@ public class Patient {
     
     
 
-    @Override
-    public String toString() {
-        return "Prediction:"
-                + "\n\tChance of IBS=" + p_IBS
-                + "\n\tChance of Chron's disease=" + p_chrons
-                + "\n\tChance of ulcerative Colitis=" + p_ulcerative
-                + "\n\tChance of diverticulosis=" + p_diverticulosis
-                + "\n\tChance of Hernia=" + p_hernia
-                + "\n\tChance of appendicitis=" + p_appendicitis
-                + "\n\tChance of infectious enterocolitis=" + p_enterocolitis
-                + "\n\tChance of coeliac disease=" + p_coeliac
-                + "\n\tChance of colorectal cancer=" + p_rectal_cancer;
-
-    }
-
+   
     public ArrayList<Object> patientSynmptomsToArrayList() {
 
         diseaseArrayList.add(this.abdpain);
@@ -505,40 +407,35 @@ public class Patient {
         disease.addAll(this.patientSynmptomsToArrayList());
         
         for (int i = 0; i < (disease1.size() - 1); i++) {
-        //System.out.println("");    
-        //System.out.println("-----------");
-        //System.out.println("-----------");
             if(disease1.get(i).toString().equals(disease.get(i).toString())){
                 result=result+0;
-                //System.out.println("Sumo 0");
             }
             else{
                 if(disease1.get(i).toString().equals("true")){
                     if(disease.get(i).toString().equals("false")){
                         result=result+2;
-                        //System.out.println("Sumo 2");
                     }
                 }else if(disease1.get(i).toString().equals("false")){
                     if(disease.get(i).toString().equals("true")){
                         result=result+2;
-                        //System.out.println("Sumo 2");
                     }
                 }else{
                     result=result+Math.abs(Float.parseFloat(disease.get(i).toString())-Float.parseFloat(disease1.get(i).toString()));
-                    //System.out.println("Sumo: "+Math.abs(Float.parseFloat(disease.get(i).toString())-Float.parseFloat(disease1.get(i).toString())));
                 }
             }
-            //System.out.println("-----------");
-            //System.out.println(disease1.get(i));
-            //System.out.println(disease.get(i));
-            //System.out.println("-----------");
             
         }
-        System.out.println("result:"+result);
         
-        float porcentage=((float)(69-(float)result)/69)*100;//69 is because 23 symptons * 3 range of ponderation
+        float porcentage=((float)(69-(float)result)/69)*100; //23 symptons * 3 range of ponderation = 69
         return porcentage;
 
     }
+
+    @Override
+    public String toString() {
+        return "Patient{" + "diseaseName=" + diseaseName + ", gender=" + gender + ", age=" + age + ", abdpain=" + abdpain + ", distention=" + distention + ", nausea=" + nausea + ", vomiting=" + vomiting + ", anxiety=" + anxiety + ", genetic=" + genetic + ", tobacco=" + tobacco + ", diarrhea=" + diarrhea + ", rectalHemo=" + rectalHemo + ", exhaustion=" + exhaustion + ", weightLoss=" + weightLoss + ", cramps=" + cramps + ", constipation=" + constipation + ", pee=" + pee + ", bulks=" + bulks + ", fever=" + fever + ", perianalDiscom=" + perianalDiscom + ", ulcers=" + ulcers + ", melenas=" + melenas + ", chills=" + chills + ", fatigue=" + fatigue + ", poo=" + poo + ", dermatitis=" + dermatitis + ", diseaseArrayList=" + diseaseArrayList + '}';
+    }
+    
+    
 
 }

@@ -11,7 +11,6 @@ public class Disease {
     
     private String diseaseName;
     public enum Gender {MALE, FEMALE};
-  //CHILD(5-10), YOUNG(12-14), YOUNGADULT(15-35) AND ADULT(+40) 
     public enum AgeRange {CHILD,YOUNG,YOUNGADULT,ADULT}; 
     private Gender gender;
     private AgeRange age;
@@ -486,19 +485,10 @@ public class Disease {
     public static void setWeight_poo(float weight_poo) {
         Disease.weight_poo = weight_poo;
     }
-     //private static String[] compareDiseases() 
-       /* 
-            
-        }
-    */
     public static void setWeight_dermatitis(float weight_dermatitis) {
         Disease.weight_dermatitis = weight_dermatitis;
     }
 
-    @Override
-    public String toString() {
-        return "Disease{" + "diseaseName=" + diseaseName + ", gender=" + gender + ", age=" + age + ", abdpain=" + abdpain + ", distention=" + distention + ", nausea=" + nausea + ", vomiting=" + vomiting + ", anxiety=" + anxiety + ", genetic=" + genetic + ", tobacco=" + tobacco + ", diarrhea=" + diarrhea + ", rectalHemo=" + rectalHemo + ", exhaustion=" + exhaustion + ", weightLoss=" + weightLoss + ", cramps=" + cramps + ", constipation=" + constipation + ", pee=" + pee + ", bulks=" + bulks + ", fever=" + fever + ", perianalDiscom=" + perianalDiscom + ", ulcers=" + ulcers + ", melenas=" + melenas + ", chills=" + chills + ", fatigue=" + fatigue + ", poo=" + poo + ", dermatitis=" + dermatitis + '}';
-    }
 
     
     public ArrayList<Boolean> diseaseToArrayList(){
@@ -545,6 +535,11 @@ public class Disease {
         }
         return result;
      
+    }
+
+    @Override
+    public String toString() {
+        return "Disease{" + "diseaseName=" + diseaseName + ", gender=" + gender + ", age=" + age + ", abdpain=" + abdpain + ", distention=" + distention + ", nausea=" + nausea + ", vomiting=" + vomiting + ", anxiety=" + anxiety + ", genetic=" + genetic + ", tobacco=" + tobacco + ", diarrhea=" + diarrhea + ", rectalHemo=" + rectalHemo + ", exhaustion=" + exhaustion + ", weightLoss=" + weightLoss + ", cramps=" + cramps + ", constipation=" + constipation + ", pee=" + pee + ", bulks=" + bulks + ", fever=" + fever + ", perianalDiscom=" + perianalDiscom + ", ulcers=" + ulcers + ", melenas=" + melenas + ", chills=" + chills + ", fatigue=" + fatigue + ", poo=" + poo + ", dermatitis=" + dermatitis + '}';
     }
     
     

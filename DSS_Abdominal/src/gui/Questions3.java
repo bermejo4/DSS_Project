@@ -24,9 +24,7 @@ import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 
-/**
- * @author marin
- */
+
 public class Questions3 implements Initializable, QuestionPanel {
 
     @FXML

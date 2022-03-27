@@ -5,10 +5,7 @@
  */
 package dss_abdominal;
 
-/**
- *
- * @author gabri
- */
+
 import java.io.*;
 import java.util.*;
 import org.kie.api.KieServices;
@@ -24,7 +21,7 @@ public class Dss_abdominal {
     private static BufferedReader console_reader;
     private static boolean DEBUGGING = true;
     
-    private String selectedDiseaseName;
+    
     
     public static void execute(KieServices ks, KieContainer kc, Patient pat){
         KieSession ksession = kc.newKieSession("DiseaseRulesKS");
@@ -35,15 +32,32 @@ public class Dss_abdominal {
     }
     
     
-        public float ibsPorcentage = -1;
-        public float chronPorcentage = -1;
-        public float ulcerativeColitisPorcentage = -1;
-        public float diverticulosisPorcentage = -1;
-        public float herniaPorcentage = -1;
-        public float appendicitisPorcentage = -1;
-        public float enterocolitisPorcentage = -1;
-        public float celiacPorcentage = -1;
-        public float colorectalCancerPorcentage = -1;
+
+    public static void main(String[] args) {
+        
+        KieServices ks = KieServices.Factory.get();
+        KieContainer kc = ks.getKieClasspathContainer();
+        
+        console_reader = new BufferedReader(new InputStreamReader(System.in));
+        
+        
+        Patient patient = new Patient();
+        String selectedDiseaseName="";
+        
+        String answer="";
+        boolean answer_not_acceptable;
+        Set<String> acceptable_answers_set = new HashSet<String>();
+        
+        
+        float ibsPorcentage = -1;
+        float chronPorcentage = -1;
+        float ulcerativeColitisPorcentage = -1;
+        float diverticulosisPorcentage = -1;
+        float herniaPorcentage = -1;
+        float appendicitisPorcentage = -1;
+        float enterocolitisPorcentage = -1;
+        float celiacPorcentage = -1;
+        float colorectalCancerPorcentage = -1;
         
         Patient ibs = new Patient("Irritable Bowel Syndrom", Patient.Gender.FEMALE, Patient.AgeRange.YOUNG, 1f, 1f, 1f, 1f, true, false, false, true, 1f, 0f, 0f, 0f, true, 1f, false, 0f, 0f, false, 0f, 0f, 0f, 0f, 0f);
         Patient chron = new Patient("Chron", Patient.Gender.FEMALE, Patient.AgeRange.YOUNGADULT, 1f, 2f, 1f, 1f, true, true, true, true, 0f, 1f, 2f, 0f, true, 0f, false, 1f, 0f, false, 1f, 0f, 0f, 0f, 0f);
@@ -56,21 +70,6 @@ public class Dss_abdominal {
         Patient colorectal_cancer = new Patient("Colorectal Cancer", Patient.Gender.MALE, Patient.AgeRange.ADULT, 2f, 1f, 2f, 2f, true, true, true, false, 2f, 2f, 2f, 0f, true, 0f, false, 0f, 0f, false, 0f, 0f, 0f, 0f, 0f);
 
         
-
-    public static void main(String[] args) {
-        
-        KieServices ks = KieServices.Factory.get();
-        KieContainer kc = ks.getKieClasspathContainer();
-        
-        console_reader = new BufferedReader(new InputStreamReader(System.in));
-        
-        
-        Patient patient = new Patient();
-        
-        
-        String answer="";
-        boolean answer_not_acceptable;
-        Set<String> acceptable_answers_set = new HashSet<String>();
 
         do {
             answer = ask("Patient's gender? female(f) or male(m)");
@@ -85,7 +84,6 @@ public class Dss_abdominal {
                 System.out.println("Please enter Female(f) or Male(m)");
 
             } else {
-                DEBUG("Answer = " + answer);
                 if (answer.equalsIgnoreCase("female") || answer.equalsIgnoreCase("f")) {
                     patient.setGender(Patient.Gender.FEMALE);
 
@@ -153,7 +151,6 @@ public class Dss_abdominal {
             if ( answer_not_acceptable ) {
                 System.out.println("Please enter \"yes\" or \"no\".");
             } else {
-                DEBUG("Answer = " + answer);
                 if (answer.equalsIgnoreCase("yes") || answer.equalsIgnoreCase("y")) {
                     patient.setTobacco(true);
                 } else if (answer.equalsIgnoreCase("no") || answer.equalsIgnoreCase("n")) {
@@ -179,7 +176,6 @@ public class Dss_abdominal {
             if ( answer_not_acceptable ) {
                 System.out.println("Please enter \"yes\" or \"no\".");
             } else {
-                DEBUG("Answer = " + answer);
                 if (answer.equalsIgnoreCase("yes") || answer.equalsIgnoreCase("y")) {
                     patient.setDiarrhea(true);
 
@@ -207,7 +203,6 @@ public class Dss_abdominal {
             if ( answer_not_acceptable ) {
                 System.out.println("Please enter \"yes\" or \"no\".");
             } else {
-                DEBUG("Answer = " + answer);
                 if (answer.equalsIgnoreCase("yes") || answer.equalsIgnoreCase("y")) {
                     patient.setConstipation(true);
 
@@ -232,7 +227,6 @@ public class Dss_abdominal {
             if ( answer_not_acceptable ) {
                 System.out.println("Please enter \"yes\" or \"no\".");
             } else {
-                DEBUG("Answer = " + answer);
                 if (answer.equalsIgnoreCase("yes") || answer.equalsIgnoreCase("y")) {
                     patient.setUlcers(true);
                 } else if (answer.equalsIgnoreCase("no") || answer.equalsIgnoreCase("n")) {
@@ -256,7 +250,6 @@ public class Dss_abdominal {
             if ( answer_not_acceptable ) {
                 System.out.println("Please enter \"yes\" or \"no\".");
             } else {
-                DEBUG("Answer = " + answer);
                 if (answer.equalsIgnoreCase("yes") || answer.equalsIgnoreCase("y")) {
                     patient.setBulks(true);
                 } else if (answer.equalsIgnoreCase("no") || answer.equalsIgnoreCase("n")) {
@@ -312,7 +305,6 @@ public class Dss_abdominal {
             if ( answer_not_acceptable ) {
                 System.out.println("Please enter \"yes\" or \"no\".");
             } else {
-                DEBUG("Answer = " + answer);
                 if (answer.equalsIgnoreCase("yes") || answer.equalsIgnoreCase("y")) {
                     patient.setGenetic(true);
                 } else if (answer.equalsIgnoreCase("no") || answer.equalsIgnoreCase("n")) {
@@ -817,7 +809,6 @@ public class Dss_abdominal {
             if ( answer_not_acceptable ) {
                 System.out.println("Please enter \"yes\" or \"no\".");
             } else {
-                DEBUG("Answer = " + answer);
                 if (answer.equalsIgnoreCase("yes") || answer.equalsIgnoreCase("y")) {
                     patient.setAnxiety(true);
                 } else if (answer.equalsIgnoreCase("no") || answer.equalsIgnoreCase("n")) {
@@ -827,30 +818,8 @@ public class Dss_abdominal {
                 }
             }
         } while ( answer_not_acceptable );
-
-        execute(ks,kc,patient);
-        
-        //String name=selectBestDisease(patient);
-        //patient.setDiseaseName(name);
-        //System.out.println("/nThe best approximation of your disease is: " + patient.getDiseaseName());
-        //System.out.println("/nIf you want more information go to https://medlineplus.gov ");
         
         
-      
-    }
-            
-     
-    private static String askSymptom( String message ){
-        System.out.println(message);
-        try {
-            return console_reader.readLine();
-        } catch (IOException e) {
-            e.printStackTrace();
-            return "";
-        }
-    }
-    
-    public void calculatePercentageFromSymptoms(Patient patient) {
         ibs.patientSynmptomsToArrayList();
         chron.patientSynmptomsToArrayList();
         ulcerative_colitis.patientSynmptomsToArrayList();
@@ -870,9 +839,8 @@ public class Dss_abdominal {
         enterocolitisPorcentage = patient.ComparationArrayListSymptoms(enterocolitis.getDiseaseArrayList());
         celiacPorcentage = patient.ComparationArrayListSymptoms(celiac_Disease.getDiseaseArrayList());
         colorectalCancerPorcentage = patient.ComparationArrayListSymptoms(colorectal_cancer.getDiseaseArrayList());
-
-    }
-    public String selectBestDisease(Patient patient) {
+        
+        
         ArrayList<Float> allPercentages = new ArrayList();
         allPercentages.add(ibsPorcentage);
         allPercentages.add(chronPorcentage);
@@ -925,11 +893,35 @@ public class Dss_abdominal {
         }
 
         patient.setDiseaseName(selectedDiseaseName);
-        System.out.println(patient.getDiseaseName());
-        return selectedDiseaseName;
+        
+        
+        
+        
+        
+        
 
-
+        execute(ks,kc,patient);
+        
+        
+        System.out.println("\n\tThe best approximation of your disease is: " + patient.getDiseaseName()+"\n\t");
+        System.out.println("\n\tIf you want more information go to https://medlineplus.gov \n\t");
+        
+        
+      
     }
+            
+     
+    private static String askSymptom( String message ){
+        System.out.println(message);
+        try {
+            return console_reader.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return "";
+        }
+    }
+   
+
     private static String ask( String message ){
         System.out.println(message);
         try {
@@ -940,9 +932,7 @@ public class Dss_abdominal {
         }
     }
 
-    private static void DEBUG( String message ){
-        if ( DEBUGGING ) System.out.println("[ DEBUG ] :: " + message);
-    }
+   
 
 }
      
