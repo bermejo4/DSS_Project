@@ -362,7 +362,49 @@ public class Patient {
         this.fatigue = fatigue;
     }
 
-    
+    public Boolean getAnxiety() {
+        return anxiety;
+    }
+
+    public Boolean getGenetic() {
+        return genetic;
+    }
+
+    public Boolean getTobacco() {
+        return tobacco;
+    }
+
+    public Boolean getDiarrhea() {
+        return diarrhea;
+    }
+
+    public Boolean getConstipation() {
+        return constipation;
+    }
+
+    public Boolean getBulks() {
+        return bulks;
+    }
+
+    public Boolean getUlcers() {
+        return ulcers;
+    }
+
+    public Float getMelenas() {
+        return melenas;
+    }
+
+    public Float getChills() {
+        return chills;
+    }
+
+    public Float getPoo() {
+        return poo;
+    }
+
+    public Float getDermatitis() {
+        return dermatitis;
+    }
 
     public ArrayList<Object> getDiseaseArrayList() {
         return diseaseArrayList;

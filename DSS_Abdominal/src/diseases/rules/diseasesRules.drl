@@ -5,7 +5,7 @@ import dss_abdominal.Patient
 rule "Hernia"
     dialect "java"
     when
-        d1 : Patient(bulks == true)
+        d1 : Patient(bulks == true, diseaseName == null)
     then
         d1.setDiseaseName("Hernia");
         System.out.println("The first approximation of the diagnosis is:"+d1.getDiseaseName());
@@ -14,7 +14,7 @@ end
 rule "Colitis"
     dialect "java"
     when
-        d2 : Patient(poo > 0.0)
+        d2 : Patient(poo > 0.0, diseaseName == null)
     then
         d2.setDiseaseName("Ulcerative Colitis");
         System.out.println("The first approximation of the diagnosis is:"+d2.getDiseaseName());
@@ -23,7 +23,7 @@ end
 rule "Colitis2"
     dialect "java"
     when
-        d3 : Patient(nausea>0.0)
+        d3 : Patient(nausea>0.0, diseaseName == null)
     then
         d3.setDiseaseName("Ulcerative Colitis");
         System.out.println("The first approximation of the diagnosis is:"+d3.getDiseaseName());
@@ -32,7 +32,7 @@ end
 rule "Celiac"
     dialect "java"
     when
-        d4 : Patient(dermatitis==true)
+        d4 : Patient(dermatitis>0.0, diseaseName == null)
     then
         d4.setDiseaseName("Celiac Disease");
         System.out.println("The first approximation of the diagnosis is:"+d4.getDiseaseName());
@@ -41,7 +41,7 @@ end
 rule "Diverticulosis"
     dialect "java"
     when
-        d5 : Patient(chills>0.0)
+        d5 : Patient(chills>0.0, diseaseName == null)
     then
         d5.setDiseaseName("Diverticulosis");
         System.out.println("The first approximation of the diagnosis is:"+d5.getDiseaseName());
@@ -51,7 +51,7 @@ end
 rule "Crohns"
     dialect "java"
     when
-        d6 : Patient(melenas>0F)
+        d6 : Patient(melenas>0.0, diseaseName == null)
     then
         d6.setDiseaseName("Crohns Disease");
         System.out.println("The first approximation of the diagnosis is:"+d6.getDiseaseName());
@@ -60,7 +60,7 @@ end
 rule "Enterocolitis"
     dialect "java"
     when
-        d7 : Patient(ulcers==true)
+        d7 : Patient(ulcers==true, diseaseName == null)
     then
         d7.setDiseaseName("Infectious Enterocolitis");
         System.out.println("The first approximation of the diagnosis is:"+d7.getDiseaseName());
@@ -69,7 +69,7 @@ end
 rule "Hernia2"
     dialect "java"
     when
-        d8 : Patient(diarrhea==false)
+        d8 : Patient(diarrhea==false, diseaseName == null)
     then
         d8.setDiseaseName("Inguinal or Abdominal Hernia");
         System.out.println("The first approximation of the diagnosis is:"+d8.getDiseaseName());
@@ -78,7 +78,7 @@ end
 rule "Appendicitis"
     dialect "java"
     when
-        d9 : Patient(fever==true)
+        d9 : Patient(fever>0.0, diseaseName == null)
     then
         d9.setDiseaseName("Appendicitis");
         System.out.println("The first approximation of the diagnosis is:"+d9.getDiseaseName());
@@ -87,7 +87,7 @@ end
 rule "Colorectal"
     dialect "java"
     when
-        d10 : Patient(genetic==true)
+        d10 : Patient(genetic==true, diseaseName == null)
     then
         d10.setDiseaseName("Colorectal Cancer");
         System.out.println("The first approximation of the diagnosis is:"+d10.getDiseaseName());
