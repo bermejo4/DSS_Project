@@ -159,7 +159,7 @@ public class Results extends Application implements Initializable  {
         switch ((int) position) {
             case 0:
                 selectedDiseaseName = "Irritable Bowel Syndrom";
-                diseaseNameToURL = "irritablebowelssyndrome";
+                diseaseNameToURL = "irritablebowelsyndrome";
 
                 break;
             case 1:
