@@ -1,5 +1,8 @@
 package telegram;
 
+import com.gargoylesoftware.htmlunit.WebClient;
+import com.gargoylesoftware.htmlunit.html.HtmlPage;
+import com.gargoylesoftware.htmlunit.html.HtmlParagraph;
 import dss_abdominal.Patient;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendAnimation;
@@ -9,10 +12,8 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Locale;
-import java.util.Set;
+import java.io.IOException;
+import java.util.*;
 
 public class Telegrambot extends TelegramLongPollingBot {
 
@@ -23,19 +24,23 @@ public class Telegrambot extends TelegramLongPollingBot {
     private ArrayList<Long> times;
     private Set<String> acceptable_answers_set;
 
+    private String selectedDiseaseName;
+    private String diseaseNameToMedURL;
+    private String diseaseMayoURL;
+
     private boolean askingAge;
 
     protected static final long TIMEOUT = 600000; // in ms
     
-    public static float ibsPorcentage = -1;
-    public static float chronPorcentage = -1;
-    public static float ulcerativeColitisPorcentage=-1;
-    public static float diverticulosisPorcentage = -1;
-    public static float herniaPorcentage=-1;
-    public static float appendicitisPorcentage=-1;
-    public static float enterocolitisPorcentage=-1;
-    public static float celiacPorcentage=-1;
-    public static float colorectalCancerPorcentage=-1;
+    public float ibsPorcentage = -1;
+    public float chronPorcentage = -1;
+    public float ulcerativeColitisPorcentage=-1;
+    public float diverticulosisPorcentage = -1;
+    public float herniaPorcentage=-1;
+    public float appendicitisPorcentage=-1;
+    public float enterocolitisPorcentage=-1;
+    public float celiacPorcentage=-1;
+    public float colorectalCancerPorcentage=-1;
     
     Patient ibs = new Patient("Irritable Bowel Syndrom",Patient.Gender.FEMALE,Patient.AgeRange.YOUNG,1f,1f,1f,1f,true,false,false,true,1f,0f,0f,0f,true,1f,false,0f,0f,false,0f,0f,0f,0f,0f);    
     Patient chron = new Patient("Chron",Patient.Gender.FEMALE,Patient.AgeRange.YOUNGADULT,1f,2f,1f,1f,true,true,true,true,0f,1f,2f,0f,true,0f,false,1f,0f,false,1f,0f,0f,0f,0f);        
@@ -720,17 +725,29 @@ public class Telegrambot extends TelegramLongPollingBot {
                 }
             }
 
-            message.setText(calculatePorcentageFromSymptoms(patient));
+            String diagnosis = "You are most likely to have: "+calculatePorcentageFromSymptoms(patient)+"\n\n";
+            WebClient webClient = new WebClient();
+            try {
+                HtmlPage page = webClient.getPage(diseaseMayoURL);
+                List<HtmlParagraph> paragraphs =  page.getByXPath("//div[@class='content']/div/p");
+                diagnosis += "A brief summary: \n"+paragraphs.get(0).asNormalizedText();
+            } catch (IOException e) {
+                // In this case, we just keep going.
+                e.printStackTrace();
+            } finally {
+                webClient.close();
+            }
+            diagnosis += "\n\nYou can learn more about it in the following link: https://medlineplus.gov/" + diseaseNameToMedURL + ".html";
+
+            message.setText(diagnosis);
             sendMessage(message);
-            //TODO: get a diagnosis.
             
         }
     }
     
-    
-        public String calculatePorcentageFromSymptoms(Patient patient){
+    public String calculatePorcentageFromSymptoms(Patient patient){
             
-        String diagnosisPorcentage="";
+        //String diagnosisPorcentage="";
         ibs.patientSynmptomsToArrayList();
         chron.patientSynmptomsToArrayList();
         ulcerative_colitis.patientSynmptomsToArrayList();
@@ -750,24 +767,25 @@ public class Telegrambot extends TelegramLongPollingBot {
         enterocolitisPorcentage=patient.ComparationArrayListSymptoms(enterocolitis.getDiseaseArrayList());
         celiacPorcentage=patient.ComparationArrayListSymptoms(celiac_Disease.getDiseaseArrayList());
         colorectalCancerPorcentage=patient.ComparationArrayListSymptoms(colorectal_cancer.getDiseaseArrayList());
-        
-        diagnosisPorcentage="\nYour diagnosis is: "
-                + "\n-> Ibs:"+ibsPorcentage+" %"
-                + "\n-> Chron: "+chronPorcentage+" %"
-                + "\n-> Ulcerative Colitis: "+ulcerativeColitisPorcentage+" %"
-                + "\n-> Diverticulosis: "+diverticulosisPorcentage+" %"
-                + "\n-> Hernia: "+herniaPorcentage+" %"
-                + "\n-> Appendicitis: "+appendicitisPorcentage+" %"
-                + "\n-> Enterocolitis: "+enterocolitisPorcentage+" %"
-                + "\n-> Celiac Disease: "+celiacPorcentage+" %"
-                + "\n-> Colorectal Cancer: "+colorectalCancerPorcentage+" %"
-                + "";
-        
-        return diagnosisPorcentage;
+
+         return this.selectBestDisease(patient);
+
+//        diagnosisPorcentage="\nYour diagnosis is: "
+//                + "\n-> Ibs:"+ibsPorcentage+" %"
+//                + "\n-> Chron: "+chronPorcentage+" %"
+//                + "\n-> Ulcerative Colitis: "+ulcerativeColitisPorcentage+" %"
+//                + "\n-> Diverticulosis: "+diverticulosisPorcentage+" %"
+//                + "\n-> Hernia: "+herniaPorcentage+" %"
+//                + "\n-> Appendicitis: "+appendicitisPorcentage+" %"
+//                + "\n-> Enterocolitis: "+enterocolitisPorcentage+" %"
+//                + "\n-> Celiac Disease: "+celiacPorcentage+" %"
+//                + "\n-> Colorectal Cancer: "+colorectalCancerPorcentage+" %"
+//                + "";
+//
+//        return diagnosisPorcentage;
         
         
     }
-    
 
     private boolean deleteLastAnswer(int sessionPos, boolean sendMessage) {
         Patient patient = patients.get(sessionPos);
@@ -855,5 +873,82 @@ public class Telegrambot extends TelegramLongPollingBot {
         if ( sendMessage ) sendMessage(message);
         return true;
     }
+
+    public String selectBestDisease( Patient patient ) {
+        ArrayList<Float> allPercentages = new ArrayList();
+        allPercentages.add(ibsPorcentage);
+        allPercentages.add(chronPorcentage);
+        allPercentages.add(ulcerativeColitisPorcentage);
+        allPercentages.add(diverticulosisPorcentage);
+        allPercentages.add(herniaPorcentage);
+        allPercentages.add(appendicitisPorcentage);
+        allPercentages.add(enterocolitisPorcentage);
+        allPercentages.add(celiacPorcentage);
+        allPercentages.add(colorectalCancerPorcentage);
+
+        float max = 0;
+        float position = 0;
+        for (int i = 0; i < allPercentages.size(); i++) {
+            if (allPercentages.get(i) > max) {
+                max = allPercentages.get(i);
+                position = i;
+            }
+        }
+        switch ((int) position) {
+            case 0:
+                selectedDiseaseName = "Irritable Bowel Syndrom";
+                diseaseNameToMedURL = "irritablebowelsyndrome";
+                diseaseMayoURL = "https://www.mayoclinic.org/diseases-conditions/irritable-bowel-syndrome/symptoms-causes/syc-20360016";
+                break;
+            case 1:
+                selectedDiseaseName = "Chron's disease";
+                diseaseNameToMedURL = "crohnsdisease";
+                diseaseMayoURL = "https://www.mayoclinic.org/diseases-conditions/crohns-disease/symptoms-causes/syc-20353304";
+                break;
+            case 2:
+                selectedDiseaseName = "Ulcerative Colitis";
+                diseaseNameToMedURL = "ulcerativecolitis";
+                diseaseMayoURL = "https://www.mayoclinic.org/diseases-conditions/ulcerative-colitis/symptoms-causes/syc-20353326";
+                break;
+            case 3:
+                selectedDiseaseName = "Diverticulosis";
+                diseaseNameToMedURL = "diverticulosisanddiverticulitis";
+                diseaseMayoURL = "https://www.mayoclinic.org/diseases-conditions/diverticulitis/symptoms-causes/syc-20371758";
+                break;
+            case 4:
+                selectedDiseaseName = "Inguinal or Abdominal Hernia";
+                diseaseNameToMedURL = "hernia";
+                diseaseMayoURL = "https://www.mayoclinic.org/diseases-conditions/inguinal-hernia/symptoms-causes/syc-20351547";
+                break;
+            case 5:
+                selectedDiseaseName = "Appendicitis";
+                diseaseNameToMedURL = "appendicitis";
+                diseaseMayoURL = "https://www.mayoclinic.org/diseases-conditions/appendicitis/symptoms-causes/syc-20369543";
+                break;
+            case 6:
+                selectedDiseaseName = "Infectious Enterocolitis";
+                diseaseNameToMedURL = "ency/article/001148";
+                diseaseMayoURL = "https://www.mayoclinic.org/diseases-conditions/irritable-bowel-syndrome/symptoms-causes/syc-20360016";
+                break;
+            case 7:
+                selectedDiseaseName = "Celiac Disease";
+                diseaseNameToMedURL = "celiacdisease";
+                diseaseMayoURL = "https://www.mayoclinic.org/diseases-conditions/celiac-disease/symptoms-causes/syc-20352220";
+                break;
+            case 8:
+                selectedDiseaseName = "Colorectal Cancer";
+                diseaseNameToMedURL = "colorectalcancer";
+                diseaseMayoURL = "https://www.mayoclinic.org/diseases-conditions/colon-cancer/symptoms-causes/syc-20353669";
+                break;
+            default:
+                break;
+
+
+        }
+        patient.setDiseaseName(selectedDiseaseName);
+        return selectedDiseaseName;
+    }
+
+
 
 }
