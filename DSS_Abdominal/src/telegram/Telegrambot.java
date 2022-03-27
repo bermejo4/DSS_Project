@@ -252,6 +252,7 @@ public class Telegrambot extends TelegramLongPollingBot {
         Patient patient = patients.get(sessionPos);
         SendMessage message = new SendMessage();
         message.setChatId(sessions.get(sessionPos));
+        answer = answer.toLowerCase();
 
         if (patient.getGender() == null) {
             if (answer.equals("female") || answer.equals("f")) {
