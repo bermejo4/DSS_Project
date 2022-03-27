@@ -5,7 +5,7 @@ import dss_abdominal.Patient
 rule "Hernia"
     dialect "java"
     when
-        d1 : Patient(bulks==true)
+        d1 : Patient(bulks == true)
     then
         d1.setDiseaseName("Hernia");
         System.out.println("The first approximation of the diagnosis is:"+d1.getDiseaseName());
@@ -14,7 +14,7 @@ end
 rule "Colitis"
     dialect "java"
     when
-        d2 : Patient(poo>0F)
+        d2 : Patient(poo > 0.0)
     then
         d2.setDiseaseName("Ulcerative Colitis");
         System.out.println("The first approximation of the diagnosis is:"+d2.getDiseaseName());
@@ -23,7 +23,7 @@ end
 rule "Colitis2"
     dialect "java"
     when
-        d3 : Patient(nausea>0F)
+        d3 : Patient(nausea>0.0)
     then
         d3.setDiseaseName("Ulcerative Colitis");
         System.out.println("The first approximation of the diagnosis is:"+d3.getDiseaseName());
@@ -41,7 +41,7 @@ end
 rule "Diverticulosis"
     dialect "java"
     when
-        d5 : Patient(chills>0F)
+        d5 : Patient(chills>0.0)
     then
         d5.setDiseaseName("Diverticulosis");
         System.out.println("The first approximation of the diagnosis is:"+d5.getDiseaseName());
