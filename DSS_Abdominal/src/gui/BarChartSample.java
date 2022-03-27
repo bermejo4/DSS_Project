@@ -23,8 +23,6 @@ import javafx.stage.Stage;
 import javafx.scene.chart.XYChart.Data;
 import javafx.scene.chart.XYChart.Series;
 
-import gui.MainWindow;
-
 public class BarChartSample extends Application implements Initializable {
 
     private Results results;
