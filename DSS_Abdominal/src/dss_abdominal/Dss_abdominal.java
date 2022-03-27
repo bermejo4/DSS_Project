@@ -832,6 +832,8 @@ public class Dss_abdominal {
         
         //String name=selectBestDisease(patient);
         //patient.setDiseaseName(name);
+        //System.out.println("/nThe best approximation of your disease is: " + patient.getDiseaseName());
+        //System.out.println("/nIf you want more information go to https://medlineplus.gov ");
         
         
       
