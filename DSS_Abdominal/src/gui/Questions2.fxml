@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -22,22 +23,22 @@
    <children>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Has the patient experienced constipation?" wrappingWidth="302.21875" GridPane.hgrow="ALWAYS">
          <font>
-            <Font size="18.0" />
+            <Font size="24.0" />
          </font>
       </Text>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Has the patient experienced abdominal pain?" wrappingWidth="302.21875" GridPane.rowIndex="4">
          <font>
-            <Font size="18.0" />
+            <Font size="24.0" />
          </font>
       </Text>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Has the patient experienced an increase in pee frequency?" wrappingWidth="301.2314453125" GridPane.rowIndex="1">
          <font>
-            <Font size="18.0" />
+            <Font size="24.0" />
          </font>
       </Text>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Does the patient feel exhausted?" wrappingWidth="302.623046875" GridPane.rowIndex="2">
          <font>
-            <Font size="18.0" />
+            <Font size="24.0" />
          </font>
       </Text>
       <GridPane styleClass="background22" stylesheets="@mainStyle.css" GridPane.columnIndex="1">
@@ -54,6 +55,15 @@
             <RadioButton fx:id="constipation_yes" mnemonicParsing="false" onAction="#checkRadialButtons" text="Yes" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
             <RadioButton fx:id="constipation_no" mnemonicParsing="false" onAction="#checkRadialButtons" text="No" GridPane.rowIndex="2" />
          </children>
+         <GridPane.margin>
+            <Insets left="10.0" />
+         </GridPane.margin>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+         <opaqueInsets>
+            <Insets left="20.0" />
+         </opaqueInsets>
       </GridPane>
       <GridPane styleClass="background22" stylesheets="@mainStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <columnConstraints>
@@ -68,9 +78,18 @@
          </rowConstraints>
          <children>
             <RadioButton fx:id="increasedpee_none" mnemonicParsing="false" onAction="#checkRadialButtons" text="None" GridPane.rowIndex="1" />
-            <RadioButton fx:id="increasedpee_sporadic" mnemonicParsing="false" onAction="#checkRadialButtons" prefHeight="26.0" prefWidth="129.0" text="Sporadic " GridPane.rowIndex="2" />
+            <RadioButton fx:id="increasedpee_sporadic" mnemonicParsing="false" onAction="#checkRadialButtons" prefHeight="35.0" prefWidth="204.0" text="Sporadic " GridPane.rowIndex="2" />
             <RadioButton fx:id="increasedpee_frequent" mnemonicParsing="false" onAction="#checkRadialButtons" text="Frequent" GridPane.rowIndex="3" />
          </children>
+         <GridPane.margin>
+            <Insets bottom="-10.0" left="10.0" top="-10.0" />
+         </GridPane.margin>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+         <opaqueInsets>
+            <Insets left="20.0" />
+         </opaqueInsets>
       </GridPane>
       <GridPane styleClass="background22" stylesheets="@mainStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <columnConstraints>
@@ -88,6 +107,15 @@
             <RadioButton fx:id="exhaustion_mild" mnemonicParsing="false" onAction="#checkRadialButtons" text="Mild" GridPane.rowIndex="2" />
             <RadioButton fx:id="exhaustion_disabling" mnemonicParsing="false" onAction="#checkRadialButtons" text="Disabling" GridPane.rowIndex="3" />
          </children>
+         <GridPane.margin>
+            <Insets bottom="-10.0" left="10.0" top="-10.0" />
+         </GridPane.margin>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+         <opaqueInsets>
+            <Insets left="20.0" />
+         </opaqueInsets>
       </GridPane>
       <GridPane styleClass="background22" stylesheets="@mainStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="3">
          <columnConstraints>
@@ -105,10 +133,19 @@
             <RadioButton fx:id="weightloss_zerotofive" mnemonicParsing="false" onAction="#checkRadialButtons" text="0-5% loss" GridPane.rowIndex="2" />
             <RadioButton fx:id="weightloss_morefive" mnemonicParsing="false" onAction="#checkRadialButtons" text="&gt;5% loss" GridPane.rowIndex="3" />
          </children>
+         <GridPane.margin>
+            <Insets bottom="-10.0" left="10.0" top="-10.0" />
+         </GridPane.margin>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+         <opaqueInsets>
+            <Insets left="20.0" />
+         </opaqueInsets>
       </GridPane>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Has the patient experienced weight loss over the last 6 months?" wrappingWidth="297.623046875" GridPane.rowIndex="3">
          <font>
-            <Font size="18.0" />
+            <Font size="24.0" />
          </font>
       </Text>
       <GridPane styleClass="background22" stylesheets="@mainStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="4">
@@ -127,6 +164,18 @@
             <RadioButton fx:id="abdominal_mild" mnemonicParsing="false" onAction="#checkRadialButtons" text="Mild" GridPane.rowIndex="2" />
             <RadioButton fx:id="abdominal_severe" mnemonicParsing="false" onAction="#checkRadialButtons" text="Severe" GridPane.rowIndex="3" />
          </children>
+         <GridPane.margin>
+            <Insets bottom="-10.0" left="10.0" top="-10.0" />
+         </GridPane.margin>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+         <opaqueInsets>
+            <Insets left="20.0" />
+         </opaqueInsets>
       </GridPane>
    </children>
+   <padding>
+      <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+   </padding>
 </GridPane>

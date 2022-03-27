@@ -10,7 +10,11 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import dss_abdominal.Patient;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -18,6 +22,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -25,18 +30,23 @@ import javafx.stage.Stage;
 
 public class Results implements Initializable {
 
+    
     @FXML
     protected Button button_view;
     @FXML
     private BorderPane results_window;
     @FXML
-    private TextField disease_solution;
+    private Label disease_solution;
     @FXML
-    private TextField disease_treatment; 
+    private Label disease_treatment; 
     @FXML
     private Hyperlink medline;
 
     private Patient patient;
+    private Results results;
+    
+    private String selectedDiseaseName="You do not have a problem";
+    private String diseaseNameToURL;
 
     public static float ibsPorcentage = -1;
     public static float chronPorcentage = -1;
@@ -58,31 +68,68 @@ public class Results implements Initializable {
     Patient celiac_Disease = new Patient("Celiac Disease", Patient.Gender.FEMALE, Patient.AgeRange.ADULT, 1f, 2f, 1f, 1f, true, true, false, true, 0f, 1f, 0f, 0f, true, 0f, false, 0f, 0f, false, 0f, 0f, 0f, 0f, 0f);
     Patient colorectal_cancer = new Patient("Colorectal Cancer", Patient.Gender.MALE, Patient.AgeRange.ADULT, 2f, 1f, 2f, 2f, true, true, true, false, 2f, 2f, 2f, 0f, true, 0f, false, 0f, 0f, false, 0f, 0f, 0f, 0f, 0f);
 
+    
 
+    public void initialize(URL url, ResourceBundle rb) {
+        medline=new Hyperlink();
+        medline.setText("https://medlineplus.gov/"+diseaseNameToURL+".html");
+        medline.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("This link is clicked");
+            }
+        });
+      
+            
+        
+        
 
+    }
+  
+    
     public void button_pressed2(ActionEvent event) throws Exception {
-        if ( event.getSource() == button_view ) {
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("GraphicStadistics.fxml"));
+        if (event.getSource() == button_view) {
+            button_view.setDisable(true);
+        }
+        System.out.println("Moving to page: Graphic");
+    }
+    
+    public void gotoGraph() throws Exception {
+       
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("BarChartSample.fxml"));
             Parent root = loader.load();
             BarChartSample chartSample = loader.getController();
             chartSample.initComponents(this);
 
-            Stage stage = new Stage();
-            Scene scene = new Scene(root);
-            chartSample.start(stage);
+
         }
+    
+     public void gobackques4(javafx.event.ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+
+        loader.setLocation(getClass().getResource("Questions4.fxml"));
+        Parent parent = loader.load();
+
+        Scene scene = new Scene(parent);
+        results_window.setCenter(parent);
+
     }
-    
-    
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+     
+     private void seeDiasease(ActionEvent ev){
+         disease_solution.setText(selectBestDisease());
+     }
         
-    }
+     
+   
 
     protected void initComponents(Patient patient){
         this.patient = patient;
         this.calculatePercentageFromSymptoms();
+        this.selectBestDisease();
+        patient.getDiseaseName();
+        disease_solution.setText("");
+        
 
     }
 
@@ -107,6 +154,76 @@ public class Results implements Initializable {
         celiacPorcentage = patient.ComparationArrayListSymptoms(celiac_Disease.getDiseaseArrayList());
         colorectalCancerPorcentage = patient.ComparationArrayListSymptoms(colorectal_cancer.getDiseaseArrayList());
 
+    }
+    
+    public String selectBestDisease(){
+        ArrayList<Float> allPercentages= new ArrayList();
+        allPercentages.add(ibsPorcentage);
+        allPercentages.add(chronPorcentage);
+        allPercentages.add(ulcerativeColitisPorcentage);
+        allPercentages.add(diverticulosisPorcentage);
+        allPercentages.add(herniaPorcentage);
+        allPercentages.add(appendicitisPorcentage);
+        allPercentages.add(enterocolitisPorcentage);
+        allPercentages.add(celiacPorcentage);
+        allPercentages.add(colorectalCancerPorcentage);
+        
+        float max = 0;
+        float position=0;
+        for (int i = 0; i < allPercentages.size(); i++) {
+            if (allPercentages.get(i) > max) {
+                max = allPercentages.get(i);
+                position=i;
+            }
+        }
+        switch ((int) position) {
+            case 0:
+                selectedDiseaseName="Irritable Bowel Syndrom";
+                diseaseNameToURL="irritablebowelssyndrome";
+                
+                break;
+            case 1:
+                selectedDiseaseName="Chron's disease";
+                diseaseNameToURL="crohnsdisease";
+                break;
+            case 2:
+                selectedDiseaseName="Ulcerative Colitis";
+                diseaseNameToURL="ulcerativecolitis";
+                break;
+            case 3:
+                selectedDiseaseName="Diverticulosis";
+                diseaseNameToURL="diverticulosisanddiverticulitis";
+                break;
+            case 4:
+                selectedDiseaseName="Inguinal or Abdominal Hernia";
+                diseaseNameToURL="hernia";
+                break;
+            case 5:
+                selectedDiseaseName="Appendicitis";
+                diseaseNameToURL="appendicitis";
+                break;
+            case 6:
+                selectedDiseaseName="Infectious Enterocolitis";
+                diseaseNameToURL="ency/article/000294";
+                break;
+            case 7:
+                selectedDiseaseName="Celiac Disease";
+                diseaseNameToURL="celiacdisease";
+                break;
+            case 8:
+                selectedDiseaseName="Colorectal Cancer";
+                diseaseNameToURL="colorectalcancer";
+                break;
+            default:
+                break;
+        }
+        
+        patient.setDiseaseName(selectedDiseaseName);
+        System.out.println(patient.getDiseaseName());
+        System.out.println(selectedDiseaseName);
+        return selectedDiseaseName;
+    
+        
     }
     
 }
