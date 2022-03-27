@@ -110,8 +110,12 @@ public class Results extends Application implements Initializable  {
         disease_solution.setText(patient.getDiseaseName());
         medline.setText("https://medlineplus.gov/" + diseaseNameToMedURL + ".html");
 
-        WebClient webClient = new WebClient();
+        WebClient webClient = new WebClient(BrowserVersion.CHROME);
         try {
+            webClient.getOptions().setCssEnabled(false);
+            webClient.getOptions().setThrowExceptionOnFailingStatusCode(false);
+            webClient.getOptions().setThrowExceptionOnScriptError(false);
+            webClient.getOptions().setPrintContentOnFailingStatusCode(false);
             HtmlPage page = webClient.getPage(diseaseMayoURL);
             List<HtmlParagraph> paragraphs =  page.getByXPath("//div[@class='content']/div/p");
             disease_treatment.setText(paragraphs.get(0).asNormalizedText());
