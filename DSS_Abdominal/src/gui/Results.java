@@ -7,26 +7,26 @@ package gui;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
+import com.gargoylesoftware.htmlunit.BrowserVersion;
+import com.gargoylesoftware.htmlunit.WebClient;
+import com.gargoylesoftware.htmlunit.html.HtmlPage;
+import com.gargoylesoftware.htmlunit.html.HtmlParagraph;
 import dss_abdominal.Patient;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -48,7 +48,8 @@ public class Results extends Application implements Initializable  {
     private Patient patient;
 
     private String selectedDiseaseName = "You do not have a problem";
-    private String diseaseNameToURL;
+    private String diseaseNameToMedURL;
+    private String diseaseMayoURL;
 
     public float ibsPorcentage = -1;
     public float chronPorcentage = -1;
@@ -107,8 +108,19 @@ public class Results extends Application implements Initializable  {
         this.selectBestDisease();
         patient.getDiseaseName();
         disease_solution.setText(patient.getDiseaseName());
+        medline.setText("https://medlineplus.gov/" + diseaseNameToMedURL + ".html");
 
-        medline.setText("https://medlineplus.gov/" + diseaseNameToURL + ".html");
+        WebClient webClient = new WebClient();
+        try {
+            HtmlPage page = webClient.getPage(diseaseMayoURL);
+            List<HtmlParagraph> paragraphs =  page.getByXPath("//div[@class='content']/div/p");
+            disease_treatment.setText(paragraphs.get(0).asNormalizedText());
+        } catch (IOException e) {
+            disease_treatment.setText("Sorry, we couldn't load the information from the webpage.");
+            e.printStackTrace();
+        } finally {
+            webClient.close();
+        }
 
 
     }
@@ -159,40 +171,48 @@ public class Results extends Application implements Initializable  {
         switch ((int) position) {
             case 0:
                 selectedDiseaseName = "Irritable Bowel Syndrom";
-                diseaseNameToURL = "irritablebowelsyndrome";
-
+                diseaseNameToMedURL = "irritablebowelsyndrome";
+                diseaseMayoURL = "https://www.mayoclinic.org/diseases-conditions/irritable-bowel-syndrome/symptoms-causes/syc-20360016";
                 break;
             case 1:
                 selectedDiseaseName = "Chron's disease";
-                diseaseNameToURL = "crohnsdisease";
+                diseaseNameToMedURL = "crohnsdisease";
+                diseaseMayoURL = "https://www.mayoclinic.org/diseases-conditions/crohns-disease/symptoms-causes/syc-20353304";
                 break;
             case 2:
                 selectedDiseaseName = "Ulcerative Colitis";
-                diseaseNameToURL = "ulcerativecolitis";
+                diseaseNameToMedURL = "ulcerativecolitis";
+                diseaseMayoURL = "https://www.mayoclinic.org/diseases-conditions/ulcerative-colitis/symptoms-causes/syc-20353326";
                 break;
             case 3:
                 selectedDiseaseName = "Diverticulosis";
-                diseaseNameToURL = "diverticulosisanddiverticulitis";
+                diseaseNameToMedURL = "diverticulosisanddiverticulitis";
+                diseaseMayoURL = "https://www.mayoclinic.org/diseases-conditions/diverticulitis/symptoms-causes/syc-20371758";
                 break;
             case 4:
                 selectedDiseaseName = "Inguinal or Abdominal Hernia";
-                diseaseNameToURL = "hernia";
+                diseaseNameToMedURL = "hernia";
+                diseaseMayoURL = "https://www.mayoclinic.org/diseases-conditions/inguinal-hernia/symptoms-causes/syc-20351547";
                 break;
             case 5:
                 selectedDiseaseName = "Appendicitis";
-                diseaseNameToURL = "appendicitis";
+                diseaseNameToMedURL = "appendicitis";
+                diseaseMayoURL = "https://www.mayoclinic.org/diseases-conditions/appendicitis/symptoms-causes/syc-20369543";
                 break;
             case 6:
                 selectedDiseaseName = "Infectious Enterocolitis";
-                diseaseNameToURL = "ency/article/001148";
+                diseaseNameToMedURL = "ency/article/001148";
+                diseaseMayoURL = "https://www.mayoclinic.org/diseases-conditions/irritable-bowel-syndrome/symptoms-causes/syc-20360016";
                 break;
             case 7:
                 selectedDiseaseName = "Celiac Disease";
-                diseaseNameToURL = "celiacdisease";
+                diseaseNameToMedURL = "celiacdisease";
+                diseaseMayoURL = "https://www.mayoclinic.org/diseases-conditions/celiac-disease/symptoms-causes/syc-20352220";
                 break;
             case 8:
                 selectedDiseaseName = "Colorectal Cancer";
-                diseaseNameToURL = "colorectalcancer";
+                diseaseNameToMedURL = "colorectalcancer";
+                diseaseMayoURL = "https://www.mayoclinic.org/diseases-conditions/colon-cancer/symptoms-causes/syc-20353669";
                 break;
             default:
                 break;
