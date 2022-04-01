@@ -468,7 +468,7 @@ public class Patient {
             
         }
         
-        float porcentage=((float)(69-(float)result)/69)*100; //23 symptons * 3 range of ponderation = 69
+        float porcentage=((float)(46-(float)result)/46)*100; //23 symptons * 3 range of ponderation = 69
         return porcentage;
 
     }
